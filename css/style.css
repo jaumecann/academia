@@ -1,0 +1,171 @@
+
+
+
+html,body{
+	margin: 0;
+	padding: 0;
+    height: 100%;
+}
+
+#wrapper {
+display:flex;
+justify-content: center;
+height:100%;
+background-image: url("../img/background.png");
+background-repeat: no-repeat;
+background-size: cover;
+}
+
+#mainbox {
+background-color: #000000;
+width:50%;
+height:45%;
+align-self: flex-end;
+display:flex;
+padding:5% 5% 3% 5%;
+flex-wrap:wrap;
+}
+
+.lang {
+color:white;
+width:100%;
+}
+
+.lang a {
+text-decoration:none;
+color:white;   
+margin-top: 1em; 
+font-family: 'Roboto Condensed', sans-serif;
+}
+
+h1{
+    color:white;
+    font-family: 'Playfair Display', serif;
+    font-size: 2.1em;
+    margin:0;
+    line-height: 100%;
+
+}
+#maintext{
+    width: 100%;
+    color:white;
+    margin-bottom:8%;
+}
+
+
+#maintext p{
+    font-family: 'Roboto Slab', serif;
+    color: white;
+    margin:0;
+    font-size: .85em;
+}
+
+#enter {   
+    margin: auto; 
+}
+
+#enter a {
+    color:white;  
+    text-decoration: none;  
+    display:block; 
+}
+
+#enter2 {
+    background-color: #9C4B32;
+    padding: 12px 28px;
+    font-family: 'Roboto Condensed', sans-serif;
+    letter-spacing: 5px;
+    border-radius: 2%;
+    font-size: .7em;
+}
+
+
+
+
+#icon{
+    color:white;
+    display:flex; 
+    justify-content:center;
+    width:100%;
+}
+
+#logos {
+    display:flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    width:100%;
+
+    
+}
+
+.responsive {
+    max-width: 100%;
+    max-height: 50px;
+}
+
+.bold {
+    font-weight:bold;
+}
+
+
+/* GALERIA  */
+
+#background {
+    padding:5%;
+    background-color: rgb(0, 0, 0);
+    height: 100%;
+}
+
+nav {
+    border-bottom-style: solid;
+    border-bottom-color: white;
+    border-bottom-width: 1px;
+    padding-bottom: 15px;
+    display: flex;
+}
+
+.breadcrumbs {
+    color: white;
+    font-family: 'Roboto Slab', serif;
+    font-size: .8em;
+    margin-bottom: 50px;
+}
+
+.breadcrumbs span {
+    font-family: 'Playfair Display', serif;
+}
+
+#bigcontainer {
+    display: flex;
+   height:75%;
+}
+
+#gallery {
+    width: 80%;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+.leftarrow img, .rightarrow img {   
+    width:30%;
+    align-self:center;
+}
+
+#flexcont {
+    display: flex;
+    flex-wrap: wrap;
+    width: 1000px;
+}
+
+#flexcont img {
+    height: 170px;
+    padding:5px;
+}
+
+.footer {
+    border-top-style: solid;
+    border-top-color: white;
+    border-top-width: 1px;
+    padding-top: 15px;
+    margin-top: 80px;
+}
