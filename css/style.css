@@ -157,9 +157,32 @@ nav {
     width: 1000px;
 }
 
+.frame {
+    position: relative;
+   
+}
+
+.layer {
+    display:none;
+    background-color: #9C4B32;
+    height:170px;
+    width: calc(100% - 10px);
+    position:absolute;
+    /*opacity: .5;*/
+    top:0;
+    margin:5px;
+}
+
 #flexcont img {
     height: 170px;
     padding:5px;
+ 
+}
+
+
+.frame:hover .layer {
+    display: block;
+    opacity: .5;
 }
 
 .footer {
@@ -167,5 +190,5 @@ nav {
     border-top-color: white;
     border-top-width: 1px;
     padding-top: 15px;
-    margin-top: 80px;
+    margin-top: 50px;
 }
