@@ -1,5 +1,7 @@
 
-
+:root {
+    --button: #9C4B32;
+}
 
 html,body{
 	margin: 0;
@@ -65,18 +67,19 @@ h1{
 }
 
 #enter a {
-    color:white;  
+  
     text-decoration: none;  
-    display:block; 
+
 }
 
-#enter2 {
-    background-color: #9C4B32;
+.button {
+    background-color: var(--button);
     padding: 12px 28px;
     font-family: 'Roboto Condensed', sans-serif;
     letter-spacing: 5px;
     border-radius: 2%;
     font-size: .7em;
+    color:white;  
 }
 
 
@@ -110,7 +113,7 @@ h1{
 
 /* GALERIA  */
 
-#background {
+.background {
     padding:5%;
     background-color: rgb(0, 0, 0);
     height: 100%;
@@ -128,16 +131,19 @@ nav {
     color: white;
     font-family: 'Roboto Slab', serif;
     font-size: .8em;
-    margin-bottom: 50px;
+    position: relative;
 }
 
 .breadcrumbs span {
     font-family: 'Playfair Display', serif;
 }
 
+
+
 #bigcontainer {
     display: flex;
    height:75%;
+   margin-top: 50px;
 }
 
 #gallery {
@@ -155,28 +161,32 @@ nav {
     display: flex;
     flex-wrap: wrap;
     width: 1000px;
+    
+    
 }
 
 .frame {
     position: relative;
-   
+
 }
 
 .layer {
     display:none;
     background-color: #9C4B32;
-    height:170px;
+    height:200px;
     width: calc(100% - 10px);
     position:absolute;
     /*opacity: .5;*/
     top:0;
     margin:5px;
+    color:white;
 }
 
 #flexcont img {
-    height: 170px;
+
+    height: 200px;
     padding:5px;
- 
+    
 }
 
 
@@ -190,5 +200,112 @@ nav {
     border-top-color: white;
     border-top-width: 1px;
     padding-top: 15px;
-    margin-top: 50px;
+    margin-top: 60px;
+}
+
+.layer span:nth-of-type(1){
+    font-family: 'Playfair Display', serif;
+    
+}
+
+.layer span:nth-of-type(2){
+    font-family: 'Roboto Slab', serif;
+    font-weight: 900;
+    
+}
+
+.layer span:nth-of-type(3){
+    font-family: 'Roboto Slab', serif;
+   
+}
+
+.layer p{
+    position: absolute;
+    bottom:0;
+    width: 60%;
+    font-size: .6em;
+    padding-left: 5%;
+}
+
+/* CARTONE - FICHA */
+
+.breadcrumbs img {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 28px;
+    width: 21px;
+    
+}
+
+#cartone {
+    color: white;
+    height: 75%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 40px;
+   
+}
+
+.imgdiv, .bigtxtdiv, .txtdiv, .btndiv {
+    width: 65%;
+}
+
+.imgdiv {
+ height: 45%;
+ 
+ border-style: solid;
+ text-align:center;
+}
+
+.imgdiv img {
+
+height:100%;
+}
+
+.bigtxtdiv {
+
+color:white;
+height: 15%;
+padding: 5% 0;
+}
+
+h3 {
+    font-family: 'Playfair Display', serif;
+    line-height: 50%;
+}
+
+.bigtxtdiv p {
+    font-family: 'Roboto Slab', serif;
+    line-height: 50%;
+    font-size:.8em;
+}
+
+.txtdiv {
+border-top-style: solid;
+border-top-width: 1px;
+color:white;
+font-family: 'Roboto Slab', serif;
+height: 20%;   
+font-size:.7em;
+
+}
+
+.btndiv {
+  
+position: relative:
+}
+
+#esplora {   
+   display: inline;
+   width: auto;
+   position: absolute;
+}
+
+#esplora a {
+
+    text-decoration: none;  
+    
 }
