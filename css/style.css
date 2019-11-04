@@ -1,6 +1,6 @@
 
 :root {
-    --button: #9C4B32;
+    --button: #e06c49;
 }
 
 html,body{
@@ -76,9 +76,9 @@ h1{
     background-color: var(--button);
     padding: 12px 28px;
     font-family: 'Roboto Condensed', sans-serif;
-    letter-spacing: 5px;
+    letter-spacing: 4px;
     border-radius: 2%;
-    font-size: .7em;
+    font-size: .6em;
     color:white;  
 }
 
@@ -123,8 +123,14 @@ nav {
     border-bottom-style: solid;
     border-bottom-color: white;
     border-bottom-width: 1px;
-    padding-bottom: 15px;
+    padding-bottom: 10px;
     display: flex;
+}
+
+nav img {
+    width: 30px;
+    margin-left: 20px;
+   
 }
 
 .breadcrumbs {
@@ -172,7 +178,7 @@ nav {
 
 .layer {
     display:none;
-    background-color: #9C4B32;
+    background-color:/* rgba(224, 108, 73, 0.5);*/ rgba(255, 38, 0, 0.4);
     height:200px;
     width: calc(100% - 10px);
     position:absolute;
@@ -192,7 +198,7 @@ nav {
 
 .frame:hover .layer {
     display: block;
-    opacity: .5;
+   
 }
 
 .footer {
@@ -200,7 +206,11 @@ nav {
     border-top-color: white;
     border-top-width: 1px;
     padding-top: 15px;
-    margin-top: 60px;
+    margin-top: 5%;
+}
+
+.footer img {
+    width: 25px;
 }
 
 .layer span:nth-of-type(1){
@@ -210,7 +220,7 @@ nav {
 
 .layer span:nth-of-type(2){
     font-family: 'Roboto Slab', serif;
-    font-weight: 900;
+    font-weight: bolder;
     
 }
 
@@ -233,8 +243,7 @@ nav {
     position: absolute;
     right: 0;
     top: 0;
-    height: 28px;
-    width: 21px;
+    width: 25px;
     
 }
 
@@ -254,7 +263,7 @@ nav {
 }
 
 .imgdiv {
- height: 45%;
+ height: 50%;
  
  border-style: solid;
  text-align:center;
@@ -302,10 +311,61 @@ position: relative:
    display: inline;
    width: auto;
    position: absolute;
+   margin-top: 10px;
 }
 
 #esplora a {
 
     text-decoration: none;  
     
+}
+
+/* IMMAGINE  */
+
+#immagine {
+height: 80%;
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+
+#imgcont {
+height: 78%;
+margin-top: 10%;
+}
+
+#imgcont img {
+
+max-width:100%; 
+max-height:100%;   
+}
+
+.percent {
+    display: flex;
+    margin-top: 5%;
+    color: white;   
+    
+}
+
+.percent p {
+    margin: auto;
+    text-align: center;
+    padding: 0 15px;
+    font-family: 'Roboto Slab', serif;
+}
+
+
+
+.percent img {
+    height: 30px;
+}
+
+.iconsrow {
+    display:flex;
+    margin-top: 5%;
+}
+
+.iconsrow img {
+    height: 45px;
+    padding: 0 25px;
 }
