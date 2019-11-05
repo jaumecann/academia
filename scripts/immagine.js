@@ -52,17 +52,17 @@ function zoomin() {
     return false;
     } 
     else {
-      myImg.style.width = (currWidth + 100) + "px";
+      myImg.style.width = (currWidth + 50) + "px";
     }
   };
   
   function zoomout() {
     var myImg = document.getElementById("imgid");
     var currWidth = myImg.clientWidth;
-    if (currWidth == 100) {
+    if (currWidth == 500) {
    return false;
     } else {
-      myImg.style.width = (currWidth - 100) + "px";
+      myImg.style.width = (currWidth - 50) + "px";
     }
   };
 
@@ -76,6 +76,6 @@ function zoomin() {
 });//end jquery
 
 
-// mirar jQuery Toggle Click Function A PEN BY html5andblog
+
 // Pure JS image zoom A PEN BY Alex Galushka
 // https://stackoverflow.com/questions/47635341/zooming-in-out-an-image-by-clicking-zoom-buttons-javascript
