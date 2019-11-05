@@ -8,11 +8,9 @@ document.getElementById('bright').addEventListener('input', function () {
 
 $(document).ready(function(){
 
-    /*
- $("#brightness").click(function(){
-    $("#brightness").attr('src',"img/bright2.png");
-    $(".percent p").replaceWith("<input type=\"range\" id=\"bright\" min=\"0\" max=\"100\" value=\"\">");
-*/
+
+
+//  BRIGHTNESS
 
 var toclick = "img/brighticon.png";
 var clicked = "img/bright2.png";
@@ -44,6 +42,33 @@ document.getElementById("bright").addEventListener("input", function () {
 
   
 })
+
+// ZOOM IMATGE
+
+function zoomin() {
+    var myImg = document.getElementById("imgid");
+    var currWidth = myImg.clientWidth;
+    if (currWidth == 2000){
+    return false;
+    } 
+    else {
+      myImg.style.width = (currWidth + 100) + "px";
+    }
+  };
+  
+  function zoomout() {
+    var myImg = document.getElementById("imgid");
+    var currWidth = myImg.clientWidth;
+    if (currWidth == 100) {
+   return false;
+    } else {
+      myImg.style.width = (currWidth - 100) + "px";
+    }
+  };
+
+  document.getElementById("less").onclick=zoomout;
+  document.getElementById("more").onclick=zoomin;
+
 
 
 

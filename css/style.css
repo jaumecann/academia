@@ -150,12 +150,14 @@ nav img {
     display: flex;
    height:75%;
    margin-top: 50px;
+   position: relative;
 }
 
 #gallery {
     width: 80%;
     overflow-x: hidden;
     overflow-y: hidden;
+    position: relative;
 }
 
 .leftarrow img, .rightarrow img {   
@@ -173,13 +175,15 @@ nav img {
 
 .frame {
     position: relative;
+    
+
 
 }
 
 .layer {
     display:none;
     background-color:/* rgba(224, 108, 73, 0.5);*/ rgba(255, 38, 0, 0.4);
-    height:200px;
+    height: 180px;
     width: calc(100% - 10px);
     position:absolute;
     /*opacity: .5;*/
@@ -190,7 +194,7 @@ nav img {
 
 #flexcont img {
 
-    height: 200px;
+    height: 180px;
     padding:5px;
     
 }
@@ -237,6 +241,19 @@ nav img {
     padding-left: 5%;
 }
 
+.gioca {
+    position:absolute;
+    bottom: -50px;
+    right: 0px;
+    border-style: solid;
+    color: white;
+    
+}
+
+.gioca img {
+    width: 100px;
+}
+
 /* CARTONE - FICHA */
 
 .breadcrumbs img {
@@ -281,7 +298,7 @@ height: 15%;
 padding: 5% 0;
 }
 
-h3 {
+h3, h4 {
     font-family: 'Playfair Display', serif;
     line-height: 50%;
 }
@@ -322,7 +339,7 @@ position: relative:
 
 /* IMMAGINE  */
 
-#immagine {
+.contents {
     height: 80%;
     display: flex;
     flex-direction: column;
@@ -375,3 +392,55 @@ position: relative:
         padding: 0 25px;
     }
     
+    /* MAPPA */
+
+    .box1 {
+        width: 100%;
+        color:white;
+        height: 25%;
+
+        
+    }
+
+   .box1 p {
+       
+       font-family: 'Roboto Slab', serif;
+       font-size: .7em;
+   }
+
+   .minicartone {
+       height: 80%;
+       border-style:solid;
+       display: flex;
+       flex-wrap: wrap;
+       background-color: #1C1C1C;
+       
+       
+   }
+
+   h4 {
+       font-size: .8em;
+   }
+
+   .boximg {
+      height: 100%;
+      width: 50%;
+
+      
+   }
+
+   .box2 {
+    
+    width: 100%;
+    color:white;
+  
+    border-style:solid;
+    height: ;
+   }
+
+   .maincont {
+       height: 80%;
+   }
+
+
+   /* a borrar */
