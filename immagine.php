@@ -55,5 +55,4 @@
 </body>
 
 <script src="scripts/immagine.js"></script>
-
 </html>
