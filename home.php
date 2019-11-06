@@ -6,15 +6,10 @@
 
 <div class="background">
 
-    <nav>
-        <div class="lang">
-        <a href=# class="bold" style="margin-right:10px">IT</a> | <a href=# style="margin-left:10px">EN</a>
-        </div>
+<?php 
+    require_once "templates/navbar.php";
+?>
 
-        <div style="color:white"><img src="img/lupa.png" alt="lupa"></div>
-        <div style="color:white"><img src="img/home.png" alt="home"></div>
-
-    </nav>
     <div class="breadcrumbs">
         <p><span>i cartoni cinquecenteschi</span> / collezione</p>
     </div>
@@ -53,13 +48,14 @@
     
     <div class="rightarrow" style="width:10%; align-self: center; justify-content: flex-end; text-align: center;"><img src="img/right_arrow.png" alt="right arrow"></div>
        
-    <div class="gioca"><img src="img/giochiamo.png" alt="giochiamo"></div>
+   <!-- logo giochiamo (no cal)
+       <div class="gioca"><img src="img/giochiamo.png" alt="giochiamo"></div> --> 
 
  </div> <!-- end of big container-->
 
- <div class="footer">
-    <img src="img/handic.png" alt="handicap">
-   </div>
+ <?php 
+    require_once "templates/footer.php";
+?>
 
 </div>
 

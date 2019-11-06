@@ -229,7 +229,7 @@ nav img {
     border-top-color: white;
     border-top-width: 1px;
     padding-top: 15px;
-    margin-top: 5%;
+    margin-top: 50px;
 }
 
 .footer img {
@@ -317,7 +317,7 @@ height: 15%;
 padding: 5% 0;
 }
 
-h3, h4 {
+h3, h4, h5 {
     font-family: 'Playfair Display', serif;
     line-height: 50%;
 }
@@ -388,7 +388,8 @@ position: relative:
         display: flex;
         margin-top: 5%;
         color: white;   
-        
+        width: 100%;
+        justify-content: center;
     }
     
     #progressarea {
@@ -417,6 +418,12 @@ position: relative:
     .iconsrow img {
         height: 45px;
         padding: 0 25px;
+    }
+
+    #brless {
+        width: 20px;
+        height: 20px;
+        
     }
     
     /* MAPPA */
@@ -460,6 +467,7 @@ position: relative:
 
    .boximg {
       height: 100%;
+      position: relative;
    }
     .boximg img {
         height:100%;
@@ -470,7 +478,7 @@ position: relative:
     width: 100%;
     color: white;
     height: 60%;
-    
+    overflow: hidden;
    }
 
    .box2 p{
@@ -498,13 +506,133 @@ position: relative:
    #mapframe {
     border-top: 1px solid;
     color: white;
-    width: 100%;
-    height: 100%;
+    position: relative;
+  
    }
 
    #mapframe img {
-    max-height: 100%;
+    max-height: ;
     max-width: 100%;
    }
 
-   /* a borrar */
+   .whitebox {
+       background-color: white;
+       width: 240px;
+       height: 100px;
+       position: absolute;
+       top: 35%;
+       left: 25%;
+       padding: 10px 7px;
+       display: flex;
+       color: black;
+   }
+
+   .whitebox::after {
+       content: "";
+       border-style: solid;
+       border-top-color:white;
+       border-bottom-color: transparent;
+       border-right-color: transparent;
+       border-left-color: transparent;
+       border-width: 10px;
+       border-color:;
+       bottom: -20px;
+       left: 30px;
+       position: absolute;
+       
+   }
+/*
+   .whitebox2{
+    border-style: solid;
+    border-top-color:white;
+    border-bottom-color: transparent;
+    border-right-color: transparent;
+    border-left-color: transparent;
+    border-width: 10px;
+    width: 0px;
+    height: 0px;
+    position: absolute;
+    top: calc(35% + 120px);
+    left: calc(25% + 20px);
+
+    
+}
+
+*/
+   
+   .txtwhite {
+   
+    margin-left: 10px;
+   
+   }
+
+   .txtwhite p {
+    font-family: 'Roboto Slab', serif;
+    font-size:.5em;
+    width: 80%;
+   
+   }
+
+   h5 {
+       color: var(--button);
+       font-size: .7em;
+       margin-bottom:8px;
+   }
+
+   .blackx {
+       position:absolute;
+       top: 5px;
+       right: 5px;
+       width: 5%;
+   }
+
+   .spot {
+    position:absolute;
+    left: 165px;
+    top: 300px;
+    width: 10px;
+   }
+
+
+
+   /* SLIDEBAR CUSTOMITZADA */
+
+   .slidecontainer {
+    width: 100%;
+  }
+  
+  .slider {
+    -webkit-appearance: none;
+    width: 200px;
+    height: 1px;
+    background:white;
+    outline: none;
+    opacity: 1;
+  }
+  
+  
+  .slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    background: black;
+    border-style: solid;
+    border-width: 1px;
+    border-color:white;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  
+  .slider::-moz-range-thumb {
+    width: 18px;
+    height: 18px;
+    background: black;
+    border-style: solid;
+    border-width: 1px;
+    border-color:white;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+
+
