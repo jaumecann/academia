@@ -1,7 +1,26 @@
+/* FONTS */
+@font-face{
+    font-family: 'Roboto Condensed';
+    src: 'fonts/RobotoCondensed-Light.ttf';
+}
+@font-face{
+    font-family: 'Roboto Condensed';
+    src: 'fonts/RobotoCondensed-Regular.ttf';
+}
+@font-face{
+    font-family: 'Playfair Display';
+    src: 'fonts/PlayfairDisplay-Black.ttf';
+}
+@font-face{
+    font-family: 'Roboto Slab';
+    src: 'fonts/RobotoSlab-Light.ttf';
+}
 
+/* VARS */
 :root {
     --button: #e06c49;
 }
+
 
 html,body{
 	margin: 0;

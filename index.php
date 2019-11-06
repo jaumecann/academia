@@ -19,7 +19,7 @@
 
         <!-- style=" width:auto; margin:auto;" --> 
         <div id="enter">
-          <a href="#"><div class="button">ENTER</div></a> 
+          <a href="home.php"><div class="button">ENTER</div></a> 
         </div>
       
         
@@ -49,7 +49,5 @@
 
 </div> <!--end wrapper-->
 
-
 </body>
-
 </html>
