@@ -17,7 +17,7 @@
 
  <div id="bigcontainer">
 
-    <div class="leftarrow" style="width:10%; align-self: center; text-align: center;" ><img src="img/left_arrow.png" alt="go left"></div>
+    <div class="leftarrow" ><img src="img/left_arrow.png" alt="go left"></div>
     
     <div id="gallery">
         <div id="flexcont">
@@ -105,7 +105,7 @@
     Ademas tiene clases compartidas con la otra flecha, se puede meter todo en una clase .arrows_galeria y luego en
     .rightarrow meter solamente el flex-end. 
     -->
-    <div class="rightarrow" style="width:10%; align-self: center; justify-content: flex-end; text-align: center;">
+    <div class="rightarrow">
         <img src="img/right_arrow.png" alt="right arrow">
     </div>
 
@@ -120,8 +120,10 @@
 </div>
 
 
+
 </body>
 
 <script src="scripts/galeria.js"></script>
+<script src="scripts/home.js"></script>
 
 </html>

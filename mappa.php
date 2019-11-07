@@ -66,7 +66,7 @@
 
          </div>
       
-        <div class="iconsrow" style="margin-top: 15%;">
+        <div class="iconsrow moremargin">
             <img id="mapa" src="img/mapicongr.png" alt="mapa">
             <img id="brightness" src="img/brighticon.png" alt="brightness">
             <img id="infopoints" src="img/infoicon.png" alt="info">

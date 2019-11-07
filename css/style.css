@@ -181,6 +181,13 @@ nav img {
     position: relative;
 }
 
+.leftarrow, .rightarrow {
+    width:10%; 
+    align-self: center; 
+    text-align: center;
+
+}
+
 .leftarrow img, .rightarrow img {   
     width:30%;
     align-self:center;
@@ -364,6 +371,10 @@ position: relative:
     
 }
 
+.espl-btn {
+    padding: 12px 10px;
+}
+
 /* IMMAGINE  */
 
 .contents {
@@ -436,7 +447,7 @@ position: relative:
     /* MAPPA */
 
     .maincont{
-        height: 83%;
+        height: 80%;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -600,6 +611,10 @@ position: relative:
     width: 10px;
    }
 
+   .moremargin {
+    margin-top: 15%;
+   }
+
    /* TAGS IMAGE */
 
    .red-area {
@@ -674,6 +689,9 @@ position: relative:
     border-radius: 50%;
     cursor: pointer;
   }
+
+
+/* styles per footer que apareixen en scripts */
 
 
 .newbtn {
