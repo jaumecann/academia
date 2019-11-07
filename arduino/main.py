@@ -4,6 +4,8 @@ import time
 import random
 import pyautogui
 
+# se passa abbastanza tempo senza far nulla, si fa partire un video completamente nero che fa da screensaver
+
 # Arduino init
 port = 'COM7'
 board = pyfirmata.Arduino(port)
@@ -11,7 +13,7 @@ it = pyfirmata.util.Iterator(board)
 it.start()
 
 # init vari
-pyautogui.FAILSAFE = False
+
 
 #pins
 ledPin = 13
@@ -31,8 +33,7 @@ while True:
 
     if val:
         board.digital[ledPin].write(1)
-        pyautogui.press('enter')
-        #os.system('cmd /c \" "C:\\Program Files\\VideoLAN\\VLC\\vlc.exe" --fullscreen "D:\\Wrestling\\Mosse che mi interessano\\2019-10-10 13-53-12.mkv"')
+        os.system('cmd /c \" "C:\\Program Files\\VideoLAN\\VLC\\vlc.exe" --fullscreen "C:\\Users\\Usuario\\Videos\\GreenScreenFireFootage[1].mp4"')
         if motionState is False:
             motionState = True
     else:
