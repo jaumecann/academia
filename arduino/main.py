@@ -1,10 +1,9 @@
 import pyfirmata
 import os
-import win32api
 import requests
 import time
 import subprocess
-import win32gui
+from pywinauto.application import Application
 
 # se passa abbastanza tempo senza far nulla, si fa partire un video completamente nero che fa da screensaver
 
@@ -40,11 +39,12 @@ while True:
         board.digital[ledPin].write(1)
         requests.get('http://127.0.0.1:8080/requests/status.xml?command=pl_stop')
         if firefox == None:
-            firefox = subprocess.Popen(['firefox.exe', 'www.google.it', '--kiosk'], executable='C:\\Program Files\\Mozilla Firefox\\firefox.exe', shell=False)
+            firefox = Application().start("C:\\Program Files\\Mozilla Firefox\\firefox.exe")
+            #firefox = subprocess.Popen(['firefox.exe', 'www.google.it', '--kiosk'], executable='C:\\Program Files\\Mozilla Firefox\\firefox.exe', shell=False)
     else:
         board.digital[ledPin].write(0)
         if firefox != None:
-            firefox = None
+            firefox.close()
         requests.get('http://127.0.0.1:8080/requests/status.xml?command=pl_play')
-    time.sleep(5)
+    time.sleep(2)
 board.exit()
