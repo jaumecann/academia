@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+
+<resultset statement="SELECT * FROM accademia.painting
+LIMIT 0, 1000
+"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+	<row>
+		<field name="id">1</field>
+		<field name="title">Mona Lisa</field>
+		<field name="material">acuarela de mala calidad</field>
+		<field name="descriptionEng">Este es una falsificación. Que no os engañen</field>
+		<field name="descriptionIta">Este es una falsificación. Que no os engañen</field>
+		<field name="imageUrl">img 4.png</field>
+		<field name="europeMapX">754</field>
+		<field name="europeMapY">355</field>
+		<field name="author_id">1</field>
+	</row>
+
+	<row>
+		<field name="id">2</field>
+		<field name="title">Cuadro misterioso</field>
+		<field name="material">óleo</field>
+		<field name="descriptionEng">Detrás de este quadro hay una camara secreta con muchísimo dinero</field>
+		<field name="descriptionIta">Detrás de este quadro hay una camara secreta con muchísimo dinero</field>
+		<field name="imageUrl">pieta.png</field>
+		<field name="europeMapX">223</field>
+		<field name="europeMapY">643</field>
+		<field name="author_id">2</field>
+	</row>
+
+	<row>
+		<field name="id">3</field>
+		<field name="title">Garabato</field>
+		<field name="material">temperas</field>
+		<field name="descriptionEng">Esto lo pintó claramente un niño de 3 años</field>
+		<field name="descriptionIta">Esto lo pintó claramente un niño de 3 años</field>
+		<field name="imageUrl">img5.png</field>
+		<field name="europeMapX">455</field>
+		<field name="europeMapY">542</field>
+		<field name="author_id">3</field>
+	</row>
+
+	<row>
+		<field name="id">4</field>
+		<field name="title">Cuadro Magico</field>
+		<field name="material">polvo de unicornio</field>
+		<field name="descriptionEng">Una vez vi moverse este cuadro :(</field>
+		<field name="descriptionIta">Una vez vi moverse este cuadro :(</field>
+		<field name="imageUrl">img8.png</field>
+		<field name="europeMapX">236</field>
+		<field name="europeMapY">764</field>
+		<field name="author_id">2</field>
+	</row>
+</resultset>
