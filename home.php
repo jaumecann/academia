@@ -58,7 +58,7 @@
                     <img src="img/<?=$key['imageUrl']?>">
                     <a href="immagine.php?id=<?php echo $key['id']; ?>">
                         <div class="layer">
-                            <p class="layer-nombre"><?=$key['title']?></p>
+                            <p class="layer-nombre"><?php echo $key['title']?></p>
                             <p class="layer-autor"><?=$key['name']?></p>
                             <p class="layer-fecha"><?=$fecha?></p>
                         </div>
@@ -93,23 +93,6 @@
                 </a>
             </div>
 
-            <!-- 2 - Facil veure la estructura, classes, info, etc -->
-            <div class="frame"> 
-                <img src="img/pieta.png"> 
-                <a href="#"> 
-                    <div class="layer"> 
-                        <p>
-                            <span>Pietà per Vittoria Colonna</span> 
-                            <br><span>Michelangelo Buonarroti</span>
-                            <br><span>(Valduggia 1475ca, Milano 1546)</span>
-                        </p>
-                    </div>
-                </a>
-            </div>
-
-            <!-- 1 - DIFICIL DE LLEGIR (suposo que ho has fet perque nhi havia molts de seguits per no ocupar espai) -->
-            <div class="frame"> <img src="img/pieta.png"> <a href="#"> <div class="layer"> <p><span>Pietà per Vittoria Colonna</span><br><span>Michelangelo Buonarroti</span><br><span>(Valduggia 1475ca, Milano 1546)</span></p></div></a></div>
-            
         </div>
         
     </div>
