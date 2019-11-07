@@ -1,32 +1,14 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport"
-          content="width=device-width,height=device-height,user-scalable=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0">
-  <title>Cartone</title>
-
-   <link rel="stylesheet" href="css/style.css">
-   <link href="https://fonts.googleapis.com/css?family=Playfair+Display:900|Roboto+Condensed:300,400|Roboto+Slab:300&display=swap" rel="stylesheet">
-   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    
-</head>
-
+<?php
+    require_once "templates/head.php";
+?>
 
 <body>
 
 <div class="background">
 
-    <nav>
-        <div class="lang">
-        <a href=# class="bold" style="margin-right:10px">IT</a> | <a href=# style="margin-left:10px">EN</a>
-        </div>
-
-        <div style="color:white"><img src="img/lupa.png" alt="lupa"></div>
-        <div style="color:white"><img src="img/home.png" alt="home"></div>
-
-    </nav>
+<?php 
+    require_once "templates/navbar.php";
+?>
     <div class="breadcrumbs">
         <p><span>i cartoni cinquecenteschi</span> / collezione</p>
         <img src="img/back.png" alt="go back">
@@ -50,19 +32,18 @@
         </div>
         <div class="btndiv">
             <div id="esplora">
-                <a href="#"><div class="button" style="padding: 12px 10px">ESPLORA L'IMMAGINE</div></a> 
+                <a href="#"><div class="button espl-btn">ESPLORA L'IMMAGINE</div></a> 
               </div>
         </div>
     </section>
 
 
 
- <div class="footer">
- <img src="img/handic.png" alt="handicap">
-</div>
-</div>
+    <?php 
+    require_once "templates/footer.php";
+?>
+
 
 
 </body>
-
 </html>

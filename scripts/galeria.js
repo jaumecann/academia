@@ -46,7 +46,7 @@ var pos = gallery.scrollLeft;
 
 $(document).ready(function(){
 
-
+// transicions laterals
 
     $(".rightarrow").click(function(){
         $("#gallery").animate({
@@ -62,6 +62,11 @@ $(document).ready(function(){
             scrollLeft: $("#gallery").scrollLeft() - 200
         }, 500);
     });
+
+
+
+
+
   
-  });
+});
   

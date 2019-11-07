@@ -15,7 +15,7 @@ $(document).ready(function(){
 var toclick = "img/brighticon.png";
 var clicked = "img/bright2.png";
 var percent = "<p>100%</p>";
-var range = "<input type=\"range\" id=\"bright\" min=\"0\" max=\"100\" value=\"100\">";
+var range = "<div class=\"slidecontainer\"><input type=\"range\" id=\"bright\" min=\"0\" max=\"100\" class=\"slider\" value=\"100\"></div>";
 var minbr = "<img src=\"img/minbr.png\" alt=\"down\" id=\"brless\">";
 var maxbr = "<img src=\"img/maxbr.png\" alt=\"up\" id=\"brmore\">";
 var minlupa = "<img src=\"img/less.png\" alt=\"down\" id=\"less\">";
@@ -29,7 +29,7 @@ $("#brightness").on('click',function(){
         $("#more").replaceWith(maxbr);
         
 document.getElementById("bright").addEventListener("input", function () {
-    document.getElementById("imgcont").style.opacity = this.value / 100;
+    document.getElementsByClassName("imgcont")[0].style.opacity = this.value / 100;
 })
 
     } else {

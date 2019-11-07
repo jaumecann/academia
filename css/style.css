@@ -1,13 +1,34 @@
-
-:root {
-    --button: #e06c49;
-}
-
+/* RESETS */
 html,body{
 	margin: 0;
 	padding: 0;
     height: 100%;
 }
+
+/* FONTS */
+@font-face{
+    font-family: 'Roboto Condensed';
+    src: 'fonts/RobotoCondensed-Light.ttf';
+}
+@font-face{
+    font-family: 'Roboto Condensed';
+    src: 'fonts/RobotoCondensed-Regular.ttf';
+}
+@font-face{
+    font-family: 'Playfair Display';
+    src: 'fonts/PlayfairDisplay-Black.ttf';
+}
+@font-face{
+    font-family: 'Roboto Slab';
+    src: 'fonts/RobotoSlab-Light.ttf';
+}
+
+/* VARS */
+:root {
+    --button: #e06c49;
+}
+
+
 
 #wrapper {
 display:flex;
@@ -160,6 +181,13 @@ nav img {
     position: relative;
 }
 
+.leftarrow, .rightarrow {
+    width:10%; 
+    align-self: center; 
+    text-align: center;
+
+}
+
 .leftarrow img, .rightarrow img {   
     width:30%;
     align-self:center;
@@ -180,17 +208,7 @@ nav img {
 
 }
 
-.layer {
-    display:none;
-    background-color:/* rgba(224, 108, 73, 0.5);*/ rgba(255, 38, 0, 0.4);
-    height: 180px;
-    width: calc(100% - 10px);
-    position:absolute;
-    /*opacity: .5;*/
-    top:0;
-    margin:5px;
-    color:white;
-}
+
 
 #flexcont img {
 
@@ -200,59 +218,77 @@ nav img {
 }
 
 
-.frame:hover .layer {
-    display: block;
-   
-}
 
 .footer {
     border-top-style: solid;
     border-top-color: white;
     border-top-width: 1px;
     padding-top: 15px;
-    margin-top: 5%;
+    margin-top: 50px;
+    display: flex;
 }
 
 .footer img {
     width: 25px;
 }
 
+/* ref-3 */
+/*Ara sabem que el layer span es el que ens interessa perquè el projecte és 
+petit, però pensant-ho bé aquesta és una manera molt poc clara de definir algo.
+'Layer' és molt general(podria ser per exemple 'frame_layerInfo'), i span encara més
+clar. (També hi ha diferents estils de nomenclatura, com uns estandars, que fan servir els 
+equips grans o la gent que fa codi obert per github per exemple perquè tothom ho faci
+més o menys igual: 
+http://getbem.com/introduction/
+https://www.freecodecamp.org/news/css-naming-conventions-that-will-save-you-hours-of-debugging-35cea737d849/)
+
+Per altra banda, si ara resulta que hem de posar més informació i afegim un span
+entre el primer i el segon, hauriem d'adaptar els nth-of-type perquè tornessin a
+correspondre al que ens interessa.*/
+/*
 .layer span:nth-of-type(1){
     font-family: 'Playfair Display', serif;
-    
 }
-
 .layer span:nth-of-type(2){
     font-family: 'Roboto Slab', serif;
     font-weight: bolder;
-    
 }
-
 .layer span:nth-of-type(3){
     font-family: 'Roboto Slab', serif;
-   
 }
+*/
 
-.layer p{
-    position: absolute;
-    bottom:0;
-    width: 60%;
-    font-size: .6em;
-    padding-left: 5%;
+.layer-nombre{
+    font-family: 'Playfair Display', serif;
 }
-
-.gioca {
+.layer-autor{
+    font-family: 'Roboto Slab', serif;
+    font-weight: bolder;
+}
+.layer-fecha{
+    font-family: 'Roboto Slab', serif;
+}
+.layer{
+    display:none;
+    background-color: rgba(255, 38, 0, 0.4) /*rgba(224, 108, 73, 0.5);*/;
+    width: calc(100% - 10px); height: 180px;
     position:absolute;
-    bottom: -50px;
-    right: 0px;
-    border-style: solid;
-    color: white;
-    
+    top:0;
+    margin:5px; padding: 10px;
+    box-sizing: border-box; /*Fa que el width inclogui el padding*/
+}
+.frame:hover .layer{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+.layer p{
+    margin: 0;
+    font-size: .6em;
+    color:white;
+    width: 60%;
 }
 
-.gioca img {
-    width: 100px;
-}
 
 /* CARTONE - FICHA */
 
@@ -298,7 +334,7 @@ height: 15%;
 padding: 5% 0;
 }
 
-h3, h4 {
+h3, h4, h5 {
     font-family: 'Playfair Display', serif;
     line-height: 50%;
 }
@@ -326,15 +362,17 @@ position: relative:
 
 #esplora {   
    display: inline;
-   width: auto;
    position: absolute;
-   margin-top: 10px;
 }
 
 #esplora a {
 
     text-decoration: none;  
     
+}
+
+.espl-btn {
+    padding: 12px 10px;
 }
 
 /* IMMAGINE  */
@@ -346,30 +384,30 @@ position: relative:
     align-items: center;
     }
     
-    #imgcont {
+    .imgcont {
     
-    height: 78%;
-    width: 80%;
+    height: 100%;
+    width: auto;
     margin-top: 10%;
     overflow: hidden;
     color:white;
     position: relative;
     display:flex;
     justify-content: center;
+    
     }
     
-    #imgcont img {
-     position:;
+    .imgcont img {
      margin: auto;
      width: 80%;
-     height: ; 
     }
     
     .percent {
         display: flex;
         margin-top: 5%;
         color: white;   
-        
+        width: 100%;
+        justify-content: center;
     }
     
     #progressarea {
@@ -399,11 +437,17 @@ position: relative:
         height: 45px;
         padding: 0 25px;
     }
+
+    #brless {
+        width: 20px;
+        height: 20px;
+        
+    }
     
     /* MAPPA */
 
     .maincont{
-        height: 83%;
+        height: 80%;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -441,6 +485,7 @@ position: relative:
 
    .boximg {
       height: 100%;
+      position: relative;
    }
     .boximg img {
         height:100%;
@@ -451,7 +496,7 @@ position: relative:
     width: 100%;
     color: white;
     height: 60%;
-    
+    overflow: hidden;
    }
 
    .box2 p{
@@ -479,13 +524,177 @@ position: relative:
    #mapframe {
     border-top: 1px solid;
     color: white;
-    width: 100%;
-    height: 100%;
+    position: relative;
+  
    }
 
    #mapframe img {
-    max-height: 100%;
+    max-height: ;
     max-width: 100%;
    }
 
-   /* a borrar */
+   .whitebox {
+       background-color: white;
+       width: 240px;
+       height: 100px;
+       position: absolute;
+       top: 35%;
+       left: 25%;
+       padding: 10px 7px;
+       display: flex;
+       color: black;
+   }
+
+   .whitebox::after {
+       content: "";
+       border-style: solid;
+       border-top-color:white;
+       border-bottom-color: transparent;
+       border-right-color: transparent;
+       border-left-color: transparent;
+       border-width: 10px;
+       border-color:;
+       bottom: -20px;
+       left: 30px;
+       position: absolute;
+       
+   }
+/*
+   .whitebox2{
+    border-style: solid;
+    border-top-color:white;
+    border-bottom-color: transparent;
+    border-right-color: transparent;
+    border-left-color: transparent;
+    border-width: 10px;
+    width: 0px;
+    height: 0px;
+    position: absolute;
+    top: calc(35% + 120px);
+    left: calc(25% + 20px);
+
+    
+}
+
+*/
+   
+   .txtwhite {
+   
+    margin-left: 10px;
+   
+   }
+
+   .txtwhite p {
+    font-family: 'Roboto Slab', serif;
+    font-size:.5em;
+    width: 80%;
+   
+   }
+
+   h5 {
+       color: var(--button);
+       font-size: .7em;
+       margin-bottom:8px;
+   }
+
+   .blackx {
+       position:absolute;
+       top: 5px;
+       right: 5px;
+       width: 5%;
+   }
+
+   .spot {
+    position:absolute;
+    left: 165px;
+    top: 300px;
+    width: 10px;
+   }
+
+   .moremargin {
+    margin-top: 15%;
+   }
+
+   /* TAGS IMAGE */
+
+   .red-area {
+       position: absolute;
+       left: 55%;
+       top: 15%;
+       display: flex;
+       max-width: 180px;
+   }
+
+   .red-i {
+    align-self: flex-start;
+
+   }
+
+   .red-i img {
+       width: 30px;
+   }
+
+   .i-point {  
+   position: absolute;
+   width:35px;
+   }
+
+   .redbox {
+       background-color: var(--button);
+       padding: 8px;
+       opacity: .7;
+       font-family: 'Roboto Slab Light';
+       font-size: .75em;
+       margin-left: -10px;
+   }
+
+
+
+   /* SLIDEBAR CUSTOMITZADA */
+
+   .slidecontainer {
+    width: 100%;
+  }
+  
+  .slider {
+    -webkit-appearance: none;
+    width: 200px;
+    height: 1px;
+    background:white;
+    outline: none;
+    opacity: 1;
+  }
+  
+  
+  .slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    background: black;
+    border-style: solid;
+    border-width: 1px;
+    border-color:white;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  
+  .slider::-moz-range-thumb {
+    width: 18px;
+    height: 18px;
+    background: black;
+    border-style: solid;
+    border-width: 1px;
+    border-color:white;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+
+
+/* styles per footer que apareixen en scripts */
+
+
+.newbtn {
+    margin-left: 10px;
+    
+}
