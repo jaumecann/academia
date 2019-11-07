@@ -3,7 +3,7 @@ import os
 import requests
 import time
 import subprocess
-from pywinauto.application import Application
+from pywinauto import Application, Desktop
 
 # se passa abbastanza tempo senza far nulla, si fa partire un video completamente nero che fa da screensaver
 
@@ -39,12 +39,13 @@ while True:
         board.digital[ledPin].write(1)
         requests.get('http://127.0.0.1:8080/requests/status.xml?command=pl_stop')
         if firefox == None:
-            firefox = Application().start("C:\\Program Files\\Mozilla Firefox\\firefox.exe")
+            Application().start("C:\\Program Files\\Mozilla Firefox\\firefox.exe --kiosk www.google.it")
+            firefox = Desktop(backend="uia").MozillaFirefox
             #firefox = subprocess.Popen(['firefox.exe', 'www.google.it', '--kiosk'], executable='C:\\Program Files\\Mozilla Firefox\\firefox.exe', shell=False)
     else:
         board.digital[ledPin].write(0)
         if firefox != None:
-            firefox.close()
+            firefox.minimize()
         requests.get('http://127.0.0.1:8080/requests/status.xml?command=pl_play')
     time.sleep(2)
 board.exit()
