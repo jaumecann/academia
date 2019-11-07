@@ -6,15 +6,10 @@
 
 <div class="background">
 
-    <nav>
-        <div class="lang">
-        <a href=# class="bold" style="margin-right:10px">IT</a> | <a href=# style="margin-left:10px">EN</a>
-        </div>
+<?php 
+    require_once "templates/navbar.php";
+?>
 
-        <div style="color:white"><img src="img/lupa.png" alt="lupa"></div>
-        <div style="color:white"><img src="img/home.png" alt="home"></div>
-
-    </nav>
     <div class="breadcrumbs">
         <p><span>i cartoni cinquecenteschi</span> / collezione</p>
         <img src="img/cross.png" alt="cross">
@@ -28,7 +23,7 @@
 
         <div class="percent">
             <img src="img/less.png" alt="down" id="less">
-            <div id="progressarea"><p>xx%</p></div>
+            <div id="progressarea"><p>xxx%</p></div>
             <!--<input type="range" id="bright" min="0" max="100" value="">-->
             <img src="img/more.png" id="more" alt="up">
         </div> <!-- en bar row-->
@@ -41,15 +36,15 @@
         </div> <!-- end icons row -->
 
     </section>
+
+    <?php 
+    require_once "templates/footer.php";
+?>
     
-
-
-
-    <div class="footer">
-        <img src="img/handic.png" alt="handicap">
-       </div>
-
 </div>
+
+
+ 
 
 
 </body>

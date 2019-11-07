@@ -6,15 +6,9 @@
 
 <div class="background">
 
-    <nav>
-        <div class="lang">
-        <a href=# class="bold" style="margin-right:10px">IT</a> | <a href=# style="margin-left:10px">EN</a>
-        </div>
-
-        <div style="color:white"><img src="img/lupa.png" alt="lupa"></div>
-        <div style="color:white"><img src="img/home.png" alt="home"></div>
-
-    </nav>
+<?php 
+    require_once "templates/navbar.php";
+?>
     <div class="breadcrumbs">
         <p><span>i cartoni cinquecenteschi</span> / collezione</p>
         <img src="img/back.png" alt="go back">
@@ -45,10 +39,10 @@
 
 
 
- <div class="footer">
- <img src="img/handic.png" alt="handicap">
-</div>
-</div>
+    <?php 
+    require_once "templates/footer.php";
+?>
+
 
 
 </body>

@@ -6,15 +6,10 @@
 
 <div class="background">
 
-    <nav>
-        <div class="lang">
-            <a href=# class="bold" style="margin-right:10px">IT</a> | <a href=# style="margin-left:10px">EN</a>
-        </div>
+<?php 
+    require_once "templates/navbar.php";
+?>
 
-        <div style="color:white"><img src="img/lupa.png" alt="lupa"></div>
-        <div style="color:white"><img src="img/home.png" alt="home"></div>
-
-    </nav>
 
     <div class="breadcrumbs">
         <p><span>i cartoni cinquecenteschi</span> / collezione</p>
@@ -119,6 +114,7 @@
         
     </div>
     
+
     <!-- En general no se aconseja hacer styles dentro del html
     - por mantener un orden y saber que lo que busques lo encontrarás en la hoja de estilos
     - porque un estilo puesto directamente aquí tiene prioridad sobre todo lo demás que se le aplique 
@@ -130,11 +126,13 @@
         <img src="img/right_arrow.png" alt="right arrow">
     </div>
 
+
     </div> <!-- end of big container-->
 
-    <div class="footer">
-        <img src="img/handic.png" alt="handicap">
-    </div>
+ <?php 
+    require_once "templates/footer.php";
+?>
+
 
 </div>
 
