@@ -1,3 +1,10 @@
+/* RESETS */
+html,body{
+	margin: 0;
+	padding: 0;
+    height: 100%;
+}
+
 /* FONTS */
 @font-face{
     font-family: 'Roboto Condensed';
@@ -22,11 +29,6 @@
 }
 
 
-html,body{
-	margin: 0;
-	padding: 0;
-    height: 100%;
-}
 
 #wrapper {
 display:flex;
@@ -199,17 +201,7 @@ nav img {
 
 }
 
-.layer {
-    display:none;
-    background-color:/* rgba(224, 108, 73, 0.5);*/ rgba(255, 38, 0, 0.4);
-    height: 180px;
-    width: calc(100% - 10px);
-    position:absolute;
-    /*opacity: .5;*/
-    top:0;
-    margin:5px;
-    color:white;
-}
+
 
 #flexcont img {
 
@@ -219,47 +211,86 @@ nav img {
 }
 
 
-.frame:hover .layer {
-    display: block;
-   
-}
 
 .footer {
     border-top-style: solid;
     border-top-color: white;
     border-top-width: 1px;
     padding-top: 15px;
-    margin-top: 5%;
+    margin-top: 50px;
 }
 
 .footer img {
     width: 25px;
 }
 
+/* ref-3 */
+/*Ara sabem que el layer span es el que ens interessa perquè el projecte és 
+petit, però pensant-ho bé aquesta és una manera molt poc clara de definir algo.
+'Layer' és molt general(podria ser per exemple 'frame_layerInfo'), i span encara més
+clar. (També hi ha diferents estils de nomenclatura, com uns estandars, que fan servir els 
+equips grans o la gent que fa codi obert per github per exemple perquè tothom ho faci
+més o menys igual: 
+http://getbem.com/introduction/
+https://www.freecodecamp.org/news/css-naming-conventions-that-will-save-you-hours-of-debugging-35cea737d849/)
+
+Per altra banda, si ara resulta que hem de posar més informació i afegim un span
+entre el primer i el segon, hauriem d'adaptar els nth-of-type perquè tornessin a
+correspondre al que ens interessa.*/
+/*
 .layer span:nth-of-type(1){
     font-family: 'Playfair Display', serif;
-    
 }
-
 .layer span:nth-of-type(2){
     font-family: 'Roboto Slab', serif;
     font-weight: bolder;
-    
 }
-
 .layer span:nth-of-type(3){
     font-family: 'Roboto Slab', serif;
-   
 }
+*/
 
+.layer-nombre{
+    font-family: 'Playfair Display', serif;
+}
+.layer-autor{
+    font-family: 'Roboto Slab', serif;
+    font-weight: bolder;
+}
+.layer-fecha{
+    font-family: 'Roboto Slab', serif;
+}
+/*Podemos meterle flexbox a .layer para no tener que usar .layer p como 
+un contenedor de spans */
+.layer{
+    display:none;
+    background-color: rgba(255, 38, 0, 0.4) /*rgba(224, 108, 73, 0.5);*/;
+    width: calc(100% - 10px); height: 180px;
+    position:absolute;
+    top:0;
+    margin:5px; padding: 10px;
+    box-sizing: border-box; /*Fa que el width inclogui el padding*/
+}
+.frame:hover .layer{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
 .layer p{
+    margin: 0;
+    font-size: .6em;
+    color:white;
+    width: 60%;
+}
+/*.layer p{
     position: absolute;
     bottom:0;
     width: 60%;
     font-size: .6em;
     padding-left: 5%;
-}
+}*/
 
+/*
 .gioca {
     position:absolute;
     bottom: -50px;
@@ -268,10 +299,10 @@ nav img {
     color: white;
     
 }
-
 .gioca img {
     width: 100px;
 }
+*/
 
 /* CARTONE - FICHA */
 
@@ -317,7 +348,7 @@ height: 15%;
 padding: 5% 0;
 }
 
-h3, h4 {
+h3, h4, h5 {
     font-family: 'Playfair Display', serif;
     line-height: 50%;
 }
@@ -345,9 +376,7 @@ position: relative:
 
 #esplora {   
    display: inline;
-   width: auto;
    position: absolute;
-   margin-top: 10px;
 }
 
 #esplora a {
@@ -378,17 +407,16 @@ position: relative:
     }
     
     #imgcont img {
-     position:;
      margin: auto;
      width: 80%;
-     height: ; 
     }
     
     .percent {
         display: flex;
         margin-top: 5%;
         color: white;   
-        
+        width: 100%;
+        justify-content: center;
     }
     
     #progressarea {
@@ -417,6 +445,12 @@ position: relative:
     .iconsrow img {
         height: 45px;
         padding: 0 25px;
+    }
+
+    #brless {
+        width: 20px;
+        height: 20px;
+        
     }
     
     /* MAPPA */
@@ -460,6 +494,7 @@ position: relative:
 
    .boximg {
       height: 100%;
+      position: relative;
    }
     .boximg img {
         height:100%;
@@ -470,7 +505,7 @@ position: relative:
     width: 100%;
     color: white;
     height: 60%;
-    
+    overflow: hidden;
    }
 
    .box2 p{
@@ -498,13 +533,133 @@ position: relative:
    #mapframe {
     border-top: 1px solid;
     color: white;
-    width: 100%;
-    height: 100%;
+    position: relative;
+  
    }
 
    #mapframe img {
-    max-height: 100%;
+    max-height: ;
     max-width: 100%;
    }
 
-   /* a borrar */
+   .whitebox {
+       background-color: white;
+       width: 240px;
+       height: 100px;
+       position: absolute;
+       top: 35%;
+       left: 25%;
+       padding: 10px 7px;
+       display: flex;
+       color: black;
+   }
+
+   .whitebox::after {
+       content: "";
+       border-style: solid;
+       border-top-color:white;
+       border-bottom-color: transparent;
+       border-right-color: transparent;
+       border-left-color: transparent;
+       border-width: 10px;
+       border-color:;
+       bottom: -20px;
+       left: 30px;
+       position: absolute;
+       
+   }
+/*
+   .whitebox2{
+    border-style: solid;
+    border-top-color:white;
+    border-bottom-color: transparent;
+    border-right-color: transparent;
+    border-left-color: transparent;
+    border-width: 10px;
+    width: 0px;
+    height: 0px;
+    position: absolute;
+    top: calc(35% + 120px);
+    left: calc(25% + 20px);
+
+    
+}
+
+*/
+   
+   .txtwhite {
+   
+    margin-left: 10px;
+   
+   }
+
+   .txtwhite p {
+    font-family: 'Roboto Slab', serif;
+    font-size:.5em;
+    width: 80%;
+   
+   }
+
+   h5 {
+       color: var(--button);
+       font-size: .7em;
+       margin-bottom:8px;
+   }
+
+   .blackx {
+       position:absolute;
+       top: 5px;
+       right: 5px;
+       width: 5%;
+   }
+
+   .spot {
+    position:absolute;
+    left: 165px;
+    top: 300px;
+    width: 10px;
+   }
+
+
+
+   /* SLIDEBAR CUSTOMITZADA */
+
+   .slidecontainer {
+    width: 100%;
+  }
+  
+  .slider {
+    -webkit-appearance: none;
+    width: 200px;
+    height: 1px;
+    background:white;
+    outline: none;
+    opacity: 1;
+  }
+  
+  
+  .slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    background: black;
+    border-style: solid;
+    border-width: 1px;
+    border-color:white;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  
+  .slider::-moz-range-thumb {
+    width: 18px;
+    height: 18px;
+    background: black;
+    border-style: solid;
+    border-width: 1px;
+    border-color:white;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+
+

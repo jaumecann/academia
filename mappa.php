@@ -5,15 +5,10 @@
 
 <div class="background">
 
-    <nav>
-        <div class="lang">
-        <a href=# class="bold" style="margin-right:10px">IT</a> | <a href=# style="margin-left:10px">EN</a>
-        </div>
-
-        <div style="color:white"><img src="img/lupa.png" alt="lupa"></div>
-        <div style="color:white"><img src="img/home.png" alt="home"></div>
-
-    </nav>
+<?php 
+    require_once "templates/navbar.php";
+?>
+   
     <div class="breadcrumbs">
         <p><span>i cartoni cinquecenteschi</span> / collezione</p>
         <img src="img/cross.png" alt="cross">
@@ -43,7 +38,31 @@
 
             <div id="mapframe">
                 <img src="img/mappa.png" alt="europe map">
-            </div>
+                
+                <div class="whitebox">
+                    <div class="boximg">
+                        <img src="img/imgcolor.png">
+                    </div>
+                    <div class="txtwhite">
+                            <h5>Pietà per Vittoria Colonna </h5>
+                            <p><span class="bold">Michelangelo Buonarroti</span><br>
+                            (Valduggia 1475ca, Milano 1546)<br>
+                            <p>Carboncino, matita nera e gessetto su carta.</p>
+                    </div> <!-- end txtwhite -->
+                    <div class="blackx">
+                        <img src="img/crossblack.png" alt="chiudi">
+                    </div> 
+
+                    
+
+                </div> <!--end whitebox-->
+
+                <div class="spot">
+                        <img src="img/location.png" alt="location tag">
+                    </div>
+              
+                <!--<div class="whitebox2"></div>-->
+            </div><!-- end mapframe-->
 
          </div>
       
@@ -59,9 +78,9 @@
 
 
 
-    <div class="footer">
-        <img src="img/handic.png" alt="handicap">
-       </div>
+    <?php 
+    require_once "templates/footer.php";
+?>
 
 </div>
 

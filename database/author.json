@@ -1,0 +1,26 @@
+[
+	{
+		"id" : 1,
+		"name" : "Anibal",
+		"birthYear" : 3,
+		"deathYear" : 67,
+		"birthPlace" : "Cartago",
+		"deathPlace" : "Roma"
+	},
+	{
+		"id" : 2,
+		"name" : "Leonardo Da Viola",
+		"birthYear" : 1700,
+		"deathYear" : 1746,
+		"birthPlace" : "Venecia",
+		"deathPlace" : "Paris"
+	},
+	{
+		"id" : 3,
+		"name" : "IA Paintmaker",
+		"birthYear" : 2302,
+		"deathYear" : 3610,
+		"birthPlace" : "Estación Espacial",
+		"deathPlace" : "Agujero Negro"
+	}
+]

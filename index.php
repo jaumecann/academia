@@ -7,7 +7,9 @@
 <body>
 
 <div id="wrapper">
+
     <div id="mainbox">
+        
         <div class="lang" style="margin-bottom:10%;">
             <a href=# class="bold" style="margin-right:10px">IT</a> | <a href=# style="margin-left:10px">EN</a>
         </div>
@@ -17,32 +19,26 @@
             <p>una collezione di disegni<br>unica nel suo genere</p>
         </div>
 
-        <!-- style=" width:auto; margin:auto;" --> 
         <div id="enter">
-          <a href="home.php"><div class="button">ENTER</div></a> 
+            <a href="home.php"><div class="button">ENTER</div></a> 
         </div>
-      
         
         <div id="icon">
-          <img src="" alt="mano-click">
+            <img src="" alt="mano-click">
         </div>
         
         <div id="logos">
 
+            <div style="width:30%; ">
+                <img src="img/logo1.png" class="responsive">
+            </div>
 
-         <div style="width:30%; ">
-            <img src="img/logo1.png" class="responsive">
-        </div>
-        <div style="width:25%; ">
-               <img src="img/logo2.png" class="responsive">
-          </div>
+            <div style="width:25%; ">
+                <img src="img/logo2.png" class="responsive">
+            </div>
 
-
-    
-
-          
-            
             <img src="">
+
         </div>
 
     </div> <!-- end mainbox -->
@@ -50,4 +46,5 @@
 </div> <!--end wrapper-->
 
 </body>
+
 </html>

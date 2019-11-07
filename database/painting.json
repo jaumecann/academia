@@ -1,0 +1,46 @@
+[
+	{
+		"id" : 1,
+		"title" : "Mona Lisa",
+		"material" : "acuarela de mala calidad",
+		"descriptionEng" : "Este es una falsificación. Que no os engañen",
+		"descriptionIta" : "Este es una falsificación. Que no os engañen",
+		"imageUrl" : "img 4.png",
+		"europeMapX" : 754,
+		"europeMapY" : 355,
+		"author_id" : 1
+	},
+	{
+		"id" : 2,
+		"title" : "Cuadro misterioso",
+		"material" : "óleo",
+		"descriptionEng" : "Detrás de este quadro hay una camara secreta con muchísimo dinero",
+		"descriptionIta" : "Detrás de este quadro hay una camara secreta con muchísimo dinero",
+		"imageUrl" : "pieta.png",
+		"europeMapX" : 223,
+		"europeMapY" : 643,
+		"author_id" : 2
+	},
+	{
+		"id" : 3,
+		"title" : "Garabato",
+		"material" : "temperas",
+		"descriptionEng" : "Esto lo pintó claramente un niño de 3 años",
+		"descriptionIta" : "Esto lo pintó claramente un niño de 3 años",
+		"imageUrl" : "img5.png",
+		"europeMapX" : 455,
+		"europeMapY" : 542,
+		"author_id" : 3
+	},
+	{
+		"id" : 4,
+		"title" : "Cuadro Magico",
+		"material" : "polvo de unicornio",
+		"descriptionEng" : "Una vez vi moverse este cuadro :(",
+		"descriptionIta" : "Una vez vi moverse este cuadro :(",
+		"imageUrl" : "img8.png",
+		"europeMapX" : 236,
+		"europeMapY" : 764,
+		"author_id" : 2
+	}
+]
