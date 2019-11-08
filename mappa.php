@@ -37,8 +37,9 @@
             <p>Mappa delle riproduzioni in Europa</p>
 
             <div id="mapframe">
+                <div class="region">
                 <img src="img/mappa.png" alt="europe map">
-                
+                </div>
                 <div class="whitebox">
                     <div class="boximg">
                         <img src="img/imgcolor.png">
@@ -68,8 +69,8 @@
       
         <div class="iconsrow moremargin">
             <img id="mapa" src="img/mapicongr.png" alt="mapa">
-            <img id="brightness" src="img/brighticon.png" alt="brightness">
-            <img id="infopoints" src="img/infoicon.png" alt="info">
+            <a href="immagine.php"><img id="brightness" src="img/brighticon.png" alt="brightness"></a>
+            <a href="tagspage.php"><img id="infopoints" src="img/infoicon.png" alt="info"></a>
 
         </div> <!-- end icons row -->
 

@@ -17,7 +17,7 @@
 
     <section class="contents">
 
-        <div class="imgcont">
+        <div id="imgcont">
             <img id="imgid" src="img/pieta.png">
             
             <div class="red-area">
@@ -36,24 +36,39 @@
         </div> <!-- end img container-->
 
         <div class="percent">
+            <div id="lessbox">
             <img src="img/less.png" alt="down" id="less">
+            </div>
+            
             <div id="progressarea"><p>xxx%</p></div>
-            <!--<input type="range" id="bright" min="0" max="100" value="">-->
+
+            <div id="morebox">
             <img src="img/more.png" id="more" alt="up">
+            </div>
+            
+
         </div> <!-- en bar row-->
 
         <div class="iconsrow">
-            <img id="mapa" src="img/mapicon.png" alt="mapa">
-            <img id="brightness" src="img/brighticon.png" alt="brightness">
+            <a href="mappa.php"><img id="mapa" src="img/mapicon.png" alt="mapa"></a>
+            <a href="immagine.php"><img id="brightness" src="img/brighticon.png" alt="brightness"></a>
             <img id="infopoints" src="img/infogr.png" alt="info">
 
         </div> <!-- end icons row -->
 
     </section>
 
-    <?php 
-    require_once "templates/footer.php";
-?>
+
+    <div class="footer">
+        <div><img id="chair" src="img/handic.png" alt="handicap"></div>
+
+        <div id="add-div" class="hiding">
+            <img class="newbtn" src="img/infopoint.png">   
+            <img class="newbtn" src="img/infopoint.png">  
+            <img class="newbtn" src="img/infopoint.png">   
+            <img class="newbtn" src="img/infopoint.png">    
+        </div>
+</div>
 
 
     

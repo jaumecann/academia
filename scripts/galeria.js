@@ -46,6 +46,7 @@ var pos = gallery.scrollLeft;
 
 $(document).ready(function(){
 
+
 // transicions laterals
 
     $(".rightarrow").click(function(){
@@ -64,9 +65,8 @@ $(document).ready(function(){
     });
 
 
+// icones amagades handicapped
 
 
-
-  
 });
   
