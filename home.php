@@ -17,7 +17,7 @@
 
  <div id="bigcontainer">
 
-    <div class="leftarrow" style="width:10%; align-self: center; text-align: center;" ><img src="img/left_arrow.png" alt="go left"></div>
+    <div class="leftarrow" ><img src="img/left_arrow.png" alt="go left"></div>
     
     <div id="gallery">
         <div id="flexcont">
@@ -58,7 +58,7 @@
                     <img src="img/<?=$key['imageUrl']?>">
                     <a href="immagine.php?id=<?php echo $key['id']; ?>">
                         <div class="layer">
-                            <p class="layer-nombre"><?=$key['title']?></p>
+                            <p class="layer-nombre"><?php echo $key['title']?></p>
                             <p class="layer-autor"><?=$key['name']?></p>
                             <p class="layer-fecha"><?=$fecha?></p>
                         </div>
@@ -93,23 +93,6 @@
                 </a>
             </div>
 
-            <!-- 2 - Facil veure la estructura, classes, info, etc -->
-            <div class="frame"> 
-                <img src="img/pieta.png"> 
-                <a href="#"> 
-                    <div class="layer"> 
-                        <p>
-                            <span>Pietà per Vittoria Colonna</span> 
-                            <br><span>Michelangelo Buonarroti</span>
-                            <br><span>(Valduggia 1475ca, Milano 1546)</span>
-                        </p>
-                    </div>
-                </a>
-            </div>
-
-            <!-- 1 - DIFICIL DE LLEGIR (suposo que ho has fet perque nhi havia molts de seguits per no ocupar espai) -->
-            <div class="frame"> <img src="img/pieta.png"> <a href="#"> <div class="layer"> <p><span>Pietà per Vittoria Colonna</span><br><span>Michelangelo Buonarroti</span><br><span>(Valduggia 1475ca, Milano 1546)</span></p></div></a></div>
-            
         </div>
         
     </div>
@@ -122,7 +105,7 @@
     Ademas tiene clases compartidas con la otra flecha, se puede meter todo en una clase .arrows_galeria y luego en
     .rightarrow meter solamente el flex-end. 
     -->
-    <div class="rightarrow" style="width:10%; align-self: center; justify-content: flex-end; text-align: center;">
+    <div class="rightarrow">
         <img src="img/right_arrow.png" alt="right arrow">
     </div>
 
@@ -137,8 +120,10 @@
 </div>
 
 
+
 </body>
 
 <script src="scripts/galeria.js"></script>
+<script src="scripts/home.js"></script>
 
 </html>

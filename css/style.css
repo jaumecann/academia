@@ -181,6 +181,13 @@ nav img {
     position: relative;
 }
 
+.leftarrow, .rightarrow {
+    width:10%; 
+    align-self: center; 
+    text-align: center;
+
+}
+
 .leftarrow img, .rightarrow img {   
     width:30%;
     align-self:center;
@@ -218,6 +225,7 @@ nav img {
     border-top-width: 1px;
     padding-top: 15px;
     margin-top: 50px;
+    display: flex;
 }
 
 .footer img {
@@ -260,8 +268,6 @@ correspondre al que ens interessa.*/
 .layer-fecha{
     font-family: 'Roboto Slab', serif;
 }
-/*Podemos meterle flexbox a .layer para no tener que usar .layer p como 
-un contenedor de spans */
 .layer{
     display:none;
     background-color: rgba(255, 38, 0, 0.4) /*rgba(224, 108, 73, 0.5);*/;
@@ -282,27 +288,7 @@ un contenedor de spans */
     color:white;
     width: 60%;
 }
-/*.layer p{
-    position: absolute;
-    bottom:0;
-    width: 60%;
-    font-size: .6em;
-    padding-left: 5%;
-}*/
 
-/*
-.gioca {
-    position:absolute;
-    bottom: -50px;
-    right: 0px;
-    border-style: solid;
-    color: white;
-    
-}
-.gioca img {
-    width: 100px;
-}
-*/
 
 /* CARTONE - FICHA */
 
@@ -385,6 +371,10 @@ position: relative:
     
 }
 
+.espl-btn {
+    padding: 12px 10px;
+}
+
 /* IMMAGINE  */
 
 .contents {
@@ -394,19 +384,20 @@ position: relative:
     align-items: center;
     }
     
-    #imgcont {
+    .imgcont {
     
-    height: 78%;
-    width: 80%;
+    height: 100%;
+    width: auto;
     margin-top: 10%;
     overflow: hidden;
     color:white;
     position: relative;
     display:flex;
     justify-content: center;
+    
     }
     
-    #imgcont img {
+    .imgcont img {
      margin: auto;
      width: 80%;
     }
@@ -456,7 +447,7 @@ position: relative:
     /* MAPPA */
 
     .maincont{
-        height: 83%;
+        height: 80%;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -620,6 +611,43 @@ position: relative:
     width: 10px;
    }
 
+   .moremargin {
+    margin-top: 15%;
+   }
+
+   /* TAGS IMAGE */
+
+   .red-area {
+       position: absolute;
+       left: 55%;
+       top: 15%;
+       display: flex;
+       max-width: 180px;
+   }
+
+   .red-i {
+    align-self: flex-start;
+
+   }
+
+   .red-i img {
+       width: 30px;
+   }
+
+   .i-point {  
+   position: absolute;
+   width:35px;
+   }
+
+   .redbox {
+       background-color: var(--button);
+       padding: 8px;
+       opacity: .7;
+       font-family: 'Roboto Slab Light';
+       font-size: .75em;
+       margin-left: -10px;
+   }
+
 
 
    /* SLIDEBAR CUSTOMITZADA */
@@ -663,3 +691,10 @@ position: relative:
   }
 
 
+/* styles per footer que apareixen en scripts */
+
+
+.newbtn {
+    margin-left: 10px;
+    
+}

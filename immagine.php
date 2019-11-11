@@ -17,7 +17,7 @@
 
     <section class="contents">
 
-        <div id="imgcont">
+        <div class="imgcont">
             <img id="imgid" src="img/pieta.png">
         </div> <!-- end img container-->
 

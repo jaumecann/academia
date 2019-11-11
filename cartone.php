@@ -32,7 +32,7 @@
         </div>
         <div class="btndiv">
             <div id="esplora">
-                <a href="#"><div class="button" style="padding: 12px 10px">ESPLORA L'IMMAGINE</div></a> 
+                <a href="#"><div class="button espl-btn">ESPLORA L'IMMAGINE</div></a> 
               </div>
         </div>
     </section>

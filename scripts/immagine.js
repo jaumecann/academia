@@ -29,7 +29,7 @@ $("#brightness").on('click',function(){
         $("#more").replaceWith(maxbr);
         
 document.getElementById("bright").addEventListener("input", function () {
-    document.getElementById("imgcont").style.opacity = this.value / 100;
+    document.getElementsByClassName("imgcont")[0].style.opacity = this.value / 100;
 })
 
     } else {
