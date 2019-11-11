@@ -28,6 +28,7 @@
                 "SELECT 
                     painting.id,
                     painting.title,
+                    painting.panoUrl,
                     painting.imageUrl,
                     author.name,
                     author.birthYear,
@@ -55,8 +56,8 @@
                     $fecha = '('.$key['birthPlace'].' '.$key['birthYear'].', '.$key['deathPlace'].' '.$key['deathYear'].')';
             ?>
                 <div class="frame">
-                    <img src="img/<?=$key['imageUrl']?>">
-                    <a href="immagine.php?id=<?php echo $key['id']; ?>">
+                    <img src="pinturas/<?=$key['panoUrl'].'/'.$key['imageUrl']?>">
+                    <a href="immagine2.php?id=<?php echo $key['id']; ?>">
                         <div class="layer">
                             <p class="layer-nombre"><?php echo $key['title']?></p>
                             <p class="layer-autor"><?=$key['name']?></p>
