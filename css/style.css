@@ -384,10 +384,11 @@ position: relative;
     align-items: center;
     }
     
-    #imgcont {
-    
+
+    .imgcont {
+    width: 100%;
     height: 100%;
-    width: 500px;
+
     margin-top: 10%;
     overflow: hidden;
     color:white;
@@ -485,10 +486,7 @@ position: relative;
        margin: 10px 0 14px 0;
    }
 
-   .boximg {
-      position: ;
-   }
-
+  
     .boximg img {
     width: 80px;
     }
@@ -530,24 +528,22 @@ position: relative;
     width: 100%;
    }
 
-   .region {
-    width: 500px;
-   }
 
-   .region  img {
-    width: 100%;
+   #mapframe img {
+    max-width: 100%;
+
    }
 
    .whitebox {
        background-color: white;
-       width: 240px;
-       height: 110px;
-       position: absolute;
-       top: 130px;
-       left: 120px;
        padding: 7px;
        display: flex;
        color: black;
+       width: 240px;
+       height: 100px;
+       position:absolute;
+
+       
    }
 
    .whitebox::after {
@@ -581,6 +577,10 @@ position: relative;
 }
 
 */
+
+    .display-onclick {
+        visibility: hidden;
+    }
    
    .txtwhite {
    
@@ -612,13 +612,14 @@ position: relative;
    }
 
    .spot {
-    position:absolute;
+    position: absolute;
     left: 165px;
-    top: 300px;
+    top: 250px;
    }
 
+
    .spot img {
-       width: 15px;
+    width: 15px;
    }
 
    .moremargin {
