@@ -22,7 +22,7 @@
 
             <div class="minicartone">
                 <div class="boximg">
-                            <img src="img/pieta.png">
+                            <img src="pinturas/pieta.png">
                         </div>
                     <div class="txtscheda">
                             <h4>Pietà per Vittoria Colonna </h4>
@@ -37,29 +37,38 @@
             <p>Mappa delle riproduzioni in Europa</p>
 
             <div id="mapframe">
+                <div class="region">
                 <img src="img/mappa.png" alt="europe map">
+                </div>
+
                 
-                <div class="whitebox">
+            
+
+                <div class="whitebox display-onclick">
                     <div class="boximg">
-                        <img src="img/imgcolor.png">
+                        <img src="pinturas/imgcolor.png">
                     </div>
+                   
                     <div class="txtwhite">
                             <h5>Pietà per Vittoria Colonna </h5>
                             <p><span class="bold">Michelangelo Buonarroti</span><br>
                             (Valduggia 1475ca, Milano 1546)<br>
                             <p>Carboncino, matita nera e gessetto su carta.</p>
                     </div> <!-- end txtwhite -->
+                    
                     <div class="blackx">
                         <img src="img/crossblack.png" alt="chiudi">
                     </div> 
 
-                    
-
                 </div> <!--end whitebox-->
 
+        
+                    
                 <div class="spot">
-                        <img src="img/location.png" alt="location tag">
-                    </div>
+                <img src="img/location.png" alt="location tag">         
+                </div>
+
+                
               
                 <!--<div class="whitebox2"></div>-->
             </div><!-- end mapframe-->
@@ -68,8 +77,8 @@
       
         <div class="iconsrow moremargin">
             <img id="mapa" src="img/mapicongr.png" alt="mapa">
-            <img id="brightness" src="img/brighticon.png" alt="brightness">
-            <img id="infopoints" src="img/infoicon.png" alt="info">
+            <a href="immagine.php"><img id="brightness" src="img/brighticon.png" alt="brightness"></a>
+            <a href="tagspage.php"><img id="infopoints" src="img/infoicon.png" alt="info"></a>
 
         </div> <!-- end icons row -->
 
@@ -83,6 +92,34 @@
 ?>
 
 </div>
+
+<script>
+
+$(document).ready(function(){
+
+ var copyleft = parseInt($(".spot").css("left"));
+ console.log(copyleft);
+ var copytop = parseInt($(".spot").css("top"));    
+ console.log(copytop); 
+
+$(".spot").click(function(){
+    $(".whitebox").css("left", copyleft - 35 + "px");
+})
+.click(function(){
+    $(".whitebox").css("top", copytop -130 + "px");
+})
+.click(function(){
+    $(".whitebox").toggleClass("display-onclick");
+})
+
+$(".blackx").click(function(){
+    $(".whitebox").toggleClass("display-onclick");
+})
+
+
+});
+
+</script>
 
 </body>
 </html>

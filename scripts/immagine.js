@@ -29,13 +29,13 @@ $("#brightness").on('click',function(){
         $("#more").replaceWith(maxbr);
         
 document.getElementById("bright").addEventListener("input", function () {
-    document.getElementsByClassName("imgcont")[0].style.opacity = this.value / 100;
+    document.getElementById("imgcont").style.opacity = this.value / 100;
 })
 
     } else {
         $(this).attr('src', toclick);
         $("#progressarea input").replaceWith(percent);
-        $("#brless").replaceWith(minlupa)
+        $("#brless").replaceWith(minlupa);
         $("#brmore").replaceWith(maxlupa)
         
     };
@@ -48,7 +48,7 @@ document.getElementById("bright").addEventListener("input", function () {
 function zoomin() {
     var myImg = document.getElementById("imgid");
     var currWidth = myImg.clientWidth;
-    if (currWidth == 2000){
+    if (currWidth >= 2000){
     return false;
     } 
     else {
@@ -59,15 +59,15 @@ function zoomin() {
   function zoomout() {
     var myImg = document.getElementById("imgid");
     var currWidth = myImg.clientWidth;
-    if (currWidth == 500) {
+    if (currWidth <= 300) {
    return false;
     } else {
       myImg.style.width = (currWidth - 50) + "px";
     }
   };
 
-  document.getElementById("less").onclick=zoomout;
-  document.getElementById("more").onclick=zoomin;
+  document.getElementById("lessbox").onclick=zoomout;
+  document.getElementById("morebox").onclick=zoomin;
 
 
 

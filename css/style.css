@@ -357,7 +357,7 @@ font-size:.7em;
 
 .btndiv {
   
-position: relative:
+position: relative;
 }
 
 #esplora {   
@@ -384,10 +384,11 @@ position: relative:
     align-items: center;
     }
     
+
     .imgcont {
-    
+    width: 100%;
     height: 100%;
-    width: auto;
+
     margin-top: 10%;
     overflow: hidden;
     color:white;
@@ -395,9 +396,10 @@ position: relative:
     display:flex;
     justify-content: center;
     
+   
     }
     
-    .imgcont img {
+    #imgcont img {
      margin: auto;
      width: 80%;
     }
@@ -469,11 +471,12 @@ position: relative:
    }
 
    .minicartone {
-       height: 60%;
+       
        display: flex;
        flex-wrap: wrap;
        background-color: #1C1C1C;
-       padding: 20px 0 20px 30px;
+       padding: 20px 0 10px 30px;
+       margin-bottom: 10px;
        
        
    }
@@ -483,12 +486,9 @@ position: relative:
        margin: 10px 0 14px 0;
    }
 
-   .boximg {
-      height: 100%;
-      position: relative;
-   }
+  
     .boximg img {
-        height:100%;
+    width: 80px;
     }
 
 
@@ -525,24 +525,25 @@ position: relative:
     border-top: 1px solid;
     color: white;
     position: relative;
-  
+    width: 100%;
    }
 
+
    #mapframe img {
-    max-height: ;
     max-width: 100%;
+
    }
 
    .whitebox {
        background-color: white;
-       width: 240px;
-       height: 100px;
-       position: absolute;
-       top: 35%;
-       left: 25%;
-       padding: 10px 7px;
+       padding: 7px;
        display: flex;
        color: black;
+       width: 240px;
+       height: 100px;
+       position:absolute;
+
+       
    }
 
    .whitebox::after {
@@ -553,7 +554,6 @@ position: relative:
        border-right-color: transparent;
        border-left-color: transparent;
        border-width: 10px;
-       border-color:;
        bottom: -20px;
        left: 30px;
        position: absolute;
@@ -577,6 +577,10 @@ position: relative:
 }
 
 */
+
+    .display-onclick {
+        visibility: hidden;
+    }
    
    .txtwhite {
    
@@ -600,15 +604,22 @@ position: relative:
    .blackx {
        position:absolute;
        top: 5px;
-       right: 5px;
-       width: 5%;
+       right: 5px;   
+   }
+
+   .blackx img {
+       width: 12px;
    }
 
    .spot {
-    position:absolute;
+    position: absolute;
     left: 165px;
-    top: 300px;
-    width: 10px;
+    top: 250px;
+   }
+
+
+   .spot img {
+    width: 15px;
    }
 
    .moremargin {
@@ -647,6 +658,7 @@ position: relative:
        font-size: .75em;
        margin-left: -10px;
    }
+
 
 
 
@@ -694,7 +706,13 @@ position: relative:
 /* styles per footer que apareixen en scripts */
 
 
-.newbtn {
-    margin-left: 10px;
-    
+
+
+#add-div {
+    margin: auto;
+}
+
+.hiding {
+    visibility: hidden;
+
 }
