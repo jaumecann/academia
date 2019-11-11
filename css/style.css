@@ -357,7 +357,7 @@ font-size:.7em;
 
 .btndiv {
   
-position: relative:
+position: relative;
 }
 
 #esplora {   
@@ -528,7 +528,6 @@ position: relative:
    }
 
    #mapframe img {
-    max-height: ;
     max-width: 100%;
    }
 
@@ -552,7 +551,6 @@ position: relative:
        border-right-color: transparent;
        border-left-color: transparent;
        border-width: 10px;
-       border-color:;
        bottom: -20px;
        left: 30px;
        position: absolute;
