@@ -241,7 +241,6 @@ equips grans o la gent que fa codi obert per github per exemple perquè tothom h
 més o menys igual: 
 http://getbem.com/introduction/
 https://www.freecodecamp.org/news/css-naming-conventions-that-will-save-you-hours-of-debugging-35cea737d849/)
-
 Per altra banda, si ara resulta que hem de posar més informació i afegim un span
 entre el primer i el segon, hauriem d'adaptar els nth-of-type perquè tornessin a
 correspondre al que ens interessa.*/
@@ -384,7 +383,7 @@ position: relative;
     align-items: center;
     }
     
-
+/*
     .imgcont {
     width: 100%;
     height: 100%;
@@ -395,29 +394,25 @@ position: relative;
     position: relative;
     display:flex;
     justify-content: center;
-    
+
    
     }
+
+    */
     
-    #imgcont img {
-     margin: auto;
-     width: 80%;
-    }
+
+
+.percent {
+    display: flex;
+    margin-top: 5%;
+    color: white;   
+    width: 100%;
+    justify-content: center;
+}
     
-    .percent {
-        display: flex;
-        margin-top: 5%;
-        color: white;   
-        width: 100%;
-        justify-content: center;
-    }
-    
-    #progressarea {
-    padding: 0 20px;
-    
-    
-        
-    }
+#progressarea {
+    padding: 0 20px; 
+}
     
     #progressarea p {
         margin:auto;
@@ -572,10 +567,8 @@ position: relative;
     position: absolute;
     top: calc(35% + 120px);
     left: calc(25% + 20px);
-
     
 }
-
 */
 
     .display-onclick {
@@ -664,7 +657,7 @@ position: relative;
 
    /* SLIDEBAR CUSTOMITZADA */
 
-   .slidecontainer {
+   #slidecslidecontainer {
     width: 100%;
   }
   
@@ -716,3 +709,29 @@ position: relative;
     visibility: hidden;
 
 }
+
+/* STYLES PER LEAFLET */
+
+#imgcont {
+    width: 80%;
+    height: 600px;
+}
+
+.leaflet-popup-content-wrapper {
+    background: #C96B54;
+    color: #eee;
+    font-size: 12px;
+    line-height: 24px;
+    border-radius: 0px;
+    box-shadow: none;
+  }
+  
+  .leaflet-popup-content-wrapper .leaflet-popup-content {
+  }
+  
+  .leaflet-popup-close-button {
+    display:none;
+  }
+  
+  .leaflet-popup-tip-container {
+    display: none;
