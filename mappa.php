@@ -75,12 +75,13 @@
 
          </div>
       
-        <div class="iconsrow moremargin">
-            <img id="mapa" src="img/mapicongr.png" alt="mapa">
-            <a href="immagine.php"><img id="brightness" src="img/brighticon.png" alt="brightness"></a>
-            <a href="tagspage.php"><img id="infopoints" src="img/infoicon.png" alt="info"></a>
-
-        </div> <!-- end icons row -->
+         <div class="iconsrow">
+      <div class="fondo-icona"><img id="mapa" src="img/mapicon.png" alt="mapa"></div>
+      <div class="fondo-icona"><img onclick="openBrightness()" id="brightness" src="img/brighticon.png" alt="brightness">
+    </div>
+      <div class="fondo-icona"><img onclick="showInfoPoints()" id="infopoints" src="img/infoicon.png" alt="info">
+    </div>
+    </div> <!-- end icons row -->
 
 
     </section>

@@ -319,16 +319,31 @@ nav img {
 .iconsrow {
     display:flex;
     margin-top: 5%;
+    justify-content: space-between;
+    width: 40%;
 }
 .iconsrow img {
-    height: 45px;
-    padding: 0 25px;
+    width: 100%;
     cursor: pointer;
 }
+
+
+.fondo-icona {   
+    background-color: var(--button);
+    border-radius: 45px;
+    width: 45px;
+    height: 45px;
+     
+}
+
+.change-style {
+    background-color: grey;
+    border-radius: 45px;
+}
+
 #brless {
     width: 20px;
     height: 20px;
-    
 }
     
 /* MAPPA */
@@ -534,21 +549,23 @@ h5 {
 }
 
 /* STYLES PER LEAFLET */
+
 #imgcont {
     width: 80%;
     height: 600px;
 }
-.leaflet-popup-content-wrapper {
+#imgcont .leaflet-popup-content-wrapper {
     background: #C96B54;
     color: #eee;
     font-size: 12px;
     line-height: 24px;
     border-radius: 0px;
     box-shadow: none;
+    opacity: .8;
 }
-.leaflet-popup-close-button {
+#imgcont .leaflet-popup-close-button {
     display:none;
 }
-.leaflet-popup-tip-container {
+#imgcont .leaflet-popup-tip-container {
     display: none;
 }
