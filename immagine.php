@@ -86,9 +86,9 @@ function openBrightness(){
 // create the slippy map
 var map = L.map('imgcont', {
   minZoom: 1,
-  maxZoom: 6,
+  maxZoom: 4,
   center: [0, 0],
-  zoom: 3,
+  zoom: 2,
   zoomDelta: 1,
   crs: L.CRS.Simple,
   attributionControl:false,
@@ -99,16 +99,23 @@ var map = L.map('imgcont', {
 
 // dimensions of the image
 
-
-
-var w = $("#imgcont").width()*3;
-    h = $("#imgcont").height()*3;
+/* solució per explorar
+var w = document.getElementsByTagName('img')[2].naturalWidth;
+    h = document.getElementsByTagName('img')[2].naturalHeight;
     url = 'pinturas/<?=$img?>';
+*/
+
+var w = $("#imgcont").width();
+    h = $("#imgcont").height();
+    url = 'pinturas/<?=$img?>';
+
 
 // calculate the edges of the image, in coordinate space
 var southWest = map.unproject([0, h], map.getMaxZoom()-1);
 var northEast = map.unproject([w, 0], map.getMaxZoom()-1);
 var bounds = new L.LatLngBounds(southWest, northEast);
+
+
 
 
 
@@ -140,7 +147,7 @@ L.DomEvent.on(L.DomUtil.get('bright'), 'change', function () {
 });
 
 $("#brightness, #infopoints").click(function(){
-  $(this).toggleClass("change-opacity");
+  $(this).toggleClass("change-style");
 })
 
 
