@@ -7,7 +7,7 @@
   $exec_imagen->execute();
   $resultado = $exec_imagen -> fetch(PDO::FETCH_ASSOC);
   $img = $resultado['imageUrl'];
-  $panoUrl = $resultado['panoUrl'];
+  $img_sobreposada = $resultado['imageUrl_sobreposada'];
 ?>
 
 <body>
@@ -35,9 +35,11 @@
     </div>
 
     <div class="iconsrow">
-      <img id="mapa" src="img/mapicon.png" alt="mapa">
-      <img onclick="openBrightness()" id="brightness" src="img/brighticon.png" alt="brightness">
-      <img onclick="showInfoPoints()" id="infopoints" src="img/infoicon.png" alt="info">
+      <div class="fondo-icona"><img id="mapa" src="img/mapicon.png" alt="mapa"></div>
+      <div class="fondo-icona"><img onclick="openBrightness()" id="brightness" src="img/brighticon.png" alt="brightness">
+    </div>
+      <div class="fondo-icona"><img onclick="showInfoPoints()" id="infopoints" src="img/infoicon.png" alt="info">
+    </div>
     </div>
   </section>
 
@@ -56,6 +58,7 @@ function showInfoPoints(){
   console.log("Mostrar tags");
   $('.leaflet-popup-pane').fadeToggle();
   $('.leaflet-marker-pane').fadeToggle();
+  
 }
 
 /* Hacer zoom al pulsar botones externos a la libreria */
@@ -83,9 +86,9 @@ function openBrightness(){
 // create the slippy map
 var map = L.map('imgcont', {
   minZoom: 1,
-  maxZoom: 4,
+  maxZoom: 6,
   center: [0, 0],
-  zoom: 2,
+  zoom: 3,
   zoomDelta: 1,
   crs: L.CRS.Simple,
   attributionControl:false,
@@ -95,8 +98,11 @@ var map = L.map('imgcont', {
 });
 
 // dimensions of the image
-var w = 2000,
-    h = 2000,
+
+
+
+var w = $("#imgcont").width()*3;
+    h = $("#imgcont").height()*3;
     url = 'pinturas/<?=$img?>';
 
 // calculate the edges of the image, in coordinate space
@@ -104,10 +110,16 @@ var southWest = map.unproject([0, h], map.getMaxZoom()-1);
 var northEast = map.unproject([w, 0], map.getMaxZoom()-1);
 var bounds = new L.LatLngBounds(southWest, northEast);
 
+
+
 // add the image overlay, 
 // so that it covers the entire map
 var layer1 = L.imageOverlay(url, bounds).addTo(map);
-var layer2 = L.imageOverlay('pinturas/<?=$img?>', bounds,).addTo(map);
+var layer2 = L.imageOverlay('pinturas/<?=$img_sobreposada?>', bounds).addTo(map);
+
+
+
+
 // tell leaflet that the map is exactly as big as the image
 map.setMaxBounds(bounds);
 
@@ -115,16 +127,22 @@ var myIcon = L.icon({
   iconUrl: 'img/infopoint.png',
   iconSize:     [35, 35], // size of the icon
   iconAnchor:   [15, 15], // point of the icon which will correspond to marker's location
-  popupAnchor:  [75, 40] // point from which the popup should open relative to the iconAnchor
+  popupAnchor:  [70, 60] // point from which the popup should open relative to the iconAnchor
 });
 
 L.marker([-18.5, 25.09], {icon:myIcon}).addTo(map).bindPopup("<b>Hello world!</b><br>I am a popup.").openPopup();
 
+
 L.DomEvent.on(L.DomUtil.get('bright'), 'change', function () {
-  L.DomUtil.get('image-opacity').textContent = this.value;
+  L.DomUtil.get('bright').value = this.value;
   //layer2.options.opacity = this.value;
   layer2.setOpacity(this.value);
 });
+
+$("#brightness, #infopoints").click(function(){
+  $(this).toggleClass("change-opacity");
+})
+
 
 </script>
 </body>
