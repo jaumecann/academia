@@ -15,7 +15,7 @@ $(document).ready(function(){
 var toclick = "img/brighticon.png";
 var clicked = "img/bright2.png";
 var percent = "<p>100%</p>";
-var range = "<div class=\"slidecontainer\"><input type=\"range\" id=\"bright\" min=\"0\" max=\"100\" class=\"slider\" value=\"100\"></div>";
+var range = "<div id=\"slidecontainer\"><span id=\"image-opacity\">1</span><input type=\"range\" id=\"bright\" min=\"0\" max=\"1\" class=\"slider\" step=\"0.5\" value=\"1\"></div>";
 var minbr = "<img src=\"img/minbr.png\" alt=\"down\" id=\"brless\">";
 var maxbr = "<img src=\"img/maxbr.png\" alt=\"up\" id=\"brmore\">";
 var minlupa = "<img src=\"img/less.png\" alt=\"down\" id=\"less\">";
@@ -27,15 +27,16 @@ $("#brightness").on('click',function(){
         $("#progressarea p").replaceWith(range);
         $("#less").replaceWith(minbr);
         $("#more").replaceWith(maxbr);
-        
+  
+/* funció per baixar opacitat quan només hi havia una imatge      
 document.getElementById("bright").addEventListener("input", function () {
-    document.getElementsByClassName("imgcont")[0].style.opacity = this.value / 100;
+    document.getElementById("imgcont").style.opacity = this.value / 100;
 })
-
+*/
     } else {
         $(this).attr('src', toclick);
         $("#progressarea input").replaceWith(percent);
-        $("#brless").replaceWith(minlupa)
+        $("#brless").replaceWith(minlupa);
         $("#brmore").replaceWith(maxlupa)
         
     };
@@ -48,7 +49,7 @@ document.getElementById("bright").addEventListener("input", function () {
 function zoomin() {
     var myImg = document.getElementById("imgid");
     var currWidth = myImg.clientWidth;
-    if (currWidth == 2000){
+    if (currWidth >= 2000){
     return false;
     } 
     else {
@@ -59,15 +60,15 @@ function zoomin() {
   function zoomout() {
     var myImg = document.getElementById("imgid");
     var currWidth = myImg.clientWidth;
-    if (currWidth == 500) {
+    if (currWidth <= 300) {
    return false;
     } else {
       myImg.style.width = (currWidth - 50) + "px";
     }
   };
 
-  document.getElementById("less").onclick=zoomout;
-  document.getElementById("more").onclick=zoomin;
+  document.getElementById("lessbox").onclick=zoomout;
+  document.getElementById("morebox").onclick=zoomin;
 
 
 

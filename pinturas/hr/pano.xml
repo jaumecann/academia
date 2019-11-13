@@ -23,4 +23,13 @@
 		</level>
 	</image>
 
+	<hotspot name="info" type="image" url="../../img/infopoint.png" width="30" height="30" ath="-0.2" atv="-0.1" onclick="myaction"></hotspot>
+	
+	
+
+<action name="myaction" type="Javascript">
+
+	</action>
+
+	
 </krpano>

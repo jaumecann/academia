@@ -111,20 +111,30 @@
     </div>
 
 
-    </div> <!-- end of big container-->
+</div> <!-- end of big container-->
 
- <?php 
-    require_once "templates/footer.php";
-?>
+    <div class="footer">
+        <div><img id="chair" src="img/handic.png" alt="handicap"></div>
 
+        <div id="add-div" class="hiding">
+            <img src="img/toleft.png">   
+            <img src="img/tobottom.png">  
+            <img src="img/totop.png">   
+            <img src="img/toright.png">    
+            </div>
+    </div>
 
 </div>
 
 
-
 </body>
+
 
 <script src="scripts/galeria.js"></script>
 <script src="scripts/home.js"></script>
 
+<!--
+
+
+    -->
 </html>
