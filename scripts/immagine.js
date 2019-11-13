@@ -8,8 +8,6 @@ document.getElementById('bright').addEventListener('input', function () {
 
 $(document).ready(function(){
 
-
-
 //  BRIGHTNESS
 
 var toclick = "img/brighticon.png";
@@ -45,7 +43,7 @@ document.getElementById("bright").addEventListener("input", function () {
 })
 
 // ZOOM IMATGE
-
+/*
 function zoomin() {
     var myImg = document.getElementById("imgid");
     var currWidth = myImg.clientWidth;
@@ -69,6 +67,7 @@ function zoomin() {
 
   document.getElementById("lessbox").onclick=zoomout;
   document.getElementById("morebox").onclick=zoomin;
+  */
 
 
 
