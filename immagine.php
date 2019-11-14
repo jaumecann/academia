@@ -86,9 +86,9 @@ function openBrightness(){
 // create the slippy map
 var map = L.map('imgcont', {
   minZoom: 1,
-  maxZoom: 4,
+  maxZoom: 8,
   center: [0, 0],
-  zoom: 2,
+  zoom: 4,
   zoomDelta: 1,
   crs: L.CRS.Simple,
   attributionControl:false,
@@ -98,15 +98,15 @@ var map = L.map('imgcont', {
 });
 
 // dimensions of the image
-
-/* solució per explorar
+/*
 var w = document.getElementsByTagName('img')[2].naturalWidth;
     h = document.getElementsByTagName('img')[2].naturalHeight;
     url = 'pinturas/<?=$img?>';
 */
+console.log( document.getElementsByTagName('img')[3].naturalWidth );
 
-var w = $("#imgcont").width();
-    h = $("#imgcont").height();
+var w = 500,
+    h = 500,
     url = 'pinturas/<?=$img?>';
 
 
@@ -121,8 +121,10 @@ var bounds = new L.LatLngBounds(southWest, northEast);
 
 // add the image overlay, 
 // so that it covers the entire map
+url2 = 'pinturas/<?=$img_sobreposada?>';
+
 var layer1 = L.imageOverlay(url, bounds).addTo(map);
-var layer2 = L.imageOverlay('pinturas/<?=$img_sobreposada?>', bounds).addTo(map);
+var layer2 = L.imageOverlay(url2, bounds).addTo(map);
 
 
 
@@ -149,6 +151,46 @@ L.DomEvent.on(L.DomUtil.get('bright'), 'change', function () {
 $("#brightness, #infopoints").click(function(){
   $(this).toggleClass("change-style");
 })
+
+
+var cuadro_x = document.getElementsByTagName('img')[2].naturalWidth;
+var cuadro_y = document.getElementsByTagName('img')[2].naturalHeight;
+
+var cuadro_x2 = document.getElementsByTagName('img')[3].naturalWidth;
+var cuadro_y2 = document.getElementsByTagName('img')[3].naturalHeight;
+
+console.log(cuadro_x);
+
+//reassignem valor a les imatges un cop carregada la finestra amb les dimensions reals de les fotos;
+
+window.onload = function (){
+  w = cuadro_x;
+  h = cuadro_y;
+  w2 = cuadro_x2;
+  h2 = cuadro_y2;
+
+southWest = map.unproject([0, h], map.getMaxZoom()-1);
+northEast = map.unproject([w, 0], map.getMaxZoom()-1);
+southWest2 = map.unproject([0, h2], map.getMaxZoom()-1);
+northEast2 = map.unproject([w2, 0], map.getMaxZoom()-1);
+
+bounds = new L.LatLngBounds(southWest, northEast);
+bounds2 = new L.LatLngBounds(southWest2, northEast2);
+
+layer1 = L.imageOverlay(url, bounds).addTo(map);
+layer2 = L.imageOverlay(url2, bounds2).addTo(map);
+map.setMaxBounds(bounds2);
+};
+
+/*
+southWest = map.unproject([0, h], map.getMaxZoom()-1);
+northEast = map.unproject([w, 0], map.getMaxZoom()-1);
+bounds = new L.LatLngBounds(southWest, northEast);
+layer1 = L.imageOverlay(url, bounds).addTo(map);
+layer2 = L.imageOverlay(url2, bounds,).addTo(map);
+map.setMaxBounds(bounds);
+*/
+
 
 
 </script>
