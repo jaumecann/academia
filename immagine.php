@@ -54,12 +54,8 @@ Luego pulsando el boton de tags se 'cargan', en realidad ya estaban allí, solo 
 los mostramos dandole una clase */
 
 /* Mostrar los tags quando se pulsa el boton de tags */
-function showInfoPoints(){
-  console.log("Mostrar tags");
-  $('.leaflet-popup-pane').fadeToggle();
-  $('.leaflet-marker-pane').fadeToggle();
-  
-}
+
+
 
 /* Hacer zoom al pulsar botones externos a la libreria */
 function zoomImg(direccion){
@@ -73,9 +69,37 @@ function zoomImg(direccion){
 }
 
 /* Abrir la barra controladora de brillo */
-function openBrightness(){
-  $('#progressarea').toggleClass('show');
+/* Amb variables i condicionals per canviar icones */
+
+
+var minbr = "<img src=\"img/minbr.png\" alt=\"down\" id=\"brless\">";
+var maxbr = "<img src=\"img/maxbr.png\" alt=\"up\" id=\"brmore\">";
+var minlupa = "<img src=\"img/less.png\" alt=\"down\" id=\"minus\">";
+var maxlupa = "<img src=\"img/more.png\" alt=\"down\" id=\"plus\">";
+
+if ($("#infopoints").hasClass("change-style")){
+  $(this).data('clicked', true);
 }
+
+if ($("#brightness").hasClass("change-style")){
+  $(this).data('clicked', true);
+}
+
+function openBrightness(){
+
+  $('#progressarea').toggleClass('show');
+
+  if ($("#brightness").hasClass("change-style")){
+    $("#brless").replaceWith(minlupa);
+    $("#brmore").replaceWith(maxlupa);
+      
+    } else {
+    $("#minus").replaceWith(minbr);
+    $("#plus").replaceWith(maxbr);
+        
+    }
+
+};
 
 
 
@@ -85,7 +109,7 @@ function openBrightness(){
 // See also: http://kempe.net/blog/2014/06/14/leaflet-pan-zoom-image.html
 // create the slippy map
 var map = L.map('imgcont', {
-  minZoom: 1,
+  minZoom: 2,
   maxZoom: 8,
   center: [0, 0],
   zoom: 4,
@@ -98,12 +122,6 @@ var map = L.map('imgcont', {
 });
 
 // dimensions of the image
-/*
-var w = document.getElementsByTagName('img')[2].naturalWidth;
-    h = document.getElementsByTagName('img')[2].naturalHeight;
-    url = 'pinturas/<?=$img?>';
-*/
-console.log( document.getElementsByTagName('img')[3].naturalWidth );
 
 var w = 500,
     h = 500,
@@ -140,6 +158,26 @@ var myIcon = L.icon({
 });
 
 L.marker([-18.5, 25.09], {icon:myIcon}).addTo(map).bindPopup("<b>Hello world!</b><br>I am a popup.").openPopup();
+
+$(".leaflet-popup").hide();
+  $(".leaflet-marker-icon").hide();
+
+  var toggleIt = true;
+
+function showInfoPoints(){
+  console.log("Mostrar tags");
+
+if(toggleIt){
+  $('.leaflet-popup').show();
+  $('.leaflet-marker-icon').show();
+  toggleIt = false;
+} else {
+  $('.leaflet-popup').hide();
+  $('.leaflet-marker-icon').hide();
+  toggleIt= true;
+}  
+
+};
 
 
 L.DomEvent.on(L.DomUtil.get('bright'), 'change', function () {
@@ -182,17 +220,10 @@ layer2 = L.imageOverlay(url2, bounds2).addTo(map);
 map.setMaxBounds(bounds2);
 };
 
-/*
-southWest = map.unproject([0, h], map.getMaxZoom()-1);
-northEast = map.unproject([w, 0], map.getMaxZoom()-1);
-bounds = new L.LatLngBounds(southWest, northEast);
-layer1 = L.imageOverlay(url, bounds).addTo(map);
-layer2 = L.imageOverlay(url2, bounds,).addTo(map);
-map.setMaxBounds(bounds);
-*/
 
 
 
 </script>
+
 </body>
 </html>
