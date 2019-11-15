@@ -151,42 +151,82 @@ nav img {
 }
 #gallery {
     width: 80%;
-    overflow-x: hidden;
+    overflow-x: scroll;
     overflow-y: hidden;
     position: relative;
+}
+#gallery::-webkit-scrollbar {
+    display: none;
 }
 .leftarrow, .rightarrow {
     width:10%; 
     align-self: center; 
     text-align: center;
-
+    cursor: pointer;
 }
 .leftarrow img, .rightarrow img {   
     width:30%;
     align-self:center;
 }
 #flexcont {
-    display: flex;
-    flex-wrap: wrap;
+    height: 100%;
     width: 1000px; 
 }
 .frame {
-    position: relative;
-}
-#flexcont img {
-    height: 180px;
-    padding:5px;
-}
-.footer {
-    border-top-style: solid;
-    border-top-color: white;
-    border-top-width: 1px;
-    padding-top: 15px;
-    margin-top: 50px;
+    float: left;
     display: flex;
+    position: relative;
+    height: calc(100% / 3 - 10px);
+    margin: 5px;
+    cursor: pointer;
+    overflow: hidden;
+    transition: 0.5;
 }
-.footer img {
-    width: 25px;
+/*
+.frame.handicap_active{
+    filter: brightness(0.5);
+}
+.frame.handicap_active.handicap_selected{
+    filter: brightness(1);
+}
+*/
+.frame img {
+    height: 100%;
+    pointer-events: none;
+}
+/*El layer de info se activa mientras hover
+y cuando handicap esta activo y el cursor de handicap encima*/
+.frame.handicap_active.handicap_selected .layer{
+    visibility: visible;
+    opacity: 1;
+    bottom: 0;
+}
+.frame:hover .layer{
+    visibility: visible;
+    opacity: 1;
+    bottom: 0;
+}
+.layer{
+    visibility: hidden;
+    display:flex;
+    background-color: rgba(var(--sec_color), 0.4);
+    width: 100%; height: 100%;
+    position:absolute;
+    bottom:0; left: 0;
+    padding: 10px;
+    box-sizing: border-box;
+    text-decoration: none;
+    flex-direction: column;
+    justify-content: flex-end;
+    
+    opacity: 0;
+    transition: visibility 0s, opacity 0.5s;
+}
+.layer p{
+    margin: 0;
+    font-size: .6em;
+    color:white;
+    width: 60%;
 }
 .layer-nombre{
     font-family: 'Playfair Display', serif;
@@ -198,26 +238,28 @@ nav img {
 .layer-fecha{
     font-family: 'Roboto Slab', serif;
 }
-.layer{
-    display:none;
-    background-color: rgba(var(--sec_color), 0.4);
-    width: calc(100% - 10px); height: 180px;
-    position:absolute;
-    top:0;
-    margin:5px; padding: 10px;
-    box-sizing: border-box;
-}
-.frame:hover .layer{
+
+.footer {
+    border-top-style: solid;
+    border-top-color: white;
+    border-top-width: 1px;
+    margin-top: 50px;
     display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
 }
-.layer p{
-    margin: 0;
-    font-size: .6em;
-    color:white;
-    width: 60%;
+.footer img {
+    width: 25px;
 }
+
+.handicap_cursor{
+    position: absolute;
+    width: 2px; height: 2px;
+    background-color: red;
+    z-index: 1;
+}
+.handicap_cursor.activo{
+    display: block;
+}
+
 
 /* CARTONE - FICHA */
 .breadcrumbs img {
@@ -541,10 +583,24 @@ h5 {
 }
 
 /* styles per footer que apareixen en scripts */
+.handicap{
+    cursor: pointer;
+    padding: 20px;
+    padding-left: 0;
+}
 #add-div {
     margin: auto;
+    margin-top: 0;
+    opacity: 1;
+    transition: 1s;
 }
-.hiding {
+#add-div img{
+    padding: 20px;
+    cursor: pointer;
+}
+#add-div.hiding {
+    margin-top: 20px;
+    opacity: 0;
     visibility: hidden;
 }
 
