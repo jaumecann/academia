@@ -17,9 +17,9 @@
   <?php require_once "templates/navbar.php"; ?>
 
   <div class="breadcrumbs">
-    <p><span>i cartoni cinquecenteschi</span> / collezione</p>
-    <img src="img/cross.png" alt="cross">
-  </div>
+        <p><span>i cartoni cinquecenteschi</span> / collezione</p>
+        <a href="cartone.php"><img src="img/cross.png" alt="cross"></a>
+    </div>
 
   <section class="contents">
 
@@ -35,7 +35,7 @@
     </div>
 
     <div class="iconsrow">
-      <div class="fondo-icona"><img id="mapa" src="img/mapicon.png" alt="mapa"></div>
+      <a href="mappa.php"><div class="fondo-icona"><img id="mapa" src="img/mapicon.png" alt="mapa"></div></a>
       <div class="fondo-icona"><img onclick="openBrightness()" id="brightness" src="img/brighticon.png" alt="brightness">
     </div>
       <div class="fondo-icona"><img onclick="showInfoPoints()" id="infopoints" src="img/infoicon.png" alt="info">
@@ -136,7 +136,7 @@ $("#infopoints").click(function(){
   if ($("#brightness").hasClass("change-style")){
     openBrightness(); 
   }
-  
+
   map.setZoom(4);
   layer2.setOpacity(1);
   $("#bright").val(1);
@@ -243,6 +243,9 @@ bounds2 = new L.LatLngBounds(southWest2, northEast2);
 layer1 = L.imageOverlay(url, bounds).addTo(map);
 layer2 = L.imageOverlay(url2, bounds2).addTo(map);
 map.setMaxBounds(bounds2);
+
+
+
 };
 
 

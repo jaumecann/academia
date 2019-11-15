@@ -321,6 +321,7 @@ nav img {
     margin-top: 5%;
     justify-content: space-between;
     width: 40%;
+    
 }
 .iconsrow img {
     width: 100%;
@@ -339,6 +340,8 @@ nav img {
 .change-style {
     background-color: grey;
     border-radius: 45px;
+    width: 45px;
+    height: 45px;
 }
 
 #brless {
@@ -348,12 +351,6 @@ nav img {
     
 /* MAPPA */
 
-.maincont{
-    height: 80%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
 .box1 {
     width: 100%;
     color:white;
@@ -403,9 +400,11 @@ h4 {
     color: white;
     position: relative;
     width: 100%;
+   
 }
 #mapframe img {
     max-width: 100%;
+
 }
 .whitebox {
     background-color: white;

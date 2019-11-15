@@ -11,11 +11,11 @@
 ?>
     <div class="breadcrumbs">
         <p><span>i cartoni cinquecenteschi</span> / collezione</p>
-        <img src="img/back.png" alt="go back">
-    </div>
+        <a href="home.php"><img src="img/back.png" alt="go back">
+    </div></a>
 
     <section id="cartone">
-        <div class="imgdiv"><img src="img/pieta.png"></div>
+        <div class="imgdiv"><img src="pinturas/pieta.png"></div>
         <div class="bigtxtdiv">
             <h3>Pietà per Vittoria Colonna </h3>
             <p class="bold">Michelangelo Buonarroti</p>
@@ -31,9 +31,10 @@
                 per una corretta conservazione delle opere su carta.</p>
         </div>
         <div class="btndiv">
-            <div id="esplora">
+            <a href="immagine.php"><div id="esplora">
                 <a href="#"><div class="button espl-btn">ESPLORA L'IMMAGINE</div></a> 
               </div>
+            </a>  
         </div>
     </section>
 
