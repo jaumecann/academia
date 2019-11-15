@@ -74,8 +74,8 @@ function zoomImg(direccion){
 
 var minbr = "<img src=\"img/minbr.png\" alt=\"down\" id=\"brless\">";
 var maxbr = "<img src=\"img/maxbr.png\" alt=\"up\" id=\"brmore\">";
-var minlupa = "<img src=\"img/less.png\" alt=\"down\" id=\"minus\">";
-var maxlupa = "<img src=\"img/more.png\" alt=\"down\" id=\"plus\">";
+var minlupa = "<img onclick=\"zoomImg('out')\" src=\"img/less.png\" alt=\"down\" id=\"minus\">";
+var maxlupa = "<img src=\"img/more.png\" onclick=\"zoomImg('in')\" alt=\"down\" id=\"plus\">";
 
 if ($("#infopoints").hasClass("change-style")){
   $(this).data('clicked', true);
@@ -87,19 +87,62 @@ if ($("#brightness").hasClass("change-style")){
 
 function openBrightness(){
 
-  $('#progressarea').toggleClass('show');
-
   if ($("#brightness").hasClass("change-style")){
     $("#brless").replaceWith(minlupa);
     $("#brmore").replaceWith(maxlupa);
+    $('#progressarea').toggleClass('show');
+    $("#brightness").toggleClass("change-style");
       
     } else {
     $("#minus").replaceWith(minbr);
     $("#plus").replaceWith(maxbr);
-        
+    $('#progressarea').toggleClass('show');
+    $("#brightness").toggleClass("change-style");    
     }
 
 };
+
+// mostrar o amagar tags
+
+var toggleIt = true;
+
+function showInfoPoints(){
+  console.log("Mostrar tags");
+
+if(toggleIt){
+  $('.leaflet-popup').show();
+  $('.leaflet-marker-icon').show();
+  $("#infopoints").toggleClass("change-style");
+  toggleIt = false;
+} else {
+  $('.leaflet-popup').hide();
+  $('.leaflet-marker-icon').hide();
+  $("#infopoints").toggleClass("change-style");
+  toggleIt= true;
+}  
+
+};
+
+// tornar a l'estat inicial si es clica l'altre botó
+
+$("#brightness").click(function(){
+  if (toggleIt==false){
+    showInfoPoints();
+  }
+
+});
+
+$("#infopoints").click(function(){
+  if ($("#brightness").hasClass("change-style")){
+    openBrightness(); 
+  }
+  
+  map.setZoom(4);
+  layer2.setOpacity(1);
+  $("#bright").val(1);
+  
+  
+});
 
 
 
@@ -157,28 +200,14 @@ var myIcon = L.icon({
   popupAnchor:  [70, 60] // point from which the popup should open relative to the iconAnchor
 });
 
-L.marker([-18.5, 25.09], {icon:myIcon}).addTo(map).bindPopup("<b>Hello world!</b><br>I am a popup.").openPopup();
+L.marker([-10.5, 5.09], {icon:myIcon}).addTo(map).bindPopup("<b>Hello world!</b><br>I am a popup.").openPopup();
 
 $(".leaflet-popup").hide();
   $(".leaflet-marker-icon").hide();
 
-  var toggleIt = true;
+ 
 
-function showInfoPoints(){
-  console.log("Mostrar tags");
-
-if(toggleIt){
-  $('.leaflet-popup').show();
-  $('.leaflet-marker-icon').show();
-  toggleIt = false;
-} else {
-  $('.leaflet-popup').hide();
-  $('.leaflet-marker-icon').hide();
-  toggleIt= true;
-}  
-
-};
-
+// change opacity
 
 L.DomEvent.on(L.DomUtil.get('bright'), 'change', function () {
   L.DomUtil.get('bright').value = this.value;
@@ -186,9 +215,8 @@ L.DomEvent.on(L.DomUtil.get('bright'), 'change', function () {
   layer2.setOpacity(this.value);
 });
 
-$("#brightness, #infopoints").click(function(){
-  $(this).toggleClass("change-style");
-})
+
+//reassignem valor a les imatges un cop carregada la finestra amb les dimensions reals de les fotos;
 
 
 var cuadro_x = document.getElementsByTagName('img')[2].naturalWidth;
@@ -197,9 +225,6 @@ var cuadro_y = document.getElementsByTagName('img')[2].naturalHeight;
 var cuadro_x2 = document.getElementsByTagName('img')[3].naturalWidth;
 var cuadro_y2 = document.getElementsByTagName('img')[3].naturalHeight;
 
-console.log(cuadro_x);
-
-//reassignem valor a les imatges un cop carregada la finestra amb les dimensions reals de les fotos;
 
 window.onload = function (){
   w = cuadro_x;
