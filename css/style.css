@@ -41,6 +41,9 @@ h3, h4, h5 {
     font-family: 'Playfair Display', serif;
     line-height: 50%;
 }
+p{
+    font-family: 'Playfair Display', serif;
+}
 
 
 
@@ -158,10 +161,11 @@ nav img {
 #gallery::-webkit-scrollbar {
     display: none;
 }
-.leftarrow, .rightarrow {
-    width:10%; 
-    align-self: center; 
-    text-align: center;
+.galeria_flecha{
+    width:10%; height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     cursor: pointer;
 }
 .leftarrow img, .rightarrow img {   
@@ -182,14 +186,6 @@ nav img {
     overflow: hidden;
     transition: 0.5;
 }
-/*
-.frame.handicap_active{
-    filter: brightness(0.5);
-}
-.frame.handicap_active.handicap_selected{
-    filter: brightness(1);
-}
-*/
 .frame img {
     height: 100%;
     pointer-events: none;
@@ -255,9 +251,7 @@ y cuando handicap esta activo y el cursor de handicap encima*/
     width: 2px; height: 2px;
     background-color: red;
     z-index: 1;
-}
-.handicap_cursor.activo{
-    display: block;
+    opacity: 1;
 }
 
 
@@ -589,19 +583,41 @@ h5 {
     padding-left: 0;
 }
 #add-div {
-    margin: auto;
-    margin-top: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     opacity: 1;
     transition: 1s;
+    user-select: none;
 }
 #add-div img{
     padding: 20px;
     cursor: pointer;
 }
 #add-div.hiding {
-    margin-top: 20px;
     opacity: 0;
     visibility: hidden;
+}
+.handicap_flechas{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+.handicap_flechas img.noclick{
+    pointer-events: none;
+    user-select: none;
+}
+.button.handicap_select{
+    margin-left: auto;
+    border: 1px solid white;
+    background: none;
+    border-radius: 4px;
+    padding: 0 15px;
+    cursor: pointer;
+}
+.handicap_select p{
+    color: white;
 }
 
 /* STYLES PER LEAFLET */
