@@ -43,7 +43,17 @@
     </div>
   </section>
 
-  <?php require_once "templates/footer.php"; ?>
+  <div class="footer">
+        <div><img id="chair" src="img/handic.png" alt="handicap"></div>
+
+        <div id="add-div" class="hiding">
+            <img class="newbtn" src="img/infopoint.png">   
+            <img class="newbtn" src="img/infopoint.png">  
+            <img class="newbtn" src="img/infopoint.png">   
+            <img class="newbtn" src="img/infopoint.png">    
+        </div>
+</div>
+
 </div>
 
 
@@ -109,19 +119,27 @@ var toggleIt = true;
 function showInfoPoints(){
   console.log("Mostrar tags");
 
-if(toggleIt){
-  $('.leaflet-popup').show();
+if(toggleIt){ 
   $('.leaflet-marker-icon').show();
   $("#infopoints").toggleClass("change-style");
+    
+  
   toggleIt = false;
+
 } else {
   $('.leaflet-popup').hide();
   $('.leaflet-marker-icon').hide();
-  $("#infopoints").toggleClass("change-style");
+  $("#infopoints").toggleClass("change-style"); 
+  if ($("#add-div").is(":visible")){
+    $("#add-div").toggleClass("hiding");
+  };
+ 
   toggleIt= true;
 }  
 
 };
+
+
 
 // tornar a l'estat inicial si es clica l'altre botó
 
@@ -129,6 +147,7 @@ $("#brightness").click(function(){
   if (toggleIt==false){
     showInfoPoints();
   }
+
 
 });
 
@@ -197,14 +216,26 @@ var myIcon = L.icon({
   iconUrl: 'img/infopoint.png',
   iconSize:     [35, 35], // size of the icon
   iconAnchor:   [15, 15], // point of the icon which will correspond to marker's location
-  popupAnchor:  [70, 60] // point from which the popup should open relative to the iconAnchor
+  popupAnchor:  [75, 65] // point from which the popup should open relative to the iconAnchor
 });
 
-L.marker([-10.5, 5.09], {icon:myIcon}).addTo(map).bindPopup("<b>Hello world!</b><br>I am a popup.").openPopup();
+L.marker([-10.5, 5.09], {icon:myIcon}).addTo(map).bindPopup("Hello world!<br>I am a popup.").openPopup();
 
-$(".leaflet-popup").hide();
+ $(".leaflet-popup").hide();
   $(".leaflet-marker-icon").hide();
 
+  $("#chair").click(function(){
+    if ($("#infopoints").hasClass("change-style")){
+      $("#add-div").toggleClass("hiding");
+    } 
+  }); 
+  
+
+  
+
+  $(".leaflet-marker-icon").click(function(){
+    $('.leaflet-popup').show();
+  });
  
 
 // change opacity
@@ -244,7 +275,10 @@ layer1 = L.imageOverlay(url, bounds).addTo(map);
 layer2 = L.imageOverlay(url2, bounds2).addTo(map);
 map.setMaxBounds(bounds2);
 
-
+if(!window.location.hash) {
+window.location = window.location + '#loaded';
+window.location.reload();
+};
 
 };
 
