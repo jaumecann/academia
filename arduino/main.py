@@ -3,7 +3,6 @@ import os
 import requests
 import time
 import subprocess
-from pywinauto import Application, Desktop
 
 # se passa abbastanza tempo senza far nulla, si fa partire un video completamente nero che fa da screensaver
 
