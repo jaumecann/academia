@@ -102,7 +102,20 @@ h3, h4, h5 {
     display:flex; 
     justify-content:center;
     width:100%;
+    margin-top: -5px;
 }
+
+#img-icon-cont{
+    width: 30px;
+
+}
+
+#img-icon-cont img{
+    max-width:100%;
+    height:auto;
+}
+
+
 #logos {
     display:flex;
     justify-content: flex-end;
@@ -319,26 +332,38 @@ nav img {
 .iconsrow {
     display:flex;
     margin-top: 5%;
+    justify-content: space-between;
+    width: 40%;
+    
 }
 .iconsrow img {
-    height: 45px;
-    padding: 0 25px;
+    width: 100%;
     cursor: pointer;
 }
+
+
+.fondo-icona {   
+    background-color: var(--button);
+    border-radius: 45px;
+    width: 45px;
+    height: 45px;
+     
+}
+
+.change-style {
+    background-color: grey;
+    border-radius: 45px;
+    width: 45px;
+    height: 45px;
+}
+
 #brless {
     width: 20px;
     height: 20px;
-    
 }
     
 /* MAPPA */
 
-.maincont{
-    height: 80%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
 .box1 {
     width: 100%;
     color:white;
@@ -388,9 +413,11 @@ h4 {
     color: white;
     position: relative;
     width: 100%;
+   
 }
 #mapframe img {
     max-width: 100%;
+
 }
 .whitebox {
     background-color: white;
@@ -534,21 +561,28 @@ h5 {
 }
 
 /* STYLES PER LEAFLET */
+
 #imgcont {
     width: 80%;
     height: 600px;
+    background-color: black;
 }
-.leaflet-popup-content-wrapper {
-    background: #C96B54;
+#imgcont .leaflet-popup-content-wrapper {
+    background: #c96b54da;
     color: #eee;
-    font-size: 12px;
+    font-size: 14px;
     line-height: 24px;
     border-radius: 0px;
     box-shadow: none;
+    font-family: 'Roboto Slab';
+    font-weight: 100;
 }
-.leaflet-popup-close-button {
+#imgcont .leaflet-popup-close-button {
     display:none;
 }
-.leaflet-popup-tip-container {
+#imgcont .leaflet-popup-tip-container {
     display: none;
 }
+
+
+

@@ -1,11 +1,12 @@
 $(document).ready(function(){
         
     
-    $("#chair").click(function(){
-        $("#add-div").toggleClass("hiding");
-        });    
+ $("#chair").click(function(){
+     $("#add-div").toggleClass("hiding");
+     
+    });    
     
-    
+
     
     
     
