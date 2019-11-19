@@ -24,7 +24,9 @@
         </div>
         
         <div id="icon">
-            <img src="" alt="mano-click">
+            <div id="img-icon-cont">
+            <img src="img/manoclick.png" alt="mano-click">
+            </div>
         </div>
         
         <div id="logos">

@@ -1,7 +1,23 @@
-<?php
+<?php 
     require_once "templates/head.php";
-?>
+    $imagen = $_GET['id'];
 
+    $exec_imagen = $conn->prepare("SELECT * FROM painting INNER JOIN author ON painting.author_id = author.id WHERE painting.id = :imagen");
+    $exec_imagen->bindParam(':imagen',$imagen);
+    $exec_imagen->execute();
+    $resultado = $exec_imagen -> fetch(PDO::FETCH_ASSOC);
+    $img = $resultado['imageUrl'];
+    $img_sobreposada = $resultado['imageUrl_sobreposada'];
+    $descriptionIta = $resultado['descriptionIta'];
+    $material = $resultado['material'];
+    $title = $resultado['title'];
+
+    $nombre_autor = $resultado['name'];
+    $birthYear_autor = $resultado['birthYear'];
+    $deathYear_autor = $resultado['deathYear'];
+    $birthPlace_autor = $resultado['birthPlace'];
+    $deathPlace_autor = $resultado['deathPlace'];
+?>
 <body>
 
 <div class="background">
@@ -10,30 +26,26 @@
     require_once "templates/navbar.php";
 ?>
     <div class="breadcrumbs">
-        <p><span>i cartoni cinquecenteschi</span> / collezione</p>
-        <img src="img/back.png" alt="go back">
-    </div>
+        <p><a href="home.php">Home</a> / <?=$title?></p>
+        <a href="home.php"><img src="img/back.png" alt="go back">
+    </div></a>
 
     <section id="cartone">
-        <div class="imgdiv"><img src="img/pieta.png"></div>
+        <div class="imgdiv"><img src="pinturas/<?=$img?>"></div>
         <div class="bigtxtdiv">
-            <h3>Pietà per Vittoria Colonna </h3>
-            <p class="bold">Michelangelo Buonarroti</p>
-            <p>(Valduggia 1475ca, Milano 1546)</p>
-            <p>Carboncino, matita nera e gessetto su carta.</p>
+            <h3><?=$title?></h3>
+            <p class="bold"><?=$nombre_autor?></p>
+            <p> (<?=$birthPlace_autor?> <?=$birthYear_autor?>, <?=$deathPlace_autor?> <?=$deathYear_autor?>) </p>
+            <p><?=$material?></p>
         </div>
         <div class="txtdiv">
-            <p>I tratta di una preziosa raccolta di cinquantanove cartoni preparatori, che si
-                riferiscono quasi tutti a importanti dipinti di Gaudenzio Ferrari e della sua
-                scuola. Datati in un arco di tempo che va dal 1515 al 1610, i cartoni rivelano
-                un’unica provenienza geografico-artistica, quella delle botteghe attive a
-                Vercelli nel corso del XVI secolo. La fioca luce che illumina la sala, necessaria
-                per una corretta conservazione delle opere su carta.</p>
+            <p><?=$descriptionIta?></p>
         </div>
         <div class="btndiv">
-            <div id="esplora">
-                <a href="#"><div class="button espl-btn">ESPLORA L'IMMAGINE</div></a> 
+            <a href="immagine.php"><div id="esplora">
+                <a href="immagine.php?id=<?=$imagen?>"><div class="button espl-btn">ESPLORA L'IMMAGINE</div></a> 
               </div>
+            </a>  
         </div>
     </section>
 
