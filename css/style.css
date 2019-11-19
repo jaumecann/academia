@@ -156,6 +156,12 @@ nav img {
     font-size: .8em;
     position: relative;
 }
+.breadcrumbs a{
+    color: white;
+    font-family: 'Roboto Slab', serif;
+    font-size: .8em;
+    text-decoration: none;
+}
 .breadcrumbs span {
     font-family: 'Playfair Display', serif;
 }
@@ -340,6 +346,7 @@ y cuando handicap esta activo y el cursor de handicap encima*/
     color: white;   
     width: 100%;
     justify-content: center;
+    align-items: center;
 }
 #progressarea {
     padding: 0 20px;

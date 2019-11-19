@@ -3,7 +3,7 @@
 <div class="background">
 <?php require_once "templates/navbar.php"; ?>
     <div class="breadcrumbs">
-        <p><span>i cartoni cinquecenteschi</span> / collezione</p>
+        <p><a href="home.php">Home</a></p>
     </div>
     <div id="bigcontainer">
         <div class="galeria_flecha leftarrow" ><img src="img/left_arrow.png" alt="go left"></div>
@@ -36,7 +36,7 @@
                 ?>
                     <div class="frame">
                         <img src="pinturas/<?=$key['imageUrl']?>">
-                        <a class="layer" href="immagine.php?id=<?php echo $key['id']; ?>">
+                        <a class="layer" href="cartone.php?id=<?php echo $key['id']; ?>">
                             <p class="layer-nombre"><?php echo $key['title']?></p>
                             <p class="layer-autor"><?=$key['name']?></p>
                             <p class="layer-fecha"><?=$fecha?></p>

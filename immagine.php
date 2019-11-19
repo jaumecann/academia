@@ -6,8 +6,10 @@
   $exec_imagen->bindParam(':imagen',$imagen);
   $exec_imagen->execute();
   $resultado = $exec_imagen -> fetch(PDO::FETCH_ASSOC);
+  $title = $resultado['title'];
   $img = $resultado['imageUrl'];
   $img_sobreposada = $resultado['imageUrl_sobreposada'];
+
 ?>
 
 <body>
@@ -17,8 +19,8 @@
   <?php require_once "templates/navbar.php"; ?>
 
   <div class="breadcrumbs">
-        <p><span>i cartoni cinquecenteschi</span> / collezione</p>
-        <a href="cartone.php"><img src="img/cross.png" alt="cross"></a>
+        <p><a href="home.php">Home</a> / <?=$title?></p>
+        <a href="cartone.php?id=<?=$imagen?>"><img src="img/cross.png" alt="cross"></a>
     </div>
 
   <section class="contents">
@@ -28,14 +30,13 @@
     <div class="percent">
       <img onclick="zoomImg('out')" id="minus" src="img/less.png" alt="down" id="less">
       <div id="progressarea">
-        <span id="image-opacity">1</span>
         <input type="range" id="bright" min="0" max="1" class="slider" step="0.1" value="1">
       </div>
       <img onclick="zoomImg('in')" id="plus" src="img/more.png" id="more" alt="up">
     </div>
 
     <div class="iconsrow">
-      <a href="mappa.php"><div class="fondo-icona"><img id="mapa" src="img/mapicon.png" alt="mapa"></div></a>
+      <a href="mappa.php?id=<?=$imagen?>"><div class="fondo-icona"><img id="mapa" src="img/mapicon.png" alt="mapa"></div></a>
       <div class="fondo-icona"><img onclick="openBrightness()" id="brightness" src="img/brighticon.png" alt="brightness">
     </div>
       <div class="fondo-icona"><img onclick="showInfoPoints()" id="infopoints" src="img/infoicon.png" alt="info">
@@ -59,13 +60,26 @@
 
 <script>
 
-/* Hacemos que los tags se cargan siempre, pero al principio no se muestran.
-Luego pulsando el boton de tags se 'cargan', en realidad ya estaban allí, solo que ahora
-los mostramos dandole una clase */
+$(document).ready(function(){
 
-/* Mostrar los tags quando se pulsa el boton de tags */
-
-
+  //Hacemos una consulta ajax para obtener los tags
+  $.ajax({
+    url: 'php/get_image_tags.php',
+    data: {
+      image_id: <?php echo $_GET['id']?>,
+    },
+    dataType: 'json',
+    method: 'post',
+    beforeSend: function(res){
+      console.log( "Buscar tags de la imatge " + <?php echo $_GET['id']?> )
+    },
+    success:function(resp){
+      console.log(json_decode(resp));
+    }
+  }).done(function(){
+    console.log("GET TAGS")
+  })
+});
 
 /* Hacer zoom al pulsar botones externos a la libreria */
 function zoomImg(direccion){
@@ -122,8 +136,7 @@ function showInfoPoints(){
 if(toggleIt){ 
   $('.leaflet-marker-icon').show();
   $("#infopoints").toggleClass("change-style");
-    
-  
+
   toggleIt = false;
 
 } else {
@@ -147,8 +160,6 @@ $("#brightness").click(function(){
   if (toggleIt==false){
     showInfoPoints();
   }
-
-
 });
 
 $("#infopoints").click(function(){
@@ -159,8 +170,6 @@ $("#infopoints").click(function(){
   map.setZoom(4);
   layer2.setOpacity(1);
   $("#bright").val(1);
-  
-  
 });
 
 
@@ -184,20 +193,14 @@ var map = L.map('imgcont', {
 });
 
 // dimensions of the image
-
 var w = 500,
     h = 500,
     url = 'pinturas/<?=$img?>';
-
 
 // calculate the edges of the image, in coordinate space
 var southWest = map.unproject([0, h], map.getMaxZoom()-1);
 var northEast = map.unproject([w, 0], map.getMaxZoom()-1);
 var bounds = new L.LatLngBounds(southWest, northEast);
-
-
-
-
 
 // add the image overlay, 
 // so that it covers the entire map
@@ -205,8 +208,6 @@ url2 = 'pinturas/<?=$img_sobreposada?>';
 
 var layer1 = L.imageOverlay(url, bounds).addTo(map);
 var layer2 = L.imageOverlay(url2, bounds).addTo(map);
-
-
 
 
 // tell leaflet that the map is exactly as big as the image
@@ -219,23 +220,19 @@ var myIcon = L.icon({
   popupAnchor:  [75, 65] // point from which the popup should open relative to the iconAnchor
 });
 
-L.marker([-10.5, 5.09], {icon:myIcon}).addTo(map).bindPopup("Hello world!<br>I am a popup.").openPopup();
 
- $(".leaflet-popup").hide();
-  $(".leaflet-marker-icon").hide();
+$(".leaflet-popup").hide();
+$(".leaflet-marker-icon").hide();
 
-  $("#chair").click(function(){
-    if ($("#infopoints").hasClass("change-style")){
-      $("#add-div").toggleClass("hiding");
-    } 
-  }); 
-  
+$("#chair").click(function(){
+  if ($("#infopoints").hasClass("change-style")){
+    $("#add-div").toggleClass("hiding");
+  } 
+}); 
 
-  
-
-  $(".leaflet-marker-icon").click(function(){
-    $('.leaflet-popup').show();
-  });
+$(".leaflet-marker-icon").click(function(){
+  $('.leaflet-popup').show();
+});
  
 
 // change opacity
