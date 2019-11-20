@@ -56,9 +56,15 @@
                 </div>
 
                 <div class="whitebox display-onclick">
-                    <div class="boximg">
+                    <div class="compared-img-box">
+                        <div class="img1-overwhite">   
+                        <img src="pinturas/<?=$img?>">  
+                        </div>
+                        <div class="img2-overwhite">
                         <img src="pinturas/<?=$img?>">
+                        </div>
                     </div>
+                    
                    
                     <div class="txtwhite">
                         <h5><?=$title?></h5>
@@ -110,13 +116,18 @@
  var copytop = parseInt($(".spot").css("top"));    
  console.log(copytop); 
 
+/*
  $(".spot").click(function(){
-    $(".whitebox").css("left", copyleft - 35 + "px");
+  //$(".whitebox").css("left", copyleft - 35 + "px");
+  $(".whitebox").css("margin", "auto");
  })
  .click(function(){
-    $(".whitebox").css("top", copytop -130 + "px");
+   //$(".whitebox").css("top", copytop -130 + "px");
+    $(".whitebox").css("bottom", "30px");
  })
- .click(function(){
+ */
+ 
+ $(".spot").click(function(){
     $(".whitebox").toggleClass("display-onclick");
  })
 

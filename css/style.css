@@ -295,8 +295,9 @@ y cuando handicap esta activo y el cursor de handicap encima*/
 }
 .imgdiv {
     height: 50%;
-    border-style: solid;
+    
     text-align:center;
+    overflow: hidden;
 }
 .imgdiv img {
     height:100%;
@@ -410,7 +411,8 @@ y cuando handicap esta activo y el cursor de handicap encima*/
 .box1 {
     width: 100%;
     color:white;
-    height: 26%;   
+    height: 180px;   
+    margin-bottom: 10px;
 }
 .box1 p {   
     font-family: 'Roboto Slab', serif;
@@ -423,24 +425,36 @@ y cuando handicap esta activo y el cursor de handicap encima*/
     background-color: #1C1C1C;
     padding: 20px 0 10px 30px;
     margin-bottom: 10px;
+    height: 150px;
+    overflow: hidden;
 }
 h4 {
     font-size: .9em;
     margin: 10px 0 14px 0;
 }
-.boximg img {
+.boximg {
     width: 80px;
+    max-height: 100%;
 }
+
+.boximg img {
+    max-height: 100%;
+    max-width: 100%;
+    
+}
+
+
 .box2 {
     width: 100%;
     color: white;
     height: 60%;
     overflow: hidden;
+    margin-top: 10px;
 }
 .box2 p{
     font-family: 'Roboto Slab', serif;
     font-size: .9em;
-    margin: 0 0 5px 0;
+    margin: 10px 0 5px 0;
     width: 100%;
 }
 .txtscheda {
@@ -458,18 +472,52 @@ h4 {
     width: 100%;
    
 }
-#mapframe img {
+.region img {
     max-width: 100%;
 
 }
+
+.compared-img-box {
+    display: flex;
+    justify-content: center;
+    max-height: 220px;
+    
+    overflow:hidden; 
+}
+
+.img1-overwhite {
+   max-width: 40%;  
+
+    
+    
+}
+
+.img2-overwhite {
+    max-width: 40%;
+ }
+
+
+.img1-overwhite img, .img2-overwhite img {
+    max-width:100%;
+    height: auto;
+}
+
+
 .whitebox {
     background-color: white;
     padding: 7px;
-    display: flex;
     color: black;
-    width: 240px;
-    height: 100px;
-    position:absolute;
+    width: 300px;
+    height: 300px;
+    position: absolute;
+    bottom: 35px;
+    left: 0; 
+    right: 0; 
+    margin-left: auto; 
+    margin-right: auto; 
+    width: 340px;
+    z-index: 2;
+
 }
 .whitebox::after {
     content: "";
@@ -480,8 +528,12 @@ h4 {
     border-left-color: transparent;
     border-width: 10px;
     bottom: -20px;
-    left: 30px;
+    left: 0; 
+    right: 0; 
+    margin-left: auto; 
+    margin-right: auto; 
     position: absolute;
+    width: 0px;
 }
 /*
 .whitebox2{
@@ -502,6 +554,10 @@ left: calc(25% + 20px);
 }
 .txtwhite {
     margin-left: 10px;
+    position:;
+    width: 50%;
+    
+    
 }
 .txtwhite p {
     font-family: 'Roboto Slab', serif;
