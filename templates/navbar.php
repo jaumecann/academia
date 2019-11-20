@@ -4,9 +4,38 @@
         </div>
 
         <!--<div style="color:white"><img src="img/lupa.png" alt="lupa"></div>-->
+        
+        <div id="video-div"> 
 
+        <div id="quit-video">
+        <img src="img/cross.png" alt="cross">
+        </div> 
+
+        <div id="flex-div">
+        <video width="400" height="300" controls autoplay>
+         <source src="img/videoplayback.mp4" type="video/mp4">
+        </video>
+        </div>
+        
+        </div>
+        <img id="video">
         <a href="home.php">
                 <img src="img/home.png" alt="home">
         </a>
+
+        <script>
+        
+        var videoIcon = document.getElementById('video');
+        videoIcon.onclick = function(){
+        document.getElementById('video-div').style.display = "block";
+        }
+
+        document.getElementById('quit-video').onclick = function(){
+        document.getElementById('video-div').style.display = "none";
+        }
+
+
+
+        </script>
 
 </nav>
