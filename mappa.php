@@ -33,7 +33,7 @@
 
     <section class="contents">
         <div class="box1">
-            <p>Scheda tecnica del cartone</p>
+            <p class="box1-titl">Scheda tecnica del cartone</p>
             <div class="minicartone">
                 <div class="boximg">
                     <img src="pinturas/<?=$img?>">
@@ -55,13 +55,18 @@
                     <img src="img/mappa.png" alt="europe map">
                 </div>
 
+
+                <div class="spot">
+                    <img src="img/location.png" alt="location tag">      
+                </div>
+
                 <div class="whitebox display-onclick">
                     <div class="compared-img-box">
                         <div class="img1-overwhite">   
-                        <img src="pinturas/<?=$img?>">  
+                          <img src="pinturas/<?=$img?>">  
                         </div>
-                        <div class="img2-overwhite">
-                        <img src="pinturas/<?=$img?>">
+                        <div class="img1-overwhite">
+                          <img src="pinturas/<?=$img?>">
                         </div>
                     </div>
                     
@@ -76,13 +81,12 @@
                     <div class="blackx">
                         <img src="img/crossblack.png" alt="chiudi">
                     </div>
-                </div>
-
-                <div class="spot">
-                    <img src="img/location.png" alt="location tag">      
-                </div>
+            </div>
 
             </div>
+
+
+
 
         </div>
 
