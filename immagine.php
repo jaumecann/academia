@@ -2,7 +2,7 @@
   require_once "templates/head.php";
   $imagen = $_GET['id'];
 
-  $exec_imagen = $conn->prepare("SELECT * FROM painting WHERE id = :imagen");
+  $exec_imagen = $conn->prepare("SELECT * FROM cartones WHERE id = :imagen");
   $exec_imagen->bindParam(':imagen',$imagen);
   $exec_imagen->execute();
   $resultado = $exec_imagen -> fetch(PDO::FETCH_ASSOC);

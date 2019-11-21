@@ -2,21 +2,53 @@
     require_once "templates/head.php";
     $imagen = $_GET['id'];
 
-    $exec_imagen = $conn->prepare("SELECT * FROM painting INNER JOIN author ON painting.author_id = author.id WHERE painting.id = :imagen");
+    $consulta_imagen = 
+    "SELECT 
+        cartones.imageUrl as imagen_carton,
+        cartones.material as material_carton,
+        cartones.title as titulo_carton,
+        
+        authCartones.name as nombre_autor,
+        authCartones.birthYear,
+        authCartones.deathYear,
+        authCartones.birthPlace,
+        authCartones.deathPlace,
+
+        authPinturas.name as autor_pintura,
+
+        pinturas.title as titulo_pintura,
+        pinturas.material as material_pintura,
+        pinturas.imageUrl as imagen_pintura,
+        pinturas.ano as ano_pintura
+    FROM 
+        cartones 
+    JOIN 
+        author authCartones
+        ON cartones.author_id = authCartones.id 
+        JOIN 
+            pinturas
+            ON pinturas.id_pintura = cartones.pintura_rel
+        JOIN
+            author authPinturas
+        ON pinturas.autor_id = authPinturas.id
+    WHERE cartones.id = :imagen";
+
+    $exec_imagen = $conn->prepare($consulta_imagen);
     $exec_imagen->bindParam(':imagen',$imagen);
     $exec_imagen->execute();
     $resultado = $exec_imagen -> fetch(PDO::FETCH_ASSOC);
-    $img = $resultado['imageUrl'];
-    $img_sobreposada = $resultado['imageUrl_sobreposada'];
-    $descriptionIta = $resultado['descriptionIta'];
-    $material = $resultado['material'];
-    $title = $resultado['title'];
+    $img_cartone = $resultado['imagen_carton'];
+    $img_pintura = $resultado['imagen_pintura'];
+    $material = $resultado['material_carton'];
+    $title = $resultado['titulo_carton'];
 
-    $nombre_autor = $resultado['name'];
+    $nombre_autor = $resultado['nombre_autor'];
     $birthYear_autor = $resultado['birthYear'];
     $deathYear_autor = $resultado['deathYear'];
     $birthPlace_autor = $resultado['birthPlace'];
     $deathPlace_autor = $resultado['deathPlace'];
+
+    $autor_pintura = $resultado['autor_pintura'];
 ?>
 <body>
 
@@ -53,7 +85,7 @@
             <p class="box1-titl">Scheda tecnica del cartone</p>
             <div class="minicartone">
                 <div class="boximg">
-                    <img src="pinturas/<?=$img?>">
+                    <img src="pinturas/<?=$img_cartone?>">
                 </div>
                 <div class="txtscheda">
                     <h4><?=$title?></h4>
@@ -66,45 +98,33 @@
 
         <div class="box2">
             <p>Mappa delle riproduzioni in Europa</p>
-
             <div id="mapframe">
                 <div class="region">
                     <img src="img/mappa.png" alt="europe map">
                 </div>
-
-
                 <div class="spot">
                     <img src="img/location.png" alt="location tag">      
                 </div>
-
                 <div class="whitebox display-onclick">
                     <div class="compared-img-box">
                         <div class="img1-overwhite">   
-                          <img src="pinturas/<?=$img?>">  
+                          <img src="pinturas/<?=$img_cartone?>">  
                         </div>
                         <div class="img1-overwhite">
-                          <img src="pinturas/<?=$img?>">
+                          <img src="pinturas/<?=$img_pintura?>">
                         </div>
                     </div>
-                    
-                   
                     <div class="txtwhite">
                         <h5><?=$title?></h5>
-                        <p><span class="bold"><?=$nombre_autor?></span><br>
+                        <p><span class="bold"><?=$autor_pintura?></span><br>
                         (<?=$birthPlace_autor?> <?=$birthYear_autor?>, <?=$deathPlace_autor?> <?=$deathYear_autor?>)<br>
                         <p><?=$material?></p>
                     </div>
-                    
                     <div class="blackx">
                         <img src="img/crossblack.png" alt="chiudi">
                     </div>
+                </div>
             </div>
-
-            </div>
-
-
-
-
         </div>
 
         <div class="iconsrow">
@@ -132,15 +152,12 @@
         </div>
         <div id="add-div" class="hiding">
             <div class="handicap_shortcuts">
-                <div class="instrucciones_ok"></div>
-                <?php
-                /*
-                foreach($resultado_tags as $key=>$tag){
-                    $tag_corr = $key + 1;
-                    echo "<div id='handicap_tag_".$tag['id']."' class='handicap_tag' data-tag='$key'>$tag_corr</div>";
-                } 
-                */
-                ?>
+                <div class="instrucciones_ok activo">
+                    <div class="instrucciones_boton">OK</div>
+                </div>
+                <div class="correspondencia_mapa">
+                    <div class="handicap_pin"></div>
+                </div>
             </div>
         </div>
     </div>
@@ -183,6 +200,12 @@ $('.handicap_tag').on('click',function(){
     /*var tag_corr = $(this).data('tag');
     markers[tag_corr].openPopup();*/
 });
+
+//Al principio esta activo el boton de Ok para que cierren instrucciones
+$('.instrucciones_boton').on('click',function(){
+    $('.instrucciones_ok').removeClass('activo');
+    $('.correspondencia_mapa').addClass('activo');
+})
 
 
 

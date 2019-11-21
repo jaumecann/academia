@@ -14,17 +14,18 @@
                 <?php 
                     $consulta_cuadros = 
                     "SELECT 
-                        painting.id,
-                        painting.title,
-                        painting.previewUrl,
+                        cartones.id,
+                        cartones.title,
+                        cartones.previewUrl,
                         author.name,
                         author.birthYear,
                         author.deathYear,
                         author.birthPlace,
                         author.deathPlace
-                    FROM painting
+                    FROM cartones
                     INNER JOIN 
-                        author ON painting.author_id = author.id";
+                        author ON cartones.author_id = author.id
+                        ORDER BY cartones.id";
                     
                     $exec_cuadros = $conn -> prepare($consulta_cuadros);
                     $exec_cuadros -> execute();
