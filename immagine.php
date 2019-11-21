@@ -60,6 +60,7 @@
       <div class="handicap_shortcuts">
         
       </div>
+      <div class="down-cross"><a href="cartone.php?id=<?=$imagen?>"><img src="img/cross.png" alt="cross"></a>
     </div>
   </div>
 
@@ -116,6 +117,10 @@ $(document).ready(function(){
     map.setMaxBounds(bounds);
   });
 
+});
+
+$(document).on('click','.handicap',function(){
+    $('#add-div').toggleClass('hiding');      
 });
 
 </script>
