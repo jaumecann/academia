@@ -63,7 +63,9 @@
                 <img onclick="mover_cursor('right')" class="handicap_moveRight" src="img/toright.png">   
             </div>
             <div class="button handicap_select" onclick="selecciona_frame()"><p>SELEZZIONA</p></div> 
-            <img id="video" src="img/videoicon.png">
+            <div class="down-cross down-video">
+                <img id="video" src="img/videoicon.png">
+            </div>
         </div>
     </div>
 </div>

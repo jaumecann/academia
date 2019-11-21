@@ -391,6 +391,18 @@ y cuando handicap esta activo y el cursor de handicap encima*/
     color: white;
     font-family: 'RobotoBold';
 }
+
+.instrucciones_boton2{
+    width: 100px;
+    text-align: center;
+    padding: 5px 15px;
+    cursor: pointer;
+    color: white;
+    font-family: 'RobotoBold';
+    border-style:solid;
+    border-width: 1px;
+}
+
 /* IMMAGINE  */
 .contents {
     position: relative;
@@ -751,6 +763,8 @@ h5 {
     border: 1px solid white;
     font-family: 'PlayfairDisplay', serif;
 }
+
+
 .button.handicap_select{
     margin-right: 40px;
     margin-left: 20px;
@@ -768,6 +782,14 @@ h5 {
     position:absolute;
     right: 0;
    
+}
+
+.down-video img{
+    width: 32px;
+}
+
+.size-cross img {
+    width: 20px;
 }
 
 /* STYLES PER LEAFLET */

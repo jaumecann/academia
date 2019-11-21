@@ -60,7 +60,7 @@
       <div class="handicap_shortcuts">
         
       </div>
-      <div class="down-cross"><a href="cartone.php?id=<?=$imagen?>"><img src="img/cross.png" alt="cross"></a>
+      <div class="down-cross size-cross"><a href="cartone.php?id=<?=$imagen?>"><img src="img/cross.png" alt="cross"></a>
     </div>
   </div>
 

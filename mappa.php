@@ -142,7 +142,7 @@
                 */
                 ?>
             </div>
-            <div class="down-cross"><a href="immagine.php?id=<?=$imagen?>"><img src="img/cross.png" alt="cross"></a>
+            <div class="down-cross size-cross"><a href="immagine.php?id=<?=$imagen?>"><img src="img/cross.png" alt="cross"></a>
             </div>
         </div>
     </div>

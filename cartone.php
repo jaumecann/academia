@@ -64,8 +64,23 @@
             <div class="handicap_shortcuts">
                
             </div> 
+            <div class="down-cross size-cross">
+                <a href="home.php"><img src="img/back.png" alt="go back">
+            </div>
         </div>
     </div>
+
+<script>
+
+$(document).ready(function(){
+
+$(document).on('click','.handicap',function(){
+    $('#add-div').toggleClass('hiding');      
+});
+
+});
+
+</script>
 
 </body>
 </html>
