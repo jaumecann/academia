@@ -23,7 +23,7 @@
   <?php require_once "templates/navbar.php"; ?>
 
   <div class="breadcrumbs">
-    <p><a href="immagine.php?id=<?=$imagen?>"><?=$title?> / esplora i dettagli</p>
+    <p><a href="immagine.php?id=<?=$imagen?>"><?=$title?></a> / <span class="bread2">esplora i dettagli</span>
     <a href="cartone.php?id=<?=$imagen?>"><img src="img/cross.png" alt="cross"></a>
   </div>
 

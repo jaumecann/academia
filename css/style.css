@@ -29,7 +29,7 @@ html,body{
 
 /* VARS */
 :root {
-    --button: #e06c49;
+    --button: #9C4B33;
     --sec_color: 255, 38, 0;
 }
 
@@ -162,13 +162,14 @@ nav img {
 }
 .breadcrumbs a{
     color: white;
-    font-family: 'Roboto Slab', serif;
     font-size: .8em;
     text-decoration: none;
 }
-.breadcrumbs span {
-    font-family: 'PlayfairDisplay', serif;
+
+.bread2 {
+ font-family: 'RobotoLight';
 }
+
 #bigcontainer {
     display: flex;
     height:75%;
@@ -386,7 +387,7 @@ y cuando handicap esta activo y el cursor de handicap encima*/
     width: 100px;
     text-align: center;
     padding: 14px;
-    background-color: #e06c49;
+    background-color: var(--button);
     cursor: pointer;
     color: white;
     font-family: 'RobotoBold';
@@ -469,11 +470,13 @@ y cuando handicap esta activo y el cursor de handicap encima*/
 border-bottom-style: solid;
 border-bottom-width: 1px;
 line-height: 25px;
+font-size: .9em;    
 }
+
+
 
 .box1 p {   
     font-family: 'Roboto Slab', serif;
-    font-size: .8em;
     margin: 5px 0 10px 0;
     
 }
@@ -701,7 +704,6 @@ h5 {
 /* styles per footer que apareixen en scripts */
 .handicap{
     cursor: pointer;
-    padding: 20px;
     padding-left: 0;
 }
 #add-div {
@@ -775,9 +777,13 @@ h5 {
     line-height: 24px;
     border-radius: 0px;
     box-shadow: none;
-    font-family: 'Roboto Slab';
     font-weight: 100;
 }
+
+.leaflet-popup-content-wrapper p {
+    font-family: 'RobotoLight';
+}
+
 #imgcont .leaflet-popup-close-button {
     display:none;
 }

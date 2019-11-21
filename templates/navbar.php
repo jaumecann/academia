@@ -18,7 +18,7 @@
         </div>
         
         </div>
-        <img id="video">
+        <img id="video" src="img/videoicon.png">
         <a href="home.php">
                 <img src="img/home.png" alt="home">
         </a>

@@ -27,7 +27,7 @@
  ?>
    
     <div class="breadcrumbs">
-        <p><a href="cartone.php?id=<?=$imagen?>"><?=$title?></a> / esplora la mappa</p>
+        <p><a href="cartone.php?id=<?=$imagen?>"><?=$title?></a>/ <span class="bread2">esplora la mappa</span></p>
         <img src="img/cross.png" alt="cross"></a>
     </div>
 
