@@ -266,6 +266,7 @@ y cuando handicap esta activo y el cursor de handicap encima*/
     border-top-color: white;
     border-top-width: 1px;
     margin-top: 50px;
+    padding-top: 20px;
     display: flex;
 }
 .footer img {
@@ -286,7 +287,7 @@ y cuando handicap esta activo y el cursor de handicap encima*/
     position: absolute;
     right: 0;
     top: 0;
-    width: 25px;
+    width: 20px;
 }
 #cartone {
     color: white;
@@ -302,8 +303,9 @@ y cuando handicap esta activo y el cursor de handicap encima*/
 }
 .imgdiv {
     height: 50%;
-    border-style: solid;
+    
     text-align:center;
+    overflow: hidden;
 }
 .imgdiv img {
     height:100%;
@@ -459,37 +461,58 @@ y cuando handicap esta activo y el cursor de handicap encima*/
 .box1 {
     width: 100%;
     color:white;
-    height: 26%;   
+    height: 180px;   
+    margin-bottom: 10px;
 }
+
+.box1-titl {
+border-bottom-style: solid;
+border-bottom-width: 1px;
+line-height: 25px;
+}
+
 .box1 p {   
     font-family: 'Roboto Slab', serif;
     font-size: .8em;
     margin: 5px 0 10px 0;
+    
 }
 .minicartone {   
     display: flex;
     flex-wrap: wrap;
     background-color: #1C1C1C;
-    padding: 20px 0 10px 30px;
+    padding: 10px 0 10px 30px;
     margin-bottom: 10px;
+    overflow: hidden;
+    height: 150px;
 }
 h4 {
     font-size: .9em;
     margin: 10px 0 14px 0;
 }
-.boximg img {
-    width: 80px;
+.boximg {
+    max-height: 150px;
 }
+
+.boximg img {
+    height: 150px;
+    max-width: 100%;
+    
+}
+
+
 .box2 {
     width: 100%;
     color: white;
     height: 60%;
     overflow: hidden;
+    margin: 20px 0 50px 0;
+    position: relative;
 }
 .box2 p{
     font-family: 'Roboto Slab', serif;
     font-size: .9em;
-    margin: 0 0 5px 0;
+    margin: 10px 0 5px 0;
     width: 100%;
 }
 .txtscheda {
@@ -507,18 +530,41 @@ h4 {
     width: 100%;
    
 }
-#mapframe img {
+.region img {
     max-width: 100%;
 
 }
+
+.compared-img-box {
+    display: flex;
+    max-height: 220px;
+    overflow:hidden; 
+    max-width:100%;
+}
+
+.img1-overwhite {
+
+     
+}
+
+
+
+
+.img1-overwhite img {
+    max-width: 100%;
+    max-height: 200px;
+}
+
+
 .whitebox {
     background-color: white;
-    padding: 7px;
-    display: flex;
+    padding: 17px;
     color: black;
-    width: 240px;
-    height: 100px;
-    position:absolute;
+    position: absolute;
+    bottom: 35px;
+    z-index: 2;
+    max-width:90%;
+
 }
 .whitebox::after {
     content: "";
@@ -529,8 +575,12 @@ h4 {
     border-left-color: transparent;
     border-width: 10px;
     bottom: -20px;
-    left: 30px;
+    left: 0; 
+    right: 0; 
+    margin-left: auto; 
+    margin-right: auto; 
     position: absolute;
+    width: 0px;
 }
 /*
 .whitebox2{
@@ -551,6 +601,10 @@ left: calc(25% + 20px);
 }
 .txtwhite {
     margin-left: 10px;
+    position:;
+    width: 50%;
+    
+    
 }
 .txtwhite p {
     font-family: 'Roboto Slab', serif;
@@ -732,4 +786,29 @@ h5 {
 }
 
 
+/* VIDEO */
+
+#video-div{
+ position:absolute;
+ height: 100%;
+ width: 90%;
+ background-color: black;
+ z-index: 3;
+ display: none;
+}
+
+#video-div video{
+margin: auto;
+}
+
+#quit-video{
+position:absolute;
+right: 0;
+}
+
+#flex-div {
+    height:100%;
+    display: flex;
+    align-items: center;
+}
 

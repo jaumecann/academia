@@ -50,7 +50,7 @@
 
 
         <div class="box1">
-            <p>Scheda tecnica del cartone</p>
+            <p class="box1-titl">Scheda tecnica del cartone</p>
             <div class="minicartone">
                 <div class="boximg">
                     <img src="pinturas/<?=$img?>">
@@ -72,10 +72,21 @@
                     <img src="img/mappa.png" alt="europe map">
                 </div>
 
+
+                <div class="spot">
+                    <img src="img/location.png" alt="location tag">      
+                </div>
+
                 <div class="whitebox display-onclick">
-                    <div class="boximg">
-                        <img src="pinturas/<?=$img?>">
+                    <div class="compared-img-box">
+                        <div class="img1-overwhite">   
+                          <img src="pinturas/<?=$img?>">  
+                        </div>
+                        <div class="img1-overwhite">
+                          <img src="pinturas/<?=$img?>">
+                        </div>
                     </div>
+                    
                    
                     <div class="txtwhite">
                         <h5><?=$title?></h5>
@@ -87,13 +98,12 @@
                     <div class="blackx">
                         <img src="img/crossblack.png" alt="chiudi">
                     </div>
-                </div>
-
-                <div class="spot">
-                    <img src="img/location.png" alt="location tag">      
-                </div>
+            </div>
 
             </div>
+
+
+
 
         </div>
 
@@ -140,39 +150,40 @@
 <script src="scripts/principal.js"></script>
 <script>
 
-    var copyleft = parseInt($(".spot").css("left"));
-    console.log(copyleft);
-    var copytop = parseInt($(".spot").css("top"));    
-    console.log(copytop); 
+var copyleft = parseInt($(".spot").css("left"));
+console.log(copyleft);
+var copytop = parseInt($(".spot").css("top"));    
+console.log(copytop); 
 
-    $(".spot").click(function(){
-        $(".whitebox").css("left", copyleft - 35 + "px");
-    })
-    .click(function(){
-        $(".whitebox").css("top", copytop -130 + "px");
-    })
-    .click(function(){
-        $(".whitebox").toggleClass("display-onclick");
-    })
+$(".spot").click(function(){
+    $(".whitebox").css("left", copyleft - 35 + "px");
+})
+.click(function(){
+    $(".whitebox").css("top", copytop -130 + "px");
+})
+.click(function(){
+    $(".whitebox").toggleClass("display-onclick");
+})
 
-    $(".blackx").click(function(){
-        $(".whitebox").toggleClass("display-onclick");
-    })
+$(".blackx").click(function(){
+    $(".whitebox").toggleClass("display-onclick");
+})
 
-    /***************/
-    /* Minusvàlids */
-    /***************/
+/***************/
+/* Minusvàlids */
+/***************/
 
-    // Abrir handicap
-    $(document).on('click','.handicap',function(){
-        $('#add-div').toggleClass('hiding');      
-    });
+// Abrir handicap
+$(document).on('click','.handicap',function(){
+    $('#add-div').toggleClass('hiding');      
+});
 
-    //Minusvàlids -> Obrim el tag corresponent al numero
-    $('.handicap_tag').on('click',function(){
-        /*var tag_corr = $(this).data('tag');
-        markers[tag_corr].openPopup();*/
-    });
+//Minusvàlids -> Obrim el tag corresponent al numero
+$('.handicap_tag').on('click',function(){
+    /*var tag_corr = $(this).data('tag');
+    markers[tag_corr].openPopup();*/
+});
+
 
 
 </script>
