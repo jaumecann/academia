@@ -9,7 +9,12 @@
 
     $tags = [];
     foreach($resultado as $tag){
-        array_push($tags,$tag['paintingX'],$tag['paintingY'],$tag['descriptionIta']);
+        $tag_info = [
+            'x'=>$tag['paintingX'],
+            'y'=>$tag['paintingY'],
+            'desc'=>$tag['descriptionIta']
+        ];
+        array_push($tags,$tag_info);
     }
     echo json_encode($tags);
 ?>

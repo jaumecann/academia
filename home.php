@@ -3,7 +3,7 @@
 <div class="background">
 <?php require_once "templates/navbar.php"; ?>
     <div class="breadcrumbs">
-        <p><a href="home.php">Home</a></p>
+        <p><a href="home.php">i cartoni cinquecenteschi</a> /</p>
     </div>
     <div id="bigcontainer">
         <div class="galeria_flecha leftarrow" ><img src="img/left_arrow.png" alt="go left"></div>
@@ -16,13 +16,12 @@
                     "SELECT 
                         painting.id,
                         painting.title,
-                        painting.panoUrl,
-                        painting.imageUrl,
+                        painting.previewUrl,
                         author.name,
                         author.birthYear,
                         author.deathYear,
                         author.birthPlace,
-                        author.deathPlace 
+                        author.deathPlace
                     FROM painting
                     INNER JOIN 
                         author ON painting.author_id = author.id";
@@ -35,12 +34,12 @@
                         $fecha = '('.$key['birthPlace'].' '.$key['birthYear'].', '.$key['deathPlace'].' '.$key['deathYear'].')';
                 ?>
                     <div class="frame">
-                        <img src="pinturas/<?=$key['imageUrl']?>">
-                        <a class="layer" href="cartone.php?id=<?php echo $key['id']; ?>">
+                        <img src="pinturas/<?=$key['previewUrl']?>">
+                        <a class="layer" href="cartone.php?id=<?=$key['id']; ?>">
                             <p class="layer-nombre"><?php echo $key['title']?></p>
                             <p class="layer-autor"><?=$key['name']?></p>
                             <p class="layer-fecha"><?=$fecha?></p>
-                            <div class="frame_go" style="color: white">------></div>
+                            <div class="frame_go" style="color: white">Vai</div>
                         </a>
                     </div>
                 <?php
@@ -57,7 +56,7 @@
             <img id="chair" src="img/handic.png" alt="handicap">
         </div>
         <div id="add-div" class="hiding">
-            <div class="handicap_flechas">
+            <div class="handicap_shortcuts">
                 <img onclick="mover_cursor('left')" class="handicap_moveLeft" src="img/toleft.png">   
                 <img onclick="mover_cursor('down')" class="handicap_moveBottom" src="img/tobottom.png">  
                 <img onclick="mover_cursor('up')" class="handicap_moveUp" src="img/totop.png">   
@@ -141,9 +140,9 @@ var try_scroll = false;
 function mover_cursor(dir){
     /* Deshabilitamos el clic durante 500ms para que no puedan hacer clicklicliclic 57 veces seguidas
     sin dejar al scroll moverse y todo esto que tiene que hacer y liarla */
-    $('.handicap_flechas').children('img').addClass('noclick');
+    $('.handicap_shortcuts').children('img').addClass('noclick');
     setTimeout(() => {
-        $('.handicap_flechas').children('img').removeClass('noclick');
+        $('.handicap_shortcuts').children('img').removeClass('noclick');
     }, 520);
     
     /* Recogemos la posicion actual del cursor */
