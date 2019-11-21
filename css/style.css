@@ -193,7 +193,10 @@ nav img {
 }
 #flexcont {
     height: 100%;
-    width: 1000px; 
+    /*Ver esto. De momento hay pocas y va bien con width 100%, pero luego el with tendra que ser mas grande
+    para que haga scroll y todo esto. Se puede ir metiendo a mano como quede bien para cada actualizacion, pero
+    lo mejor seria detectar las fotos o algo y poner un with que se vaya adaptando a la situación*/
+    width: 100%; 
 }
 .frame {
     float: left;
@@ -618,14 +621,25 @@ h5 {
     opacity: 0;
     visibility: hidden;
 }
-.handicap_flechas{
+.handicap_shortcuts{
     display: flex;
     width: 100%;
     justify-content: center;
 }
-.handicap_flechas img.noclick{
+.handicap_shortcuts img.noclick{
     pointer-events: none;
     user-select: none;
+}
+.handicap_tag{
+    width: 19px;
+    margin: 7px;
+    padding: 3px;
+    cursor: pointer;
+    text-align: center;
+    color: white;
+    border-radius: 100%;
+    border: 1px solid white;
+    font-family: 'Playfair Display', serif;
 }
 .button.handicap_select{
     margin-left: auto;

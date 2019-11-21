@@ -3,10 +3,17 @@
     $imagen = $_GET['id'];
 
     $exec_imagen = $conn->prepare("SELECT * FROM painting INNER JOIN author ON painting.author_id = author.id WHERE painting.id = :imagen");
+    if(!$exec_imagen){
+        print_r($conn->errorInfo());
+    }
     $exec_imagen->bindParam(':imagen',$imagen);
     $exec_imagen->execute();
+    if(!$exec_imagen){
+        print_r($conn->errorInfo());
+    }
     $resultado = $exec_imagen -> fetch(PDO::FETCH_ASSOC);
-    $img = $resultado['imageUrl'];
+
+    $img = $resultado['previewUrl'];
     $img_sobreposada = $resultado['imageUrl_sobreposada'];
     $descriptionIta = $resultado['descriptionIta'];
     $material = $resultado['material'];
@@ -26,7 +33,7 @@
     require_once "templates/navbar.php";
 ?>
     <div class="breadcrumbs">
-        <p><a href="home.php">Home</a> / <?=$title?></p>
+        <p><a href="home.php">i cartoni cinquecenteschi</a> / <?=$title?></p>
         <a href="home.php"><img src="img/back.png" alt="go back">
     </div></a>
 
@@ -49,13 +56,16 @@
         </div>
     </section>
 
-
-
-    <?php 
-    require_once "templates/footer.php";
-?>
-
-
+    <div class="footer">
+        <div class="handicap open_handicap">
+            <img id="chair" src="img/handic.png" alt="handicap">
+        </div>
+        <div id="add-div" class="hiding">
+            <div class="handicap_shortcuts">
+               
+            </div> 
+        </div>
+    </div>
 
 </body>
 </html>
