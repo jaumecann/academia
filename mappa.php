@@ -120,6 +120,7 @@
  var copytop = parseInt($(".spot").css("top"));    
  console.log(copytop); 
 
+console.log("HOla")
 /*
  $(".spot").click(function(){
   //$(".whitebox").css("left", copyleft - 35 + "px");
