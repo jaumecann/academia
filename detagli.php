@@ -8,6 +8,7 @@
   $resultado = $exec_imagen -> fetch(PDO::FETCH_ASSOC);
   $title = $resultado['title'];
   $img = $resultado['imageUrl'];
+  $img_sobreposada = $resultado['imageUrl_sobreposada'];
 
 ?>
 
@@ -19,17 +20,37 @@
   <?php require_once "templates/navbar.php"; ?>
 
   <div class="breadcrumbs">
-    <p><a href="immagine.php?id=<?=$imagen?>"><?=$title?> / </p>
+    <p><a href="immagine.php?id=<?=$imagen?>"><?=$title?> / esplora il disegno</p>
     <a href="cartone.php?id=<?=$imagen?>"><img src="img/cross.png" alt="cross"></a>
   </div>
 
   <section class="contents">
+    
+  
+    <div class="instrucciones activo">
+      <div class="instrucciones_content">
+        <div class="instrucciones_icon">
+          <img src="img/brighticon.png">
+        </div>
+        <div class="instrucciones_texto">
+            <h3>esplora il disegno</h3>
+            <p>aumenta e riduci il contrasto dell'immagine per vedere meglio i dettagli</p>
+        </div>
+        <div class="instrucciones_boton">
+          OK
+        </div>
+      </div>
+    </div>
+
 
     <div id="imgcont"></div>
 
     <div class="percent">
-      <img onclick="zoomImg('out')" id="minus" src="img/less.png" alt="down" id="less">
-      <img onclick="zoomImg('in')" id="plus" src="img/more.png" id="more" alt="up">
+        <img src="img/minbr.png" alt="down" id="brless">
+        <div id="progressarea">
+            <input type="range" id="bright" min="0" max="1" class="slider" step="0.1" value="1">
+        </div>
+        <img src="img/maxbr.png" alt="up" id="brmore">
     </div>
 
     <div class="iconsrow">
@@ -39,7 +60,7 @@
             </div>
         </a>
         <a href="detagli.php?id=<?=$imagen?>">
-            <div class="fondo-icona">
+            <div class="fondo-icona activo">
                 <img id="detalle" src="img/brighticon.png" alt="detalle">
             </div>
         </a>
@@ -68,21 +89,10 @@
 <script src="scripts/principal.js"></script>
 <script>
 
-var map, layer1;
-
-/* Hacer zoom al pulsar botones externos */
-function zoomImg(direccion){
-  if(direccion == 'in'){
-    map.zoomIn();
-  }else if(direccion == 'out'){
-    map.zoomOut();
-  }else{ 
-    console.log('No se esta pasando una direccion correcta en el zoom! ')
-  }
-}
+var map, layer1, layer2;
 
 $(document).ready(function(){
-
+  
   /***********/
   /* Leaflet */
   /***********/
@@ -102,7 +112,8 @@ $(document).ready(function(){
 
   var img = new Image();
   var w, h;
-  var url = 'pinturas/<?=$img?>';
+  var url = 'pinturas/<?=$img?>',
+      url2 = 'pinturas/<?=$img_sobreposada?>';
 
   img.src = url;
   
@@ -112,8 +123,14 @@ $(document).ready(function(){
     var northEast = map.unproject([w, 0], map.getMaxZoom()-1);
     var southWest = map.unproject([0, h], map.getMaxZoom()-1);
     var bounds = new L.LatLngBounds(southWest, northEast);
+    layer2 = L.imageOverlay(url2, bounds).addTo(map);
     layer1 = L.imageOverlay(url, bounds, {className: 'imatge_principal'}).addTo(map); 
     map.setMaxBounds(bounds);
+  });
+
+  //Cambiar la opacidad de la capa principal cuando se toca el slider del brillo
+  $('#bright').on('change',function(){
+    $('.imatge_principal').css('opacity',this.value)
   });
 
 });

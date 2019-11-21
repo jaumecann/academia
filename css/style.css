@@ -7,6 +7,10 @@ html,body{
 
 /* FONTS */
 @font-face{
+    font-family: 'Playfair Display';
+    src: 'fonts/PlayfairDisplay-Black.ttf';
+}
+@font-face{
     font-family: 'Roboto Condensed';
     src: 'fonts/RobotoCondensed-Light.ttf';
 }
@@ -15,12 +19,12 @@ html,body{
     src: 'fonts/RobotoCondensed-Regular.ttf';
 }
 @font-face{
-    font-family: 'Playfair Display';
-    src: 'fonts/PlayfairDisplay-Black.ttf';
+    font-family: 'Roboto Light';
+    src: 'fonts/RobotoSlab-Light.ttf';
 }
 @font-face{
-    font-family: 'Roboto Slab';
-    src: 'fonts/RobotoSlab-Light.ttf';
+    font-family: 'Roboto Bold';
+    src: 'fonts/RobotoSlab-Bold.ttf';
 }
 
 /* VARS */
@@ -336,8 +340,58 @@ y cuando handicap esta activo y el cursor de handicap encima*/
     padding: 12px 10px;
 }
 
+/* PANTALLA INSTRUCCIONES */
+.instrucciones{
+    display: none;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    z-index: 1000000;
+    background-color: rgba(0,0,0,0.9);
+    font-family: 'Roboto Light';
+}
+.instrucciones.activo{
+    display: flex;
+}
+.instrucciones_content{
+    width: auto; height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.instrucciones_icon{
+    width: 80px;
+}
+.instrucciones_icon img{
+    width: 100%;
+}
+.instrucciones_texto{
+    text-align: center;  
+    width: 250px;
+    margin-bottom: 30px;
+}
+.instrucciones_texto h3{
+    font-family: 'Roboto Bold';
+}
+.instrucciones_texto p{
+    font-family: 'Roboto Light';
+}
+.instrucciones_boton{
+    width: 100px;
+    text-align: center;
+    padding: 14px;
+    background-color: #e06c49;
+    cursor: pointer;
+    color: white;
+    font-family: 'Roboto Bold';
+}
 /* IMMAGINE  */
 .contents {
+    position: relative;
     height: 80%;
     display: flex;
     flex-direction: column;
@@ -353,19 +407,12 @@ y cuando handicap esta activo y el cursor de handicap encima*/
 }
 #progressarea {
     padding: 0 20px;
-    opacity: 0;
-    width: 10px;
-    overflow: hidden;
+    width: 200px;
     transition: 1s;
     display: flex;
     justify-content: center;
     align-items: center;
-} 
-#progressarea.show{
-    opacity: 1;
-    width: 200px;
-    overflow: visible;
-}   
+}
 #progressarea p {
     margin:auto;
     font-family: 'Roboto Slab', serif;
@@ -395,8 +442,7 @@ y cuando handicap esta activo y el cursor de handicap encima*/
     height: 45px;
      
 }
-
-.change-style {
+.fondo-icona.activo{
     background-color: grey;
     border-radius: 45px;
     width: 45px;
@@ -629,6 +675,14 @@ h5 {
 .handicap_shortcuts img.noclick{
     pointer-events: none;
     user-select: none;
+}
+.instrucciones_ok,.correspondencia_tags{
+    display: none;
+    width: 100%;
+    justify-content: center;
+}
+.instrucciones_ok.activo,.correspondencia_tags.activo{
+    display:flex;
 }
 .handicap_tag{
     width: 19px;
