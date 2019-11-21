@@ -27,11 +27,28 @@
  ?>
    
     <div class="breadcrumbs">
-        <p><a href="home.php">Home</a> / <?=$title?></p>
-        <a href="cartone.php?id=<?=$imagen?>"><img src="img/cross.png" alt="cross"></a>
+        <p><a href="cartone.php?id=<?=$imagen?>"><?=$title?></a> / esplora la mappa</p>
+        <img src="img/cross.png" alt="cross"></a>
     </div>
 
     <section class="contents">
+
+        <div class="instrucciones activo">
+            <div class="instrucciones_content">
+                <div class="instrucciones_icon">
+                    <img src="img/infoicon.png">
+                </div>
+                <div class="instrucciones_texto">
+                    <h3>esplora la mappa</h3>
+                    <p>scopri dove è stato riprodotto il cartone e confronta i disegni</p>
+                </div>
+                <div class="instrucciones_boton">
+                OK
+                </div>
+            </div>
+        </div>
+
+
         <div class="box1">
             <p class="box1-titl">Scheda tecnica del cartone</p>
             <div class="minicartone">
@@ -90,55 +107,83 @@
 
         </div>
 
-    <div class="iconsrow">
-        <div class="change-style">
-            <img id="mapa" src="img/mapicon.png" alt="mapa">
+        <div class="iconsrow">
+            <a href="mappa.php?id=<?=$imagen?>">
+                <div class="fondo-icona activo">
+                    <img id="mapa" src="img/mapicon.png" alt="mapa">
+                </div>
+            </a>
+            <a href="detagli.php?id=<?=$imagen?>">
+                <div class="fondo-icona">
+                    <img id="detalle" src="img/brighticon.png" alt="detalle">
+                </div>
+            </a>
+            <a href="tags.php?id=<?=$imagen?>">
+                <div class="fondo-icona">
+                    <img id="tags" src="img/infoicon.png" alt="tags">
+                </div>
+            </a>
         </div>
-        <a href="immagine.php?id=<?=$imagen?>">
-            <div class="fondo-icona">
-                <img onclick="openBrightness()" id="brightness" src="img/brighticon.png" alt="brightness">
-            </div>
-        </a>
-        <a href="immagine.php?id=<?=$imagen?>">
-            <div class="fondo-icona">
-                <img onclick="showInfoPoints()" id="infopoints" src="img/infoicon.png" alt="info">
-            </div>
-        </a>
-    </div>
-</section>
+    </section>
 
-<?php 
-    require_once "templates/footer.php";
-?>
+    <div class="footer">
+        <div class="handicap open_handicap">
+            <img id="chair" src="img/handic.png" alt="handicap">
+        </div>
+        <div id="add-div" class="hiding">
+            <div class="handicap_shortcuts">
+                <div class="instrucciones_ok"></div>
+                <?php
+                /*
+                foreach($resultado_tags as $key=>$tag){
+                    $tag_corr = $key + 1;
+                    echo "<div id='handicap_tag_".$tag['id']."' class='handicap_tag' data-tag='$key'>$tag_corr</div>";
+                } 
+                */
+                ?>
+            </div>
+        </div>
+    </div>
+
 
 </div>
-
+<script src="scripts/principal.js"></script>
 <script>
 
- var copyleft = parseInt($(".spot").css("left"));
- console.log(copyleft);
- var copytop = parseInt($(".spot").css("top"));    
- console.log(copytop); 
+var copyleft = parseInt($(".spot").css("left"));
+console.log(copyleft);
+var copytop = parseInt($(".spot").css("top"));    
+console.log(copytop); 
 
-console.log("HOla")
-/*
- $(".spot").click(function(){
-  //$(".whitebox").css("left", copyleft - 35 + "px");
-  $(".whitebox").css("margin", "auto");
- })
- .click(function(){
-   //$(".whitebox").css("top", copytop -130 + "px");
-    $(".whitebox").css("bottom", "30px");
- })
- */
- 
- $(".spot").click(function(){
+$(".spot").click(function(){
+    $(".whitebox").css("left", copyleft - 35 + "px");
+})
+.click(function(){
+    $(".whitebox").css("top", copytop -130 + "px");
+})
+.click(function(){
     $(".whitebox").toggleClass("display-onclick");
- })
+})
 
- $(".blackx").click(function(){
+$(".blackx").click(function(){
     $(".whitebox").toggleClass("display-onclick");
- })
+})
+
+/***************/
+/* Minusvàlids */
+/***************/
+
+// Abrir handicap
+$(document).on('click','.handicap',function(){
+    $('#add-div').toggleClass('hiding');      
+});
+
+//Minusvàlids -> Obrim el tag corresponent al numero
+$('.handicap_tag').on('click',function(){
+    /*var tag_corr = $(this).data('tag');
+    markers[tag_corr].openPopup();*/
+});
+
 
 
 </script>
