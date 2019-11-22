@@ -18,5 +18,4 @@ $(document).ready(function(){
         document.getElementById('video-div').style.display = "none";   
     }
 
-
 });

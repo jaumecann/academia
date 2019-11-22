@@ -159,6 +159,8 @@
                     <div class="handicap_pin"></div>
                 </div>
             </div>
+            <div class="size-cross"><a href=""><img src="img/location.png" alt="location"></a>
+            </div>
             <div class="down-cross size-cross"><a href="immagine.php?id=<?=$imagen?>"><img src="img/cross.png" alt="cross"></a>
             </div>
         </div>
