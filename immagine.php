@@ -20,7 +20,7 @@
 
   <div class="breadcrumbs">
     <p><a href="immagine.php?id=<?=$imagen?>"><?=$title?> / <span class="bread2">esplora l'immagine</span></p>
-    <a href="cartone.php?id=<?=$imagen?>"><img src="img/cross.png" alt="cross"></a>
+    <a class="close_breadcrumbs" href="cartone.php?id=<?=$imagen?>"><img src="img/cross.png" alt="cross"></a>
   </div>
 
   <section class="contents">
@@ -57,9 +57,6 @@
       <img id="chair" src="img/handic.png" alt="handicap">
     </div>
     <div id="add-div" class="hiding">
-      <div class="handicap_shortcuts">
-        
-      </div>
       <div class="down-cross size-cross"><a href="cartone.php?id=<?=$imagen?>"><img src="img/cross.png" alt="cross"></a>
     </div>
   </div>

@@ -5,4 +5,11 @@ $(document).ready(function(){
         $('.instrucciones').removeClass('activo');
     });
 
+    /* Abrir el video grande */
+    $('.open_video').on('click',function(){
+        document.getElementById('video-div').style.display = "block";
+    });
+    document.getElementById('quit-video').onclick = function(){
+        document.getElementById('video-div').style.display = "none";
+    }
 });

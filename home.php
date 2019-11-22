@@ -5,7 +5,7 @@
     <div class="breadcrumbs">
         <p><a href="home.php">i cartoni cinquecenteschi</a> / </p>
     </div>
-    <div id="bigcontainer">
+    <div class="bigcontainer">
         <div class="galeria_flecha leftarrow" ><img src="img/left_arrow.png" alt="go left"></div>
         <div id="gallery">
             <div class="handicap_cursor"></div>
@@ -65,7 +65,7 @@
             </div>
             <div class="button handicap_select" onclick="selecciona_frame()"><p>SELEZZIONA</p></div> 
             <div class="down-cross down-video">
-                <img id="video" src="img/videoicon.png">
+                <img id="video" class="open_video" src="img/videoicon.png">
             </div>
         </div>
     </div>
