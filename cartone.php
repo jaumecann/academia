@@ -33,17 +33,17 @@
     require_once "templates/navbar.php";
 ?>
     <div class="breadcrumbs">
-        <p class="bold"><a href="home.php">i cartoni cinquecenteschi</a> / <a class="bread2" href="">segundo nivel</a><?=$title?></p>
+        <p class="playfair"><a href="home.php">i cartoni cinquecenteschi</a> /<span class="bread2"> <?=$title?> </span></p>
         <a class="close_breadcrumbs" href="home.php"><img src="img/back.png" alt="go back">
     </div></a>
 
     <section id="cartone">
         <div class="imgdiv"><img src="pinturas/<?=$img?>"></div>
         <div class="bigtxtdiv">
-            <h3><?=$title?></h3>
+            <h3 class="titulo-cuadro"><?=$title?></h3>
             <p class="bold"><?=$nombre_autor?></p>
-            <p> (<?=$birthPlace_autor?> <?=$birthYear_autor?>, <?=$deathPlace_autor?> <?=$deathYear_autor?>) </p>
-            <p><?=$material?></p>
+            <p class="autor-datos"> (<?=$birthPlace_autor?> <?=$birthYear_autor?>, <?=$deathPlace_autor?> <?=$deathYear_autor?>) </p>
+            <p class="autor-datos"><?=$material?></p>
         </div>
         <div class="txtdiv">
             <p><?=$descriptionIta?></p>
@@ -64,8 +64,12 @@
             <div class="handicap_shortcuts">
                
             </div> 
-            <div class="down-cross size-cross">
-                <a href="home.php"><img src="img/back.png" alt="go back">
+         
+               
+           
+            <div class="down-cross">
+            <img id="video" class="down-video open_video" src="img/videoicon.png">
+                <a href="home.php"><img id="back-arrow-size" src="img/back.png" alt="go back">
             </div>
         </div>
     </div>

@@ -23,7 +23,7 @@
   <?php require_once "templates/navbar.php"; ?>
 
   <div class="breadcrumbs">
-    <p><a href="immagine.php?id=<?=$imagen?>"><?=$title?></a> / <span class="bread2">esplora i dettagli</span>
+  <p class="playfair"><a href="immagine.php?id=<?=$imagen?>"><?=$title?></a> / <span class="bread2">esplora i detagli</span></p>
     <a class="close_breadcrumbs" href="immagine.php?id=<?=$imagen?>"><img src="img/cross.png" alt="cross"></a>
   </div>
 
@@ -36,8 +36,8 @@
           <img src="img/infoicon.png">
         </div>
         <div class="instrucciones_texto">
-            <h3>esplora i dettagli</h3>
-            <p>clicca sulla "i" per scoprire i dettagli del cartone</p>
+            <p class="instrucciones_titl">esplora i dettagli</p>
+            <p class="instrucciones_content">clicca sulla "i" per scoprire i dettagli del cartone</p>
         </div>
         <div class="instrucciones_boton">
           OK
@@ -79,7 +79,7 @@
     <div id="add-div" class="hiding">
         <div class="handicap_shortcuts">
             <div class="instrucciones_ok activo">
-                <div class="instrucciones_boton">OK</div>
+                <div class="instrucciones_boton2">OK</div>
             </div>
             <div class="correspondencia_tags">
                 <?php
@@ -197,6 +197,11 @@ $(document).ready(function(){
         $('.instrucciones_ok').removeClass('activo');
         $('.correspondencia_tags').addClass('activo');
     })
+
+    $('.instrucciones_boton2').on('click',function(){
+    $('.instrucciones_ok').removeClass('activo');
+    $('.correspondencia_mapa').addClass('activo');
+})
 
 });
 

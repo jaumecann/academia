@@ -59,7 +59,7 @@
  ?>
    
     <div class="breadcrumbs">
-        <p><a href="cartone.php?id=<?=$imagen?>"><?=$title?></a>/ <span class="bread2">esplora la mappa</span></p>
+    <p class="playfair"><a href="immagine.php?id=<?=$imagen?>"><?=$title?></a>/ <span class="bread2">esplora la mappa</span></p>
         <a class="close_breadcrumbs" href="immagine.php?id=<?=$imagen?>"><img src="img/cross.png" alt="cross"></a>
     </div>
 
@@ -71,8 +71,8 @@
                     <img src="img/infoicon.png">
                 </div>
                 <div class="instrucciones_texto">
-                    <h3>esplora la mappa</h3>
-                    <p>scopri dove è stato riprodotto il cartone e confronta i disegni</p>
+                    <p class="instrucciones_titl">esplora la mappa</p>
+                    <p class="instrucciones_content">scopri dove è stato riprodotto il cartone e confronta i disegni</p>
                 </div>
                 <div class="instrucciones_boton">
                 OK
@@ -153,7 +153,7 @@
         <div id="add-div" class="hiding">
             <div class="handicap_shortcuts">
                 <div class="instrucciones_ok activo">
-                    <div class="instrucciones_boton">OK</div>
+                    <div class="instrucciones_boton2">OK</div>
                 </div>
                 <div class="correspondencia_mapa">
                     <div class="handicap_pin"></div>
@@ -205,6 +205,10 @@ $('.handicap_tag').on('click',function(){
 
 //Al principio esta activo el boton de Ok para que cierren instrucciones
 $('.instrucciones_boton').on('click',function(){
+    $('.instrucciones_ok').removeClass('activo');
+    $('.correspondencia_mapa').addClass('activo');
+})
+$('.instrucciones_boton2').on('click',function(){
     $('.instrucciones_ok').removeClass('activo');
     $('.correspondencia_mapa').addClass('activo');
 })
