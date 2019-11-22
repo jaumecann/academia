@@ -19,7 +19,7 @@
   <?php require_once "templates/navbar.php"; ?>
 
   <div class="breadcrumbs">
-    <p><a href="immagine.php?id=<?=$imagen?>"><?=$title?> / </p>
+    <p><a href="immagine.php?id=<?=$imagen?>"><?=$title?> / <span class="bread2">esplora l'immagine</span></p>
     <a href="cartone.php?id=<?=$imagen?>"><img src="img/cross.png" alt="cross"></a>
   </div>
 
@@ -60,6 +60,7 @@
       <div class="handicap_shortcuts">
         
       </div>
+      <div class="down-cross size-cross"><a href="cartone.php?id=<?=$imagen?>"><img src="img/cross.png" alt="cross"></a>
     </div>
   </div>
 
@@ -116,6 +117,10 @@ $(document).ready(function(){
     map.setMaxBounds(bounds);
   });
 
+});
+
+$(document).on('click','.handicap',function(){
+    $('#add-div').toggleClass('hiding');      
 });
 
 </script>

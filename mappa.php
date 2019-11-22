@@ -59,8 +59,8 @@
  ?>
    
     <div class="breadcrumbs">
-        <p><a href="cartone.php?id=<?=$imagen?>"><?=$title?></a> / esplora la mappa</p>
-        <img src="img/cross.png" alt="cross"></a>
+        <p><a href="cartone.php?id=<?=$imagen?>"><?=$title?></a>/ <span class="bread2">esplora la mappa</span></p>
+        <a href="immagine.php?id=<?=$imagen?>"><img src="img/cross.png" alt="cross"></a>
     </div>
 
     <section class="contents">
@@ -158,6 +158,8 @@
                 <div class="correspondencia_mapa">
                     <div class="handicap_pin"></div>
                 </div>
+            </div>
+            <div class="down-cross size-cross"><a href="immagine.php?id=<?=$imagen?>"><img src="img/cross.png" alt="cross"></a>
             </div>
         </div>
     </div>

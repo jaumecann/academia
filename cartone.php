@@ -33,7 +33,7 @@
     require_once "templates/navbar.php";
 ?>
     <div class="breadcrumbs">
-        <p><a href="home.php">i cartoni cinquecenteschi</a> / <?=$title?></p>
+        <p class="bold"><a href="home.php">i cartoni cinquecenteschi</a> / <a class="bread2" href="">segundo nivel</a><?=$title?></p>
         <a href="home.php"><img src="img/back.png" alt="go back">
     </div></a>
 
@@ -64,8 +64,23 @@
             <div class="handicap_shortcuts">
                
             </div> 
+            <div class="down-cross size-cross">
+                <a href="home.php"><img src="img/back.png" alt="go back">
+            </div>
         </div>
     </div>
+
+<script>
+
+$(document).ready(function(){
+
+$(document).on('click','.handicap',function(){
+    $('#add-div').toggleClass('hiding');      
+});
+
+});
+
+</script>
 
 </body>
 </html>

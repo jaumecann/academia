@@ -20,8 +20,8 @@
   <?php require_once "templates/navbar.php"; ?>
 
   <div class="breadcrumbs">
-    <p><a href="immagine.php?id=<?=$imagen?>"><?=$title?> / esplora il disegno</p>
-    <a href="cartone.php?id=<?=$imagen?>"><img src="img/cross.png" alt="cross"></a>
+    <p><a href="immagine.php?id=<?=$imagen?>"><?=$title?></a> / <span class="bread2">esplora il disegno</span></p>
+    <a href="immagine.php?id=<?=$imagen?>"><img src="img/cross.png" alt="cross"></a>
   </div>
 
   <section class="contents">
@@ -81,6 +81,8 @@
       <div class="handicap_shortcuts">
         
       </div>
+      <div class="down-cross size-cross"><a href="immagine.php?id=<?=$imagen?>"><img src="img/cross.png" alt="cross"></a>
+      </div>
     </div>
   </div>
 
@@ -132,6 +134,10 @@ $(document).ready(function(){
   $('#bright').on('change',function(){
     $('.imatge_principal').css('opacity',this.value)
   });
+
+  $(document).on('click','.handicap',function(){
+    $('#add-div').toggleClass('hiding');      
+});
 
 });
 
