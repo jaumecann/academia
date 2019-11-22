@@ -2,7 +2,7 @@
     require_once "templates/head.php";
     $imagen = $_GET['id'];
 
-    $exec_imagen = $conn->prepare("SELECT * FROM painting INNER JOIN author ON painting.author_id = author.id WHERE painting.id = :imagen");
+    $exec_imagen = $conn->prepare("SELECT * FROM cartones INNER JOIN author ON cartones.author_id = author.id WHERE cartones.id = :imagen");
     if(!$exec_imagen){
         print_r($conn->errorInfo());
     }
