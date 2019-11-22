@@ -19,7 +19,7 @@
         pinturas.title as titulo_pintura,
         pinturas.material as material_pintura,
         pinturas.imageUrl as imagen_pintura,
-        pinturas.ano as ano_pintura
+        pinturas.ano  as ano_pintura
     FROM 
         cartones 
     JOIN 
