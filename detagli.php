@@ -21,7 +21,7 @@
 
   <div class="breadcrumbs">
     <p><a href="immagine.php?id=<?=$imagen?>"><?=$title?></a> / <span class="bread2">esplora il disegno</span></p>
-    <a href="immagine.php?id=<?=$imagen?>"><img src="img/cross.png" alt="cross"></a>
+    <a class="close_breadcrumbs" href="immagine.php?id=<?=$imagen?>"><img src="img/cross.png" alt="cross"></a>
   </div>
 
   <section class="contents">
@@ -79,7 +79,9 @@
     </div>
     <div id="add-div" class="hiding">
       <div class="handicap_shortcuts">
-        
+        <div class="instrucciones_ok activo">
+          <div class="instrucciones_boton">OK</div>
+        </div>
       </div>
       <div class="down-cross size-cross"><a href="immagine.php?id=<?=$imagen?>"><img src="img/cross.png" alt="cross"></a>
       </div>

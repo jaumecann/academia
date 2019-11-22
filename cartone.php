@@ -34,7 +34,7 @@
 ?>
     <div class="breadcrumbs">
         <p class="bold"><a href="home.php">i cartoni cinquecenteschi</a> / <a class="bread2" href="">segundo nivel</a><?=$title?></p>
-        <a href="home.php"><img src="img/back.png" alt="go back">
+        <a class="close_breadcrumbs" href="home.php"><img src="img/back.png" alt="go back">
     </div></a>
 
     <section id="cartone">
