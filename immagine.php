@@ -1,53 +1,128 @@
 <?php 
-    require_once "templates/head.php";
+  require_once "templates/head.php";
+  $imagen = $_GET['id'];
+
+  $exec_imagen = $conn->prepare("SELECT * FROM cartones WHERE id = :imagen");
+  $exec_imagen->bindParam(':imagen',$imagen);
+  $exec_imagen->execute();
+  $resultado = $exec_imagen -> fetch(PDO::FETCH_ASSOC);
+  $title = $resultado['title'];
+  $img = $resultado['imageUrl'];
+
 ?>
 
 <body>
 
+
 <div class="background">
 
-<?php 
-    require_once "templates/navbar.php";
-?>
+  <?php require_once "templates/navbar.php"; ?>
 
-    <div class="breadcrumbs">
-        <p><span>i cartoni cinquecenteschi</span> / collezione</p>
-        <img src="img/cross.png" alt="cross">
+  <div class="breadcrumbs">
+    <p><a class="playfair" href="immagine.php?id=<?=$imagen?>"><?=$title?> / <span class="bread2">esplora l'immagine</span></p>
+    <a class="close_breadcrumbs" href="cartone.php?id=<?=$imagen?>"><img src="img/cross.png" alt="cross"></a>
+  </div>
+
+  <section class="contents">
+
+    <div id="imgcont"></div>
+
+    <div class="percent">
+      <img onclick="zoomImg('out')" id="minus" src="img/less.png" alt="down" id="less">
+      <img onclick="zoomImg('in')" id="plus" src="img/more.png" id="more" alt="up">
     </div>
 
-    <section class="contents">
+    <div class="iconsrow">
+        <a href="mappa.php?id=<?=$imagen?>">
+            <div class="fondo-icona">
+                <img id="mapa" src="img/mapicon.png" alt="mapa">
+            </div>
+        </a>
+        <a href="detagli.php?id=<?=$imagen?>">
+            <div class="fondo-icona">
+                <img id="detalle" src="img/brighticon.png" alt="detalle">
+            </div>
+        </a>
+        <a href="tags.php?id=<?=$imagen?>">
+            <div class="fondo-icona">
+                <img id="tags" src="img/infoicon.png" alt="tags">
+            </div>
+        </a>
+    </div>
 
-        <div id="imgcont">
-            <img id="imgid" src="img/pieta.png">
-        </div> <!-- end img container-->
+  </section>
 
-        <div class="percent">
-            <img src="img/less.png" alt="down" id="less">
-            <div id="progressarea"><p>xxx%</p></div>
-            <!--<input type="range" id="bright" min="0" max="100" value="">-->
-            <img src="img/more.png" id="more" alt="up">
-        </div> <!-- en bar row-->
+  <div class="footer">
+    <div class="handicap open_handicap">
+      <img id="chair" src="img/handic.png" alt="handicap">
+    </div>
+    <div id="add-div" class="hiding">
+      <div class="down-cross size-cross">
+      <img id="video" class="down-video open_video" src="img/videoicon.png">  
+      <a href="cartone.php?id=<?=$imagen?>"><img src="img/cross.png" alt="cross"></a>
+    </div>
+  </div>
 
-        <div class="iconsrow">
-            <img id="mapa" src="img/mapicon.png" alt="mapa">
-            <img id="brightness" src="img/brighticon.png" alt="brightness">
-            <img id="infopoints" src="img/infoicon.png" alt="info">
-
-        </div> <!-- end icons row -->
-
-    </section>
-
-    <?php 
-    require_once "templates/footer.php";
-?>
-    
 </div>
 
+<script src="scripts/principal.js"></script>
+<script>
 
- 
+var map, layer1;
 
+/* Hacer zoom al pulsar botones externos */
+function zoomImg(direccion){
+  if(direccion == 'in'){
+    map.zoomIn();
+  }else if(direccion == 'out'){
+    map.zoomOut();
+  }else{ 
+    console.log('No se esta pasando una direccion correcta en el zoom! ')
+  }
+}
+
+$(document).ready(function(){
+
+  /***********/
+  /* Leaflet */
+  /***********/
+
+  map = L.map('imgcont', {
+    minZoom: 2,
+    maxZoom: 8,
+    center: [0, 0],
+    zoom: 4,
+    zoomDelta: 1,
+    crs: L.CRS.Simple,
+    attributionControl:false,
+    zoomControl: false,
+    touchZoom: true,
+    bounceAtZoomLimits: true
+  });
+
+  var img = new Image();
+  var w, h;
+  var url = 'pinturas/<?=$img?>';
+
+  img.src = url;
+  
+  img.addEventListener("load", function(){
+    w = img.naturalWidth;
+    h = img.naturalHeight;
+    var northEast = map.unproject([w, 0], map.getMaxZoom()-1);
+    var southWest = map.unproject([0, h], map.getMaxZoom()-1);
+    var bounds = new L.LatLngBounds(southWest, northEast);
+    layer1 = L.imageOverlay(url, bounds, {className: 'imatge_principal'}).addTo(map); 
+    map.setMaxBounds(bounds);
+  });
+
+});
+
+$(document).on('click','.handicap',function(){
+    $('#add-div').toggleClass('hiding');      
+});
+
+</script>
 
 </body>
-
-<script src="scripts/immagine.js"></script>
 </html>
