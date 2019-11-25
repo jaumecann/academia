@@ -18,7 +18,7 @@
 
         pinturas.title as titulo_pintura,
         pinturas.tecnica as material_pintura,
-        pinturas.imageUrl as imagen_pintura,
+        pinturas.previewUrl as imagen_pintura,
         pinturas.ano  as ano_pintura
     FROM 
         cartones 
