@@ -40,7 +40,7 @@
                             <p class="layer-nombre"><?php echo $key['title']?></p>
                             <p class="layer-autor"><?=$key['name']?></p>
                             <p class="layer-fecha"><?=$fecha?></p>
-                            <div class="frame_go" style="color: white">Vai</div>
+                            <div class="frame_go" style="color: white"><img src="img/arrow_preview.svg"></div>
                         </a>
                     </div>
                 <?php

@@ -82,28 +82,28 @@
 
 
         <div class="box1">
-            <p class="box1-titl">Scheda tecnica del cartone</p>
+            <p class="box-titl">Scheda tecnica del cartone</p>
             <div class="minicartone">
                 <div class="boximg">
                     <img src="pinturas/<?=$img_cartone?>">
                 </div>
                 <div class="txtscheda">
                     <h4><?=$title?></h4>
-                    <p class="bold"><?=$nombre_autor?></p>
-                    <p>(<?=$birthPlace_autor?> <?=$birthYear_autor?>, <?=$deathPlace_autor?> <?=$deathYear_autor?>)</p>
-                    <p><?=$material?></p>
+                    <p class="txtscheda-autor" class="bold"><?=$nombre_autor?></p>
+                    <p class="txtscheda-describe">(<?=$birthPlace_autor?> <?=$birthYear_autor?>, <?=$deathPlace_autor?> <?=$deathYear_autor?>)</p>
+                    <p class="txtscheda-describe"><?=$material?></p>
                 </div>        
             </div>
         </div>
 
         <div class="box2">
-            <p>Mappa delle riproduzioni in Europa</p>
+            <p class="box-titl">Mappa delle riproduzioni collocate in Europa</p>
             <div id="mapframe">
                 <div class="region">
                     <img src="img/mappa.png" alt="europe map">
                 </div>
                 <div class="spot">
-                    <img src="img/location.png" alt="location tag">      
+                    <img src="img/infopoint.svg" alt="location tag">      
                 </div>
                 <div class="whitebox display-onclick">
                     <div class="compared-img-box">
@@ -118,7 +118,7 @@
                         <h5><?=$title?></h5>
                         <p><span class="bold"><?=$autor_pintura?></span><br>
                         (<?=$birthPlace_autor?> <?=$birthYear_autor?>, <?=$deathPlace_autor?> <?=$deathYear_autor?>)<br>
-                        <p><?=$material?></p>
+                        <?=$material?></p>
                     </div>
                     <div class="blackx">
                         <img src="img/crossblack.png" alt="chiudi">
@@ -156,12 +156,13 @@
                     <div class="instrucciones_boton2">OK</div>
                 </div>
                 <div class="correspondencia_mapa">
-                    <div class="handicap_pin"><img src="img/location.png" alt="location"></div>
+                    <div class="handicap_pin"><img src="img/infopoint_line.svg" alt="location"></div>
                 </div>
             </div>
-            <div class="down-cross size-cross">
+            <div class="down-cross">
                 <a href="immagine.php?id=<?=$imagen?>">
-                    <img src="img/cross.png" alt="cross">
+                <img id="video" class="down-video open_video" src="img/videoicon.png">
+                    <img class="down-cross-size" src="img/cross.png" alt="cross">
                 </a>
             </div>
         </div>
@@ -179,10 +180,10 @@ console.log(copytop);
 
 
 $(".spot").click(function(){
-    $(".whitebox").css("left", copyleft - 35 + "px");
+    $(".whitebox").css("left", copyleft + "px");
 })
 .click(function(){
-    $(".whitebox").css("top", copytop -130 + "px");
+    $(".whitebox").css("top", copytop + "px");
 })
 .click(function(){
     $(".whitebox").toggleClass("display-onclick");
@@ -198,7 +199,7 @@ $(".blackx").click(function(){
 
 // Abrir handicap
 $(document).on('click','.handicap',function(){
-    $('#add-div').toggleClass('hiding');      
+    $('#add-div').toggleClass('hiding');     
 });
 
 //Abrir y cerrar el pin en el mapa

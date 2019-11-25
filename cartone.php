@@ -34,7 +34,7 @@
 ?>
     <div class="breadcrumbs">
         <p class="playfair"><a href="home.php">i cartoni cinquecenteschi</a> /<span class="bread2"> <?=$title?> </span></p>
-        <a class="close_breadcrumbs" href="home.php"><img src="img/back.png" alt="go back">
+        <a class="close_breadcrumbs" href="home.php"><img src="img/cross.png" alt="go back">
     </div></a>
 
     <section id="cartone">
@@ -69,7 +69,7 @@
            
             <div class="down-cross">
             <img id="video" class="down-video open_video" src="img/videoicon.png">
-                <a href="home.php"><img id="back-arrow-size" src="img/back.png" alt="go back">
+                <a href="home.php"><img class="down-cross-size" src="img/cross.png" alt="go back">
             </div>
         </div>
     </div>

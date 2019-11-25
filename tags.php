@@ -90,7 +90,9 @@
                 ?>
             </div>
         </div>
-        <div class="down-cross size-cross"><a href="immagine.php?id=<?=$carton?>"><img src="img/cross.png" alt="cross"></a>
+        <div class="down-cross"><a href="immagine.php?id=<?=$carton?>">
+        <img id="video" class="down-video open_video" src="img/videoicon.png">
+        <img src="img/cross.png" class="down-cross-size" alt="cross"></a>
             </div>
     </div>
   </div>
@@ -151,7 +153,7 @@ $(document).ready(function(){
     //Definir el disseny dels tags
     var myIcon = L.icon({
         iconUrl: 'img/infopoint.png',
-        iconSize:     [35, 35],
+        iconSize:     [55, 55],
         iconAnchor:   [15, 15],
         popupAnchor:  [60, 55]
     });
