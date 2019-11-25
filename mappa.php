@@ -17,7 +17,7 @@
         authPinturas.name as autor_pintura,
 
         pinturas.title as titulo_pintura,
-        pinturas.material as material_pintura,
+        pinturas.tecnica as material_pintura,
         pinturas.imageUrl as imagen_pintura,
         pinturas.ano  as ano_pintura
     FROM 
@@ -31,10 +31,10 @@
         JOIN
             author authPinturas
         ON pinturas.autor_id = authPinturas.id
-    WHERE cartones.id = :imagen";
+    WHERE cartones.id = :carton";
 
     $exec_imagen = $conn->prepare($consulta_imagen);
-    $exec_imagen->bindParam(':imagen',$imagen);
+    $exec_imagen->bindParam(':carton',$imagen);
     $exec_imagen->execute();
     $resultado = $exec_imagen -> fetch(PDO::FETCH_ASSOC);
     $img_cartone = $resultado['imagen_carton'];
@@ -156,12 +156,13 @@
                     <div class="instrucciones_boton2">OK</div>
                 </div>
                 <div class="correspondencia_mapa">
-                    <div class="handicap_pin"></div>
+                    <div class="handicap_pin"><img src="img/location.png" alt="location"></div>
                 </div>
             </div>
-            <div class="size-cross"><a href=""><img src="img/location.png" alt="location"></a>
-            </div>
-            <div class="down-cross size-cross"><a href="immagine.php?id=<?=$imagen?>"><img src="img/cross.png" alt="cross"></a>
+            <div class="down-cross size-cross">
+                <a href="immagine.php?id=<?=$imagen?>">
+                    <img src="img/cross.png" alt="cross">
+                </a>
             </div>
         </div>
     </div>
@@ -175,6 +176,7 @@ var copyleft = parseInt($(".spot").css("left"));
 console.log(copyleft);
 var copytop = parseInt($(".spot").css("top"));    
 console.log(copytop); 
+
 
 $(".spot").click(function(){
     $(".whitebox").css("left", copyleft - 35 + "px");
@@ -198,6 +200,12 @@ $(".blackx").click(function(){
 $(document).on('click','.handicap',function(){
     $('#add-div').toggleClass('hiding');      
 });
+
+//Abrir y cerrar el pin en el mapa
+$('.handicap_pin').on('click',function(){
+    console.log("Pin mapa");
+    $(".whitebox").toggleClass("display-onclick");
+})
 
 //Minusvàlids -> Obrim el tag corresponent al numero
 $('.handicap_tag').on('click',function(){

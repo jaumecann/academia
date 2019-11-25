@@ -779,6 +779,7 @@ h5 {
 .handicap_shortcuts{
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 .handicap_shortcuts img.noclick{
     pointer-events: none;

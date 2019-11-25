@@ -1,8 +1,8 @@
 <?php
     require_once "conexion.php";
-    $imagen = $_POST['image_id'];
-    $get_tags = $conn->prepare("SELECT * FROM detail WHERE painting_id = :painting_id");
-    $get_tags->bindParam(':painting_id', $imagen);
+    $carton = $_POST['carton_id'];
+    $get_tags = $conn->prepare("SELECT * FROM detail WHERE painting_id = :carton_id");
+    $get_tags->bindParam(':carton_id', $carton);
     $get_tags->execute();
     $resultado = $get_tags->fetchAll(PDO::FETCH_ASSOC);
     
