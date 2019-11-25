@@ -1,16 +1,16 @@
 <?php 
   require_once "templates/head.php";
-  $imagen = $_GET['id'];
+  $carton = $_GET['id'];
 
-  $exec_imagen = $conn->prepare("SELECT * FROM cartones WHERE id = :imagen");
-  $exec_imagen->bindParam(':imagen',$imagen);
-  $exec_imagen->execute();
-  $resultado = $exec_imagen -> fetch(PDO::FETCH_ASSOC);
+  $exec_carton = $conn->prepare("SELECT * FROM cartones WHERE id = :carton");
+  $exec_carton->bindParam(':carton',$carton);
+  $exec_carton->execute();
+  $resultado = $exec_carton -> fetch(PDO::FETCH_ASSOC);
   $title = $resultado['title'];
   $img = $resultado['imageUrl'];
 
-  $get_tags = $conn->prepare("SELECT * FROM detail WHERE painting_id = :painting_id");
-  $get_tags->bindParam(':painting_id', $imagen);
+  $get_tags = $conn->prepare("SELECT * FROM detail WHERE painting_id = :carton_id");
+  $get_tags->bindParam(':carton_id', $carton);
   $get_tags->execute();
   $resultado_tags = $get_tags->fetchAll(PDO::FETCH_ASSOC);
 ?>
@@ -23,8 +23,8 @@
   <?php require_once "templates/navbar.php"; ?>
 
   <div class="breadcrumbs">
-  <p class="playfair"><a href="immagine.php?id=<?=$imagen?>"><?=$title?></a> / <span class="bread2">esplora i detagli</span></p>
-    <a class="close_breadcrumbs" href="immagine.php?id=<?=$imagen?>"><img src="img/cross.png" alt="cross"></a>
+  <p class="playfair"><a href="immagine.php?id=<?=$carton?>"><?=$title?></a> / <span class="bread2">esplora i detagli</span></p>
+    <a class="close_breadcrumbs" href="immagine.php?id=<?=$carton?>"><img src="img/cross.png" alt="cross"></a>
   </div>
 
   <section class="contents">
@@ -54,17 +54,17 @@
     </div>
 
     <div class="iconsrow">
-        <a href="mappa.php?id=<?=$imagen?>">
+        <a href="mappa.php?id=<?=$carton?>">
             <div class="fondo-icona">
                 <img id="mapa" src="img/mapicon.png" alt="mapa">
             </div>
         </a>
-        <a href="detagli.php?id=<?=$imagen?>">
+        <a href="detagli.php?id=<?=$carton?>">
             <div class="fondo-icona">
                 <img id="detalle" src="img/brighticon.png" alt="detalle">
             </div>
         </a>
-        <a href="tags.php?id=<?=$imagen?>">
+        <a href="tags.php?id=<?=$carton?>">
             <div class="fondo-icona activo">
                 <img id="tags" src="img/infoicon.png" alt="tags">
             </div>
@@ -90,7 +90,7 @@
                 ?>
             </div>
         </div>
-        <div class="down-cross size-cross"><a href="immagine.php?id=<?=$imagen?>"><img src="img/cross.png" alt="cross"></a>
+        <div class="down-cross size-cross"><a href="immagine.php?id=<?=$carton?>"><img src="img/cross.png" alt="cross"></a>
             </div>
     </div>
   </div>
@@ -162,14 +162,18 @@ $(document).ready(function(){
     $.ajax({
         url: 'php/get_image_tags.php',
         data: {
-        image_id: <?=$_GET['id']?>,
+        carton_id: <?=$_GET['id']?>,
         },
         dataType: 'json',
         method: 'post',
+        beforeSend: function(){
+          console.log(<?=$_GET['id']?>)
+        },
         success:function(resp){  
             resp.forEach( (tag,index) => {
+              console.log(tag);
                 var marker = L.marker([tag.x, tag.y],{
-                icon: myIcon
+                  icon: myIcon
                 }).addTo(map);
                 var popup = L.popup().setContent('<p>'+tag.desc+'</p>');
                 markers[index] = marker.bindPopup(popup);
