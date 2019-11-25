@@ -19,7 +19,7 @@
   <?php require_once "templates/navbar.php"; ?>
 
   <div class="breadcrumbs">
-    <p><a href="immagine.php?id=<?=$imagen?>"><?=$title?> / <span class="bread2">esplora l'immagine</span></p>
+    <p><a class="playfair" href="immagine.php?id=<?=$imagen?>"><?=$title?> / <span class="bread2">esplora l'immagine</span></p>
     <a class="close_breadcrumbs" href="cartone.php?id=<?=$imagen?>"><img src="img/cross.png" alt="cross"></a>
   </div>
 
@@ -57,7 +57,9 @@
       <img id="chair" src="img/handic.png" alt="handicap">
     </div>
     <div id="add-div" class="hiding">
-      <div class="down-cross size-cross"><a href="cartone.php?id=<?=$imagen?>"><img src="img/cross.png" alt="cross"></a>
+      <div class="down-cross size-cross">
+      <img id="video" class="down-video open_video" src="img/videoicon.png">  
+      <a href="cartone.php?id=<?=$imagen?>"><img src="img/cross.png" alt="cross"></a>
     </div>
   </div>
 

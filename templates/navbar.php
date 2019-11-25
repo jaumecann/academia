@@ -8,7 +8,7 @@
                         <img src="img/cross.png" alt="cross">
                 </div> 
                 <div id="flex-div">
-                        <video width="400" height="300" controls autoplay>
+                        <video width="400" height="300" controls preload="auto" autoplay>
                                 <source src="img/videoplayback.mp4" type="video/mp4">
                         </video>
                 </div>

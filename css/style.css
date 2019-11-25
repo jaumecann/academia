@@ -26,6 +26,10 @@ html,body{
     font-family: 'RobotoBold';
     src: url('fonts/RobotoSlab-Bold.ttf');
 }
+@font-face{
+    font-family: 'RobotoSlabRegular';
+    src: url('fonts/RobotoSlab-Regular.ttf');
+}
 
 /* VARS */
 :root {
@@ -37,7 +41,7 @@ html,body{
 h1{
     color:white;
     font-family: 'PlayfairDisplay', serif;
-    font-size: 2.1em;
+    font-size: 3em;
     margin:0;
     line-height: 100%;
 }
@@ -45,11 +49,24 @@ h3, h4, h5 {
     font-family: 'PlayfairDisplay', serif;
     line-height: 50%;
 }
-p{
-    font-family: 'PlayfairDisplay', serif;
-    font-size: 1em;
+
+.titulo-cuadro {
+    font-size: 2.2em;
+    line-height: 120%;
 }
 
+p{
+    font-family: 'RobotoLight';
+
+}
+
+.playfair {
+    font-family: 'PlayfairDisplay';
+}
+
+.slabregular {
+    font-family: 'RobotoSlabRegular';
+}
 
 
 #wrapper {
@@ -86,24 +103,26 @@ p{
     margin-bottom:8%;
 }
 #maintext p{
-    font-family: 'Roboto Slab', serif;
+    font-family: 'RobotoLight', serif;
     color: white;
     margin:0;
-    font-size: .85em;
+    font-size: 1.3em;
 }
 #enter {   
-    margin: auto; 
+    margin: auto;
+    height:30px;
+
 }
 #enter a {
     text-decoration: none;  
 }
 .button {
     background-color: var(--button);
-    padding: 12px 28px;
+    padding: 18px 45px;
     font-family: 'RobotoCondensed', sans-serif;
     letter-spacing: 4px;
     border-radius: 2%;
-    font-size: .6em;
+    font-size: 1.1em;
     color:white;  
 }
 #icon{
@@ -115,7 +134,7 @@ p{
 }
 
 #img-icon-cont{
-    width: 30px;
+    width: 55px;
 
 }
 
@@ -136,7 +155,7 @@ p{
     max-height: 50px;
 }
 .bold {
-    font-weight:bold;
+    font-family: 'RobotoBold';
 }
 
 /* GALERIA  */
@@ -151,7 +170,7 @@ p{
 nav{
     border-bottom-style: solid;
     border-bottom-color: white;
-    border-bottom-width: 1px;
+    border-bottom-width: 3px;
     padding-bottom: 25px;
     display: flex;
 }
@@ -163,8 +182,7 @@ nav img {
     display: flex;
     align-items: center;
     color: white;
-    font-family: 'Roboto Slab', serif;
-    font-size: .8em;
+    font-size: 1.6em;
     position: relative;
     margin: 5px 0 30px;
 }
@@ -177,6 +195,7 @@ nav img {
 }
 .bread2 {
  font-family: 'RobotoLight';
+ font-size: .9em;
 }
 
 
@@ -269,14 +288,14 @@ y cuando handicap esta activo y el cursor de handicap encima*/
 .footer {
     border-top-style: solid;
     border-top-color: white;
-    border-top-width: 1px;
+    border-top-width: 3px;
     margin-top: 50px;
     padding-top: 20px;
     display: flex;
     margin-top: auto;
 }
 .footer img {
-    width: 25px;
+    width: 50px;
 }
 
 .handicap_cursor{
@@ -290,7 +309,7 @@ y cuando handicap esta activo y el cursor de handicap encima*/
 
 /* CARTONE - FICHA */
 .breadcrumbs img {
-    width: 20px;
+    width: 38px;
 }
 
 .imgdiv, .bigtxtdiv, .txtdiv, .btndiv {
@@ -308,23 +327,31 @@ y cuando handicap esta activo y el cursor de handicap encima*/
 .bigtxtdiv {
     color:white;
     height: 15%;
-    padding: 5% 0;
+    padding: 5% 0 7% 0;
+    border-bottom-style: solid;
+    border-width: 3px;
 }
 .bigtxtdiv p {
-    font-family: 'Roboto Slab', serif;
+   
     line-height: 50%;
-    font-size:.8em;
+    font-size: 1.5em;
+}
+
+.autor-datos {
+    font-family: 'RobotoLight', serif;
 }
 .txtdiv {
-    border-top-style: solid;
-    border-top-width: 1px;
     color:white;
-    font-family: 'Roboto Slab', serif;
-    height: 20%;   
-    font-size:.7em;
+    font-family: 'RobotoLight', serif;
+    height: 200px;   
+    font-size:1.2em;
+    overflow: scroll;
+    margin-top: 25px;
+    padding-right: 20px;
 }
 .btndiv {
     position: relative;
+    margin-top: 50px;
 }
 #esplora {   
     display: inline;
@@ -334,7 +361,7 @@ y cuando handicap esta activo y el cursor de handicap encima*/
     text-decoration: none;  
 }
 .espl-btn {
-    padding: 12px 10px;
+    
 }
 
 /* PANTALLA INSTRUCCIONES */
@@ -361,40 +388,44 @@ y cuando handicap esta activo y el cursor de handicap encima*/
     flex-direction: column;
 }
 .instrucciones_icon{
-    width: 80px;
+    width: 100px;
 }
 .instrucciones_icon img{
     width: 100%;
 }
 .instrucciones_texto{
     text-align: center;  
-    width: 250px;
+    width: 350px;
     margin-bottom: 30px;
 }
-.instrucciones_texto h3{
-    font-family: 'RobotoBold';
+.instrucciones_titl{
+    font-family: 'RobotoSlabRegular';
+    font-size: 1.4em;
 }
-.instrucciones_texto p{
+.instrucciones_content{
     font-family: 'RobotoLight';
+    font-size: 1.3em;
 }
 .instrucciones_boton{
     width: 100px;
     text-align: center;
-    padding: 14px;
+    padding: 18px 35px;
     background-color: var(--button);
     cursor: pointer;
     color: white;
-    font-family: 'RobotoBold';
+    font-family: 'RobotoCondensed';
+    font-size: 1.3em;
 }
 .instrucciones_boton2{
     width: 100px;
     text-align: center;
-    padding: 5px 15px;
+    padding: 15px 25px;
     cursor: pointer;
     color: white;
-    font-family: 'RobotoBold';
     border-style:solid;
-    border-width: 1px;
+    border-width: 2px;
+    font-family: 'RobotoCondensed';
+    font-size: 1.4em;
 }
 
 
@@ -405,7 +436,7 @@ y cuando handicap esta activo y el cursor de handicap encima*/
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    padding-bottom: 50px;
+    
 }
 .bigcontainer {
     display: flex;
@@ -419,7 +450,6 @@ y cuando handicap esta activo y el cursor de handicap encima*/
     flex-direction: column;
     align-items: center;
     flex: 1;
-    justify-content: flex-end;
     padding-bottom: 50px;
 }
 .percent {
@@ -443,16 +473,17 @@ y cuando handicap esta activo y el cursor de handicap encima*/
     font-family: 'Roboto Slab', serif;
 }
 .percent img {
-    height: 30px;
+    height: 50px;
     padding: 10px;
     cursor: pointer;
+    margin: 0 20px;
 }
 .iconsrow {
     display:flex;
     margin-top: 5%;  
 }
 .iconsrow a{
-    margin: 0 10px;
+    margin: 0 30px;
 }
 .iconsrow img {
     width: 100%;
@@ -463,15 +494,15 @@ y cuando handicap esta activo y el cursor de handicap encima*/
 .fondo-icona {   
     background-color: var(--button);
     border-radius: 45px;
-    width: 45px;
-    height: 45px;
+    width: 80px;
+    height: 80px;
      
 }
 .fondo-icona.activo{
     background-color: grey;
     border-radius: 45px;
-    width: 45px;
-    height: 45px;
+    width: 80px;
+    height: 80px;
 }
 
 #brless {
@@ -529,7 +560,7 @@ h4 {
     width: 100%;
     color: white;
     overflow: hidden;
-    margin: 0;
+    margin-bottom: auto;
     position: relative;
 }
 .box2 p{
@@ -554,7 +585,7 @@ h4 {
    
 }
 .region img {
-    max-width: 100%;
+    max-width: 1080px;
 
 }
 
@@ -793,12 +824,20 @@ h5 {
    
 }
 
+.down-video {
+ width:50px;
+}
+
 .down-video img{
-    width: 32px;
+    width: 50px;
 }
 
 .size-cross img {
-    width: 20px;
+    width: 40px;
+}
+
+#back-arrow-size {
+    width: 35px;
 }
 
 /* STYLES PER LEAFLET */

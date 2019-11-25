@@ -20,7 +20,7 @@
   <?php require_once "templates/navbar.php"; ?>
 
   <div class="breadcrumbs">
-    <p><a href="immagine.php?id=<?=$imagen?>"><?=$title?></a> / <span class="bread2">esplora il disegno</span></p>
+    <p class="playfair"><a href="immagine.php?id=<?=$imagen?>"><?=$title?></a> / <span class="bread2">esplora il disegno</span></p>
     <a class="close_breadcrumbs" href="immagine.php?id=<?=$imagen?>"><img src="img/cross.png" alt="cross"></a>
   </div>
 
@@ -33,8 +33,8 @@
           <img src="img/brighticon.png">
         </div>
         <div class="instrucciones_texto">
-            <h3>esplora il disegno</h3>
-            <p>aumenta e riduci il contrasto dell'immagine per vedere meglio i dettagli</p>
+            <p class="instrucciones_titl">esplora il disegno</p>
+            <p class="instrucciones_content">aumenta e riduci il contrasto dell'immagine per vedere meglio i dettagli</p>
         </div>
         <div class="instrucciones_boton">
           OK
@@ -80,7 +80,7 @@
     <div id="add-div" class="hiding">
       <div class="handicap_shortcuts">
         <div class="instrucciones_ok activo">
-          <div class="instrucciones_boton">OK</div>
+          <div class="instrucciones_boton2">OK</div>
         </div>
       </div>
       <div class="down-cross size-cross"><a href="immagine.php?id=<?=$imagen?>"><img src="img/cross.png" alt="cross"></a>
@@ -140,6 +140,16 @@ $(document).ready(function(){
   $(document).on('click','.handicap',function(){
     $('#add-div').toggleClass('hiding');      
 });
+
+$('.instrucciones_boton').on('click',function(){
+        $('.instrucciones_ok').removeClass('activo');
+        $('.correspondencia_tags').addClass('activo');
+    })
+
+$('.instrucciones_boton2').on('click',function(){
+    $('.instrucciones_ok').removeClass('activo');
+    $('.correspondencia_mapa').addClass('activo');
+})
 
 });
 
