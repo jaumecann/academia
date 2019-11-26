@@ -17,6 +17,7 @@
     $img_sobreposada = $resultado['imageUrl_sobreposada'];
     $descriptionIta = $resultado['descriptionIta'];
     $material = $resultado['material'];
+    $ano = $resultado['ano'];
     $title = $resultado['title'];
 
     $nombre_autor = $resultado['name'];
@@ -41,6 +42,7 @@
         <div class="imgdiv"><img src="pinturas/<?=$img?>"></div>
         <div class="bigtxtdiv">
             <h3 class="titulo-cuadro"><?=$title?></h3>
+            <p class="bold"><?=$ano?></p>
             <p class="bold"><?=$nombre_autor?></p>
             <p class="autor-datos"> (<?=$birthPlace_autor?> <?=$birthYear_autor?>, <?=$deathPlace_autor?> <?=$deathYear_autor?>) </p>
             <p class="autor-datos"><?=$material?></p>

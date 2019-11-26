@@ -16,6 +16,7 @@
                     "SELECT 
                         cartones.id,
                         cartones.title,
+                        cartones.ano,
                         cartones.previewUrl,
                         author.name,
                         author.birthYear,
@@ -38,6 +39,7 @@
                         <img src="pinturas/<?=$key['previewUrl']?>">
                         <a class="layer" href="cartone.php?id=<?=$key['id']; ?>">
                             <p class="layer-nombre"><?php echo $key['title']?></p>
+                            <p class="layer-autor"><?=$key['ano']?></p>
                             <p class="layer-autor"><?=$key['name']?></p>
                             <p class="layer-fecha"><?=$fecha?></p>
                             <div class="frame_go" style="color: white"><img src="img/arrow_preview.svg"></div>
