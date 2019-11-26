@@ -20,7 +20,9 @@
         pinturas.title as titulo_pintura,
         pinturas.tecnica as material_pintura,
         pinturas.previewUrl as imagen_pintura,
-        pinturas.ano  as ano_pintura
+        pinturas.ano  as ano_pintura,
+        pinturas.europeMapX  as x_pintura,
+        pinturas.europeMapY  as y_pintura
     FROM 
         cartones 
     JOIN 
@@ -50,6 +52,8 @@
     $birthPlace_autor = $resultado['birthPlace'];
     $deathPlace_autor = $resultado['deathPlace'];
 
+    $x_pintura = $resultado['x_pintura'];
+    $y_pintura = $resultado['y_pintura'];
     $autor_pintura = $resultado['autor_pintura'];
 ?>
 <body>
@@ -100,12 +104,12 @@
         </div>
 
         <div class="box2">
-            <p class="box-titl">Mappa delle riproduzioni collocate in Europa</p>
+            <p class="box-titl2">Mappa delle riproduzioni collocate in Europa</p>
             <div id="mapframe">
                 <div class="region">
                     <img src="img/mappa.png" alt="europe map">
                 </div>
-                <div class="spot">
+                <div class="spot" style="left:<?=$x_pintura?>px;top:<?=$y_pintura?>px">
                     <img src="img/infopoint.svg" alt="location tag">      
                 </div>
                 <div class="whitebox display-onclick">
@@ -159,7 +163,7 @@
                     <div class="instrucciones_boton2">OK</div>
                 </div>
                 <div class="correspondencia_mapa">
-                    <div class="handicap_pin"><img src="img/infopoint_line.svg" alt="location"></div>
+                    <div class="handicap_pin hidden-tag"><img src="img/infopoint_line.svg" alt="location"></div>
                 </div>
             </div>
             <div class="down-cross">
@@ -176,20 +180,10 @@
 <script src="scripts/principal.js"></script>
 <script>
 
-var copyleft = parseInt($(".spot").css("left"));
-console.log(copyleft);
-var copytop = parseInt($(".spot").css("top"));    
-console.log(copytop); 
-
 
 $(".spot").click(function(){
-    $(".whitebox").css("left", copyleft + "px");
-})
-.click(function(){
-    $(".whitebox").css("top", copytop + "px");
-})
-.click(function(){
-    $(".whitebox").toggleClass("display-onclick");
+
+$(".whitebox").toggleClass("display-onclick");
 })
 
 $(".blackx").click(function(){
@@ -221,10 +215,12 @@ $('.handicap_tag').on('click',function(){
 $('.instrucciones_boton').on('click',function(){
     $('.instrucciones_ok').removeClass('activo');
     $('.correspondencia_mapa').addClass('activo');
+    $('.handicap_pin').removeClass('hidden-tag');
 })
 $('.instrucciones_boton2').on('click',function(){
     $('.instrucciones_ok').removeClass('activo');
     $('.correspondencia_mapa').addClass('activo');
+    $('.handicap_pin').removeClass('hidden-tag');
 })
 
 
