@@ -85,7 +85,7 @@
                 <?php
                 foreach($resultado_tags as $key=>$tag){
                     $tag_corr = $key + 1;
-                    echo "<div id='handicap_tag_".$tag['id']."' class='handicap_tag' data-tag='$key'>$tag_corr</div>";
+                    echo "<div id='handicap_tag_".$tag['id']."' class='handicap_tag' data-tag='$key' style='background-image: url(img/numeros_$tag_corr.svg)'>$tag_corr</div>";
                 }
                 ?>
             </div>

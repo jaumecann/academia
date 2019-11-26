@@ -807,16 +807,14 @@ margin-top: 0;
     display:flex;
 }
 .handicap_tag{
-    width: 40px;
-    height: 40px;
+    width: 40px; height: 40px;
     margin: 7px;
     padding: 3px;
     cursor: pointer;
-    text-align: center;
-    color: white;
-    border-radius: 100%;
-    border: 1px solid white;
-    font-family: 'PlayfairDisplay', serif;
+    
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
 }
 
 
