@@ -75,6 +75,11 @@
 <script>
 $(document).ready(function(){
 
+    //Aparecer layer naranja al pulsar sobre frame (pasamos de hacerlo con hover porque hace el click)
+    $('.frame').on('click',function(el){
+        $('.frame').removeClass('activo');
+        $(el.target).addClass('activo');        
+    })
 
     // Abrir el menú de minusválidos
     /* Lo hice sin toggle porque depende de como hace una cosa u otra, no es solo toggle */

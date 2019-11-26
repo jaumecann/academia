@@ -11,13 +11,13 @@ $(document).ready(function(){
     });
 
     /* Funcionamiento video grande */
+    var video = document.getElementById('video');
     $('.open_video').on('click',function(){
         document.getElementById('video-div').style.display = "block";
-        document.getElementById('video').play();
+        video.play();
     });
     $('#quit-video').on('click', function(){
         document.getElementById('video-div').style.display = "none";
-        var video = document.getElementById('video');
         video.pause();
         video.currentTime = 0;  
     });

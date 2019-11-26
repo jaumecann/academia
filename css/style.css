@@ -234,7 +234,6 @@ nav img {
     margin: 10px;
     cursor: pointer;
     overflow: hidden;
-    transition: 0.5;
 }
 .frame img {
     height: 100%;
@@ -246,9 +245,10 @@ y cuando handicap esta activo y el cursor de handicap encima*/
     display:flex;
     bottom: 0;
 }
-.frame:hover .layer{
+.frame.activo .layer{
     display:flex;
     bottom: 0;
+    pointer-events: initial;
 }
 .layer{
     display:none;
@@ -261,6 +261,7 @@ y cuando handicap esta activo y el cursor de handicap encima*/
     text-decoration: none;
     flex-direction: column;
     justify-content: flex-end;
+    
 }
 .layer p{
     margin: 0;
