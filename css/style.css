@@ -861,16 +861,26 @@ margin-top: 0;
 }
 #imgcont .leaflet-popup-content-wrapper {
     background: #c96b54da;
-    color: #eee;
-    font-size: 14px;
-    line-height: 24px;
     border-radius: 0px;
     box-shadow: none;
-    font-weight: 100;
 }
 
 .leaflet-popup-content-wrapper p {
     font-family: 'RobotoLight';
+}
+#imgcont .leaflet-popup-content{
+    margin: 20px 40px 20px 30px;
+    line-height: 1.4em;
+    font-size: 1.3em;
+    color: #eee;
+    font-weight: 100;
+}
+#imgcont .close_tag{
+    position: absolute;
+    top: 0; right: 0;
+    cursor: pointer;
+    width: 40px; height: 40px;
+    background: url('../img/cross.png') no-repeat center/20px;
 }
 
 #imgcont .leaflet-popup-close-button {
