@@ -12,6 +12,7 @@
         $tag_info = [
             'x'=>$tag['paintingX'],
             'y'=>$tag['paintingY'],
+            'title'=>$tag['title'],
             'desc'=>$tag['descriptionIta']
         ];
         array_push($tags,$tag_info);

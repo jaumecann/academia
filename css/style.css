@@ -868,6 +868,10 @@ margin-top: 0;
 .leaflet-popup-content-wrapper p {
     font-family: 'RobotoLight';
 }
+.leaflet-popup-content-wrapper h3 {
+    font-family: 'PlayfairDisplay';
+    font-size: 25px;
+}
 #imgcont .leaflet-popup-content{
     margin: 20px 40px 20px 30px;
     line-height: 1.4em;
@@ -879,7 +883,7 @@ margin-top: 0;
     position: absolute;
     top: 0; right: 0;
     cursor: pointer;
-    width: 40px; height: 40px;
+    width: 60px; height: 60px;
     background: url('../img/cross.png') no-repeat center/20px;
 }
 

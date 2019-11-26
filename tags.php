@@ -177,7 +177,7 @@ $(document).ready(function(){
                 var marker = L.marker([tag.x, tag.y],{
                   icon: myIcon
                 }).addTo(map);
-                var popup = L.popup().setContent('<div class="close_tag" data-popup="'+index+'"></div><p>'+tag.desc+'</p>');
+                var popup = L.popup().setContent('<div class="tag_bar"><h3 class="playfair">'+tag.title+'</h3><div class="close_tag" data-popup="'+index+'"></div></div><p>'+tag.desc+'</p>');
                 markers[index] = marker.bindPopup(popup);
             });
         }
