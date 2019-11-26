@@ -34,7 +34,7 @@ html,body{
 /* VARS */
 :root {
     --button: #8e4b3d;
-    --sec_color: 255, 38, 0;
+    --sec_color: 153, 55, 23;
 }
 
 /* GENERALS */
@@ -234,7 +234,6 @@ nav img {
     margin: 10px;
     cursor: pointer;
     overflow: hidden;
-    transition: 0.5;
 }
 .frame img {
     height: 100%;
@@ -246,13 +245,13 @@ y cuando handicap esta activo y el cursor de handicap encima*/
     display:flex;
     bottom: 0;
 }
-.frame:hover .layer{
+.frame.activo .layer{
     display:flex;
     bottom: 0;
+    pointer-events: initial;
 }
 .layer{
     display:none;
-    background-color: rgba(var(--sec_color), 0.4);
     width: 100%; height: 100%;
     position:absolute;
     bottom:0; left: 0;
@@ -261,12 +260,12 @@ y cuando handicap esta activo y el cursor de handicap encima*/
     text-decoration: none;
     flex-direction: column;
     justify-content: flex-end;
+    background-color: rgba(var(--sec_color), 0.5);
 }
 .layer p{
     margin: 0;
     font-size: 1.4em;
     color:white;
-    width: 60%;
 }
 .layer-nombre{
     font-family: 'PlayfairDisplay', serif;
@@ -775,8 +774,9 @@ margin-top: 0;
 
 
 .handicap_moveLeft, .handicap_moveBottom, .handicap_moveUp, .handicap_moveRight {
-    padding: 0 10px;
+    padding: 10px;
     cursor: pointer;
+    height: 100%;
 }
 
 #add-div.hiding {
@@ -787,6 +787,7 @@ margin-top: 0;
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 40px;
 }
 .handicap_shortcuts img.noclick{
     pointer-events: none;
@@ -806,16 +807,14 @@ margin-top: 0;
     display:flex;
 }
 .handicap_tag{
-    width: 40px;
-    height: 40px;
+    width: 40px; height: 40px;
     margin: 7px;
     padding: 3px;
     cursor: pointer;
-    text-align: center;
-    color: white;
-    border-radius: 100%;
-    border: 1px solid white;
-    font-family: 'PlayfairDisplay', serif;
+    
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
 }
 
 
@@ -862,16 +861,30 @@ margin-top: 0;
 }
 #imgcont .leaflet-popup-content-wrapper {
     background: #c96b54da;
-    color: #eee;
-    font-size: 14px;
-    line-height: 24px;
     border-radius: 0px;
     box-shadow: none;
-    font-weight: 100;
 }
 
 .leaflet-popup-content-wrapper p {
     font-family: 'RobotoLight';
+}
+.leaflet-popup-content-wrapper h3 {
+    font-family: 'PlayfairDisplay';
+    font-size: 25px;
+}
+#imgcont .leaflet-popup-content{
+    margin: 20px 40px 20px 30px;
+    line-height: 1.4em;
+    font-size: 1.3em;
+    color: #eee;
+    font-weight: 100;
+}
+#imgcont .close_tag{
+    position: absolute;
+    top: 0; right: 0;
+    cursor: pointer;
+    width: 60px; height: 60px;
+    background: url('../img/cross.png') no-repeat center/20px;
 }
 
 #imgcont .leaflet-popup-close-button {
@@ -903,6 +916,7 @@ margin: auto;
 position:absolute;
 right: 0;
 padding:15px;
+bottom: 0;
 }
 
 #flex-div {

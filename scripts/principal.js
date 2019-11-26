@@ -10,12 +10,17 @@ $(document).ready(function(){
         $('.instrucciones').removeClass('activo');
     });
 
-    /* Abrir el video grande */
+    /* Funcionamiento video grande */
+    var video = document.getElementById('video');
     $('.open_video').on('click',function(){
         document.getElementById('video-div').style.display = "block";
+        video.play();
     });
-    document.getElementById('quit-video').onclick = function(){
-        document.getElementById('video-div').style.display = "none";   
-    }
+    $('#quit-video').on('click', function(){
+        document.getElementById('video-div').style.display = "none";
+        video.pause();
+        video.currentTime = 0;  
+    });
+    
 
 });

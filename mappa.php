@@ -7,6 +7,7 @@
         cartones.imageUrl as imagen_carton,
         cartones.material as material_carton,
         cartones.title as titulo_carton,
+        cartones.ano as ano_carton,
         
         authCartones.name as nombre_autor,
         authCartones.birthYear,
@@ -41,6 +42,7 @@
     $img_pintura = $resultado['imagen_pintura'];
     $material = $resultado['material_carton'];
     $title = $resultado['titulo_carton'];
+    $ano = $resultado['ano_carton'];
 
     $nombre_autor = $resultado['nombre_autor'];
     $birthYear_autor = $resultado['birthYear'];
@@ -89,6 +91,7 @@
                 </div>
                 <div class="txtscheda">
                     <h4><?=$title?></h4>
+                    <p class="txtscheda-autor" class="bold"><?=$ano?></p>
                     <p class="txtscheda-autor" class="bold"><?=$nombre_autor?></p>
                     <p class="txtscheda-describe">(<?=$birthPlace_autor?> <?=$birthYear_autor?>, <?=$deathPlace_autor?> <?=$deathYear_autor?>)</p>
                     <p class="txtscheda-describe"><?=$material?></p>

@@ -85,7 +85,7 @@
                 <?php
                 foreach($resultado_tags as $key=>$tag){
                     $tag_corr = $key + 1;
-                    echo "<div id='handicap_tag_".$tag['id']."' class='handicap_tag' data-tag='$key'>$tag_corr</div>";
+                    echo "<div id='handicap_tag_".$tag['id']."' class='handicap_tag' data-tag='$key' style='background-image: url(img/numeros_$tag_corr.svg)'>$tag_corr</div>";
                 }
                 ?>
             </div>
@@ -155,7 +155,7 @@ $(document).ready(function(){
         iconUrl: 'img/infopoint.png',
         iconSize:     [55, 55],
         iconAnchor:   [15, 15],
-        popupAnchor:  [60, 55]
+        popupAnchor:  [230, 100]
     });
 
     var markers = [];
@@ -173,11 +173,11 @@ $(document).ready(function(){
         },
         success:function(resp){  
             resp.forEach( (tag,index) => {
-              console.log(tag);
+              console.log(index);
                 var marker = L.marker([tag.x, tag.y],{
                   icon: myIcon
                 }).addTo(map);
-                var popup = L.popup().setContent('<p>'+tag.desc+'</p>');
+                var popup = L.popup().setContent('<div class="tag_bar"><h3 class="playfair">'+tag.title+'</h3><div class="close_tag" data-popup="'+index+'"></div></div><p>'+tag.desc+'</p>');
                 markers[index] = marker.bindPopup(popup);
             });
         }
@@ -196,6 +196,12 @@ $(document).ready(function(){
     $('.handicap_tag').on('click',function(){
         var tag_corr = $(this).data('tag');
         markers[tag_corr].openPopup();
+    });
+
+    //Cerrar popup con cruz
+    $(document).on('click','.close_tag',function(){
+      var tag_corr = $(this).data('popup');
+      markers[tag_corr].closePopup();
     });
 
     //Al principio esta activo el boton de Ok para que cierren instrucciones

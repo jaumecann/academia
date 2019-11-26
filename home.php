@@ -16,6 +16,7 @@
                     "SELECT 
                         cartones.id,
                         cartones.title,
+                        cartones.ano,
                         cartones.previewUrl,
                         author.name,
                         author.birthYear,
@@ -38,6 +39,7 @@
                         <img src="pinturas/<?=$key['previewUrl']?>">
                         <a class="layer" href="cartone.php?id=<?=$key['id']; ?>">
                             <p class="layer-nombre"><?php echo $key['title']?></p>
+                            <p class="layer-autor"><?=$key['ano']?></p>
                             <p class="layer-autor"><?=$key['name']?></p>
                             <p class="layer-fecha"><?=$fecha?></p>
                             <div class="frame_go" style="color: white"><img src="img/arrow_preview.svg"></div>
@@ -75,6 +77,11 @@
 <script>
 $(document).ready(function(){
 
+    //Aparecer layer naranja al pulsar sobre frame (pasamos de hacerlo con hover porque hace el click)
+    $('.frame').on('click',function(el){
+        $('.frame').removeClass('activo');
+        $(el.target).addClass('activo');        
+    })
 
     // Abrir el menú de minusválidos
     /* Lo hice sin toggle porque depende de como hace una cosa u otra, no es solo toggle */
@@ -91,7 +98,7 @@ $(document).ready(function(){
         centrar_scroll()
         setTimeout(() => {
             collide_cursorFrame();    
-        }, 520);
+        }, 220);
         
     });
     $(document).on('click','.close_handicap',function(){
@@ -107,12 +114,12 @@ $(document).ready(function(){
     $(".rightarrow").click(function(){
         $("#gallery").animate({
             scrollLeft: $("#gallery").scrollLeft() + 200
-        }, 500);
+        }, 200);
     });
     $(".leftarrow").click(function(){
         $("#gallery").animate({
             scrollLeft: $("#gallery").scrollLeft() - 200
-        }, 500);
+        }, 200);
     });
 
 });
@@ -147,15 +154,15 @@ function mover_cursor(dir){
     $('.handicap_shortcuts').children('img').addClass('noclick');
     setTimeout(() => {
         $('.handicap_shortcuts').children('img').removeClass('noclick');
-    }, 520);
+    }, 220);
     
     /* Recogemos la posicion actual del cursor */
     cursor_x = cursor.offsetLeft;
     cursor_y = cursor.offsetTop;
     console.log("Posicion inicial: "+cursor_x+","+cursor_y);
     /* Vemos el desplazamiento relativo del cursor */
-    var next_sideMove = $(frame_activo).outerWidth()/2 + 20;
-    var next_vertMove = $(frame_activo).outerHeight()/2 + 20;
+    var next_sideMove = $(frame_activo).outerWidth()/2 + 25;
+    var next_vertMove = $(frame_activo).outerHeight()/2 + 25;
     if(dir == 'left'){
         /* La posición final será el desplazamiento relativo + la posición actual del cursor */
         let posicion_final = cursor_x - next_sideMove;
@@ -218,7 +225,7 @@ function collide_cursorFrame(){
         if(frame_activo_test.classList.contains('rightarrow')){
             $("#gallery").animate({
                 scrollLeft: $("#gallery").scrollLeft() + 200
-            }, 500, function(){
+            }, 200, function(){
                 console.log("Tornem a trobar el punt");
                 collide_cursorFrame();
             });
@@ -226,7 +233,7 @@ function collide_cursorFrame(){
         }else if(frame_activo_test.classList.contains('leftarrow')){
             $("#gallery").animate({
                 scrollLeft: $("#gallery").scrollLeft() - 200
-            }, 500, function(){
+            }, 200, function(){
                 console.log("Tornem a trobar el punt");
                 collide_cursorFrame();
             });
@@ -264,7 +271,7 @@ function centrar_scroll(){
             // Y lo desplazamos hasta que se vea todo
             // Osea los pixeles que se sale + unos pocos mas para que no se quede justo al limite del contenedor
             scrollLeft: $("#gallery").scrollLeft() + (dif + 30) 
-        }, 500);
+        }, 200);
     }else{
         console.log("El frame esta dentro por la derecha");
     }
@@ -275,7 +282,7 @@ function centrar_scroll(){
         console.log("El frame se sale por la izquierda "+dif+"px");
         $("#gallery").animate({
             scrollLeft: $("#gallery").scrollLeft() - (dif + 30)
-        }, 500);
+        }, 200);
     }else{
         console.log("El frame esta dentro por la izquierda");
     }
