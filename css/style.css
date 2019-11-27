@@ -282,9 +282,11 @@ y cuando handicap esta activo y el cursor de handicap encima*/
 
 .frame_go{
     width:50px;
+    height:50px;
     margin-top: 20px;
     margin-bottom: 10px;
 }
+
 
 .footer {
     border-top-style: solid;

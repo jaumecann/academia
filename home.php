@@ -87,6 +87,7 @@ $(document).ready(function(){
     /* Lo hice sin toggle porque depende de como hace una cosa u otra, no es solo toggle */
     /* Ademas no me encuentro bien y no se me ocurre nada mejor sooo fuckit */
     $(document).on('click','.open_handicap',function(){
+        $('.frame').removeClass('activo');
         $('.handicap').addClass('close_handicap');
         $('.handicap').removeClass('open_handicap');
 
