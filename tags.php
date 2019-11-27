@@ -155,7 +155,7 @@ $(document).ready(function(){
         iconUrl: 'img/infopoint.png',
         iconSize:     [55, 55],
         iconAnchor:   [15, 15],
-        popupAnchor:  [215, 255]
+        popupAnchor:  [185, 00]
     });
 
     var markers = [];
@@ -177,7 +177,7 @@ $(document).ready(function(){
                 var marker = L.marker([tag.x, tag.y],{
                   icon: myIcon
                 }).addTo(map);
-                var popup = L.popup().setContent('<div class="tag_bar"><h3 class="playfair">'+tag.title+'</h3><div class="close_tag" data-popup="'+index+'"></div></div><p class="add_red">'+tag.desc+'</p>');
+                var popup = L.popup().setContent('<p class="add_red"><span class="close_tag" data-popup="'+index+'"></span>'+tag.desc+'</p>');
                 markers[index] = marker.bindPopup(popup);
             });
         }

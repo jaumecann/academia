@@ -716,9 +716,11 @@ margin-top: 0;
     width: 30px;
 }
 
-.add_red {
-background-color: rgba(201, 107, 84, 0.855);
-
+.leaflet-popup-content .add_red {
+    background-color: rgba(201, 107, 84, 0.855);
+    padding: 40px 22px 20px 22px;
+    margin: 0;
+    position: relative;
 }
 
 .i-point {  
@@ -880,7 +882,7 @@ background-color: rgba(201, 107, 84, 0.855);
     background: #c96b54da;
     border-radius: 0px;
     box-shadow: none;
-    height: 255px;
+    height: 0;;
 }
 
 .leaflet-popup-content-wrapper p {
@@ -889,9 +891,10 @@ background-color: rgba(201, 107, 84, 0.855);
 .leaflet-popup-content-wrapper h3 {
     font-family: 'PlayfairDisplay';
     font-size: 25px;
+    margin: 0;
 }
 #imgcont .leaflet-popup-content{
-    margin: 20px 40px 20px 30px;
+    margin: 0;
     line-height: 1.4em;
     font-size: 1.6em;
     color: #eee;
