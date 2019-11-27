@@ -60,7 +60,7 @@
       <div class="down-cross size-cross">
       <img id="video" class="down-video open_video" src="img/videoicon.png">  
       <a href="cartone.php?id=<?=$imagen?>"><img class="down-cross-size" src="img/cross.png" alt="cross"></a>
-    </div>
+      </div>
   </div>
 
 </div>
