@@ -83,7 +83,7 @@ p{
     height:45%;
     align-self: flex-end;
     display:flex;
-    padding:5% 5% 3% 5%;
+    padding:5%;
     flex-wrap:wrap;
 }
 .lang {
@@ -152,7 +152,7 @@ p{
 }
 .responsive {
     max-width: 100%;
-    max-height: 50px;
+    max-height: 60px;
 }
 .bold {
     font-family: 'RobotoBold';
@@ -218,6 +218,7 @@ nav img {
 .leftarrow img, .rightarrow img {   
     width:30%;
     align-self:center;
+    visibility: hidden;
 }
 #flexcont {
     height: 100%;
@@ -255,7 +256,7 @@ y cuando handicap esta activo y el cursor de handicap encima*/
     width: 100%; height: 100%;
     position:absolute;
     bottom:0; left: 0;
-    padding: 10px;
+    padding: 15px;
     box-sizing: border-box;
     text-decoration: none;
     flex-direction: column;
@@ -281,21 +282,25 @@ y cuando handicap esta activo y el cursor de handicap encima*/
 
 .frame_go{
     width:50px;
+    height:50px;
     margin-top: 20px;
     margin-bottom: 10px;
 }
+
 
 .footer {
     border-top-style: solid;
     border-top-color: white;
     border-top-width: 3px;
-    margin-top: 50px;
-    padding-top: 20px;
+    padding-top: 40px;
     display: flex;
-    margin-top: auto;
+    position: relative;
+    
 }
 #chair {
-    width: 50px;
+    height:55px;
+    position: absolute;
+    left:0;
 }
 
 .handicap_cursor{
@@ -447,6 +452,7 @@ y cuando handicap esta activo y el cursor de handicap encima*/
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
+    height: 90%;
     
 }
 .bigcontainer {
@@ -547,21 +553,21 @@ padding-bottom: 5px;
     display: flex;
     flex-wrap: wrap;
     background-color: #1C1C1C;
-    padding: 10px 0 10px 30px;
+    padding: 20px 30px;
     margin-bottom: 10px;
     overflow: hidden;
     height: 230px;
 }
 h4 {
-    font-size: 1.4em;
+    font-size: 22px;
     margin: 10px 0 14px 0;
 }
 .boximg {
-    max-height: 150px;
+    height: 100%;
 }
 
 .boximg img {
-    height: 220px;
+    height: 100%;
     max-width: 100%;
     
 }
@@ -611,6 +617,7 @@ h4 {
     max-height: 400px;
     overflow:hidden; 
     max-width:100%;
+    margin-bottom: 40px;
 }
 
 .img1-overwhite {
@@ -629,10 +636,10 @@ h4 {
 
 .whitebox {
     background-color: white;
-    padding: 25px;
+    padding: 50px;
     color: black;
     position: absolute;
-    bottom: 35px;
+    bottom: 25px;
     z-index: 2;
     max-width:90%;
     left: 50%;
@@ -646,8 +653,8 @@ h4 {
     border-bottom-color: transparent;
     border-right-color: transparent;
     border-left-color: transparent;
-    border-width: 10px;
-    bottom: -20px;
+    border-width: 40px;
+    bottom: -65px;
     left: 0; 
     right: 0; 
     margin-left: auto; 
@@ -667,12 +674,13 @@ h4 {
 }
 .txtwhite p {
     font-family: 'Roboto Slab', serif;
-    font-size:1em;
+    font-size:18px;
     width: 80%;
+    margin-bottom: 0;
 }
 h5{
     color: var(--button);
-    font-size: 1.4em;
+    font-size: 22px;
     margin-bottom:5px;
     margin-top: 15px;
 }
@@ -683,11 +691,11 @@ margin-top: 0;
 
 .blackx {
     position:absolute;
-    top: 5px;
-    right: 5px;   
+    top: 15px;
+    right: 15px;   
 }
 .blackx img {
-    width: 12px;
+    width: 25px;
 }
 .spot {
     position: absolute;
@@ -718,7 +726,7 @@ margin-top: 0;
 
 .leaflet-popup-content .add_red {
     background-color: rgba(201, 107, 84, 0.855);
-    padding: 40px 22px 20px 22px;
+    padding: 50px 22px 20px 22px;
     margin: 0;
     position: relative;
 }
@@ -775,6 +783,7 @@ margin-top: 0;
 .handicap{
     cursor: pointer;
     padding-left: 0;
+   
 }
 #add-div {
     width: 100%;
@@ -785,6 +794,7 @@ margin-top: 0;
     transition: 1s;
     user-select: none;
     position:relative;
+    height: 40px;
 }
 
 
@@ -826,11 +836,9 @@ margin-top: 0;
     display:flex;
 }
 .handicap_tag{
-    width: 40px; height: 40px;
-    margin: 7px;
-    padding: 3px;
+    width: 50px; 
+    height: 50px;
     cursor: pointer;
-    
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
@@ -861,13 +869,13 @@ margin-top: 0;
 }
 
 .down-video img{
-    width: 51px;
+    width: 50px;
 }
 
 
 .down-cross-size {
     width: 40px;
-    margin-left: 20px;
+    margin-left: 30px;
 }
 
 /* STYLES PER LEAFLET */
@@ -905,7 +913,7 @@ margin-top: 0;
     top: 0; right: 0;
     cursor: pointer;
     width: 60px; height: 60px;
-    background: url('../img/cross.png') no-repeat center/20px;
+    background: url('../img/cross.png') no-repeat center/25px;
 }
 
 #imgcont .leaflet-popup-close-button {
@@ -929,9 +937,7 @@ margin-top: 0;
  display: none;
 }
 
-#video-div video{
-margin: auto;
-}
+
 
 #quit-video{
 position:absolute;

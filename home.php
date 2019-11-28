@@ -3,7 +3,7 @@
 <div class="background">
 <?php require_once "templates/navbar.php"; ?>
     <div class="breadcrumbs">
-        <p><a href="home.php">i cartoni cinquecenteschi</a> / </p>
+        <p class="playfair"><a href="home.php">i cartoni cinquecenteschi</a> / </p>
     </div>
     <div class="bigcontainer">
         <div class="galeria_flecha leftarrow" ><img src="img/left_arrow.png" alt="go left"></div>
@@ -87,6 +87,7 @@ $(document).ready(function(){
     /* Lo hice sin toggle porque depende de como hace una cosa u otra, no es solo toggle */
     /* Ademas no me encuentro bien y no se me ocurre nada mejor sooo fuckit */
     $(document).on('click','.open_handicap',function(){
+        $('.frame').removeClass('activo');
         $('.handicap').addClass('close_handicap');
         $('.handicap').removeClass('open_handicap');
 

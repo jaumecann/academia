@@ -22,7 +22,9 @@
         pinturas.previewUrl as imagen_pintura,
         pinturas.ano  as ano_pintura,
         pinturas.europeMapX  as x_pintura,
-        pinturas.europeMapY  as y_pintura
+        pinturas.europeMapY  as y_pintura,
+        pinturas.museo  as museo_pintura,
+        pinturas.ciudad  as ciudad_pintura
     FROM 
         cartones 
     JOIN 
@@ -55,6 +57,8 @@
     $x_pintura = $resultado['x_pintura'];
     $y_pintura = $resultado['y_pintura'];
     $autor_pintura = $resultado['autor_pintura'];
+    $ciudad_pintura = $resultado['ciudad_pintura'];
+    $museo_pintura = $resultado['museo_pintura'];
 ?>
 <body>
 
@@ -123,7 +127,7 @@
                     </div>
                     <div class="txtwhite">
                         <h5><?=$title?></h5>
-                        <p><span class="bold"><?=$autor_pintura?></span><br>
+                        <p><span class="bold"><?=$museo_pintura?>,<?=$ciudad_pintura?><br><?=$autor_pintura?></span><br>
                         (<?=$birthPlace_autor?> <?=$birthYear_autor?>, <?=$deathPlace_autor?> <?=$deathYear_autor?>)<br>
                         <?=$material?></p>
                     </div>
@@ -167,8 +171,8 @@
                 </div>
             </div>
             <div class="down-cross">
-                <a href="immagine.php?id=<?=$imagen?>">
                 <img id="video" class="down-video open_video" src="img/videoicon.png">
+                <a href="immagine.php?id=<?=$imagen?>">
                     <img class="down-cross-size" src="img/cross.png" alt="cross">
                 </a>
             </div>
