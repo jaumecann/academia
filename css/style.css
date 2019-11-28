@@ -376,9 +376,6 @@ y cuando handicap esta activo y el cursor de handicap encima*/
 #esplora a {
     text-decoration: none;  
 }
-.espl-btn {
-    
-}
 
 /* PANTALLA INSTRUCCIONES */
 .instrucciones{
@@ -620,12 +617,6 @@ h4 {
     margin-bottom: 40px;
 }
 
-.img1-overwhite {
-
-     
-}
-
-
 
 
 .img1-overwhite img {
@@ -668,9 +659,6 @@ h4 {
 }
 .txtwhite {
     margin-left: 10px;
-    position:;
-    
-    
 }
 .txtwhite p {
     font-family: 'Roboto Slab', serif;
@@ -781,9 +769,11 @@ margin-top: 0;
 
 /* styles per footer que apareixen en scripts */
 .handicap{
+    position: absolute;
     cursor: pointer;
     padding-left: 0;
-   
+    width: 60px; height: 60px;
+    z-index: 1;
 }
 #add-div {
     width: 100%;
@@ -842,6 +832,7 @@ margin-top: 0;
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
+    margin: 0 10px;
 }
 
 

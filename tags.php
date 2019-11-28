@@ -90,10 +90,12 @@
                 ?>
             </div>
         </div>
-        <div class="down-cross"><a href="immagine.php?id=<?=$carton?>">
-        <img id="video" class="down-video open_video" src="img/videoicon.png">
-        <img src="img/cross.png" class="down-cross-size" alt="cross"></a>
-            </div>
+        <div class="down-cross">
+          <img id="video" class="down-video open_video" src="img/videoicon.png">
+          <a href="immagine.php?id=<?=$carton?>">
+            <img src="img/cross.png" class="down-cross-size" alt="cross">
+          </a>
+        </div>
     </div>
   </div>
 

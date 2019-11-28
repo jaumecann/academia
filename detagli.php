@@ -84,9 +84,9 @@
         </div>
       </div>
       <div class="down-cross">
-        <a href="immagine.php?id=<?=$imagen?>">
         <img id="video" class="down-video open_video" src="img/videoicon.png">
-        <img class="down-cross-size" src="img/cross.png" alt="cross">
+        <a href="immagine.php?id=<?=$imagen?>">
+          <img class="down-cross-size" src="img/cross.png" alt="cross">
         </a>
       </div>
     </div>
