@@ -200,7 +200,7 @@ nav img {
 
 
 #gallery {
-    width: 80%;
+    width: 80%; height: 100%;
     overflow-x: scroll;
     overflow-y: hidden;
     position: relative;
@@ -226,6 +226,7 @@ nav img {
     para que haga scroll y todo esto. Se puede ir metiendo a mano como quede bien para cada actualizacion, pero
     lo mejor seria detectar las fotos o algo y poner un with que se vaya adaptando a la situación*/
     width: 100%; 
+    position: relative;
 }
 .frame {
     float: left;
@@ -453,6 +454,7 @@ y cuando handicap esta activo y el cursor de handicap encima*/
     
 }
 .bigcontainer {
+    height: 100%;
     display: flex;
     flex: 1;
     padding-bottom: 50px;
