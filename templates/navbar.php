@@ -8,13 +8,13 @@
                         <img src="img/cross.png" alt="cross">
                 </div> 
                 <div id="flex-div">
-                        <video id="video" width="100%" height="auto" autoplay>
+                        <video id="video" width="100%" height="auto">
                                 <source src="img/videoplayback.mp4" type="video/mp4">
                         </video>
                 </div>
         </div>
-        <img id="video" class="open_video" src="img/videoicon.png">
-        <a href="home.php">
+        <img class="open_video" src="img/videoicon.png">
+        <a href="vistamedia.php?toLight=0">
                 <img src="img/home.png" alt="home">
         </a>
 </nav>

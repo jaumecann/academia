@@ -15,7 +15,5 @@
 
    <script src="scripts/jquery.js"></script>
    <script src="leaflet/leaflet.js"></script>
-   <script src="scripts/principal.js"></script>
-
 
 </head>

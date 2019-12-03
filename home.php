@@ -74,6 +74,8 @@
 </div>
 </body>
 
+<?php require('templates/footer.php') ?>
+
 <script>
 $(document).ready(function(){
 

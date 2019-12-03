@@ -75,7 +75,7 @@
             </div>
         </div>
     </div>
-
+<script src="scripts/principal.js"></script>
 <script>
 
 $(document).ready(function(){

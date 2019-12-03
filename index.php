@@ -48,5 +48,5 @@
 </div> <!--end wrapper-->
 
 </body>
-
+<script src="scripts/principal.js"></script>
 </html>
